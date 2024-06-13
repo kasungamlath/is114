@@ -1,0 +1,367 @@
+==========
+Networking
+==========
+
+
+Hyper Text Transfer Protocol
+----------------------------
+
+- Open a Chrome browser
+- Press F12 to open the Chrome Developer Tools
+- Click on the **Network** tab
+- Visit http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
+- A list of requests and responses appears in the Network tab.
+- Click on any request in the list to see the details of the request and response.
+- In the "Headers" tab, you can view the request and response headers, which provide information such as the request method, URL, cookies, and response status code.
+- In the "Preview" tab, you can view the content of the response in a human-readable format.
+- In the "Response" tab, you can view the raw response data, including any binary content, such as images or videos.
+
+
+curl
+^^^^
+For transferring data using URL syntax
+
+- Get a webpage
+
+  ``curl "http://gaia.cs.umass.edu/kurose_ross/index.php"``
+
+- Get a webpage that displays your current IP address
+
+  ``curl checkip.amazonaws.com``
+
+- View complete protocol messages
+
+  ``curl --verbose "http://gaia.cs.umass.edu/kurose_ross/index.php"``
+
+- Get a webpage, save it to a file named ``HTTP-wireshark-file4.html``
+
+  ``curl "http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html" > HTTP-wireshark-file4.html``
+
+
+Hyper Text Transfer Protocol Secure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- HTTPS (Hyper Text Transfer Protocol Secure) is a protocol used for secure communication over the internet. It is a combination of the HTTP and Transport Layer Security protocols, which encrypt and authenticate data between the client and the server. 
+- HTTPS ensures that data is not tampered with or intercepted by unauthorized parties, making it more secure than HTTP
+- HTTPS uses a different port (port 443) than HTTP (port 80). Using a different port for HTTPS helps to prevent confusion and ensure that the correct protocol is used for secure communication.
+
+
+Remote access (Optional)
+------------------------
+
+- ``ssh`` : securely connect to remote computers
+
+Server
+^^^^^^
+
+- For some labs, we will login to a server.
+
+  - Username: your SMU username (if your e-mail address is xoxo@smu.edu.sg, then your username is **xoxo**)
+  - Password: your SMU student card ID, as printed on your student card
+
+- ``ssh -p PORT_NUMBER USERNAME@IP_ADDRESS``
+
+  - Your teacher will provide you the values for PORT_NUMBER, USERNAME, and IP_ADDRESS
+
+- When you type your password, nothing appears on screen, this is normal
+- You should see a command prompt. At this point, you're logged into the server. You're not interacting with your computer anymore.
+- Change your password by typing ``passwd`` and follow the instructions. When you type your password, nothing appears on screen, this is normal
+- **USE A UNIQUE PASSWORD, NOT SOMETHING THAT YOU USE IN REAL LIFE FOR YOUR OTHER ACCOUNTS**
+- When you're ready, you can take your SSH skills to the next step by doing passwordless logins https://linuxize.com/post/how-to-setup-passwordless-ssh-login/
+
+
+
+Remote File Transfer
+--------------------
+
+- To transfer files to a server, we can use the FileZilla client.
+- https://filezilla-project.org/download.php?type=client
+
+
+Python
+------
+
+- We need Python for this mod. If you're taking IS111, you should have Python installed on your laptop. If you're not taking IS111, ask your IS111 friends for the Python installation instructions, because we need to maintain a similar Python setup to IS111.
+- For Windows users, you would need 2 Python installations: 
+
+  - Windows Python: this is the one you installed in IS111. Sometimes installed as "Anaconda", which is Python + other software
+  - WSL Python: this is Python inside your WSL environment.
+
+
+Python Virtual Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- A virtual environment is a "bubble" where the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and from any libraries installed in a "system" Python, i.e., one which is installed as part of your operating system. Details: https://realpython.com/python-virtual-environments-a-primer/
+- We will use the folder ``~/env`` to store our virtual environment. If you have an existing folder named ``~/env``, you can either use another folder for your virtual environment, or rename your existing folder to something else.
+- It is possible to create multiple virtual environments.
+
+
+Create a virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+- Create a new virtual environment in a specific folder
+
+  .. code-block:: console
+
+    python3 -m venv ~/env
+
+
+Activate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Activate the virtual environment (careful, there's a ``.`` in front)
+
+  .. code-block:: console
+
+    . ~/env/bin/activate
+
+- The command prompt should show an ``(env)``, which means you're inside the virtual environment bubble. 
+- From now on, anything that's installed using ``python3 -m pip`` will only be installed inside this bubble.
+
+
+Install libraries inside the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make sure the environment is activated first. Then, install some libraries like this
+
+  .. code-block:: console
+
+    python3 -m pip install wheel pyserial
+    python3 -m pip install requests
+
+
+Python Requests
+^^^^^^^^^^^^^^^
+- Save this code to a file called **requests-simple.py**. Run it from a terminal using ``python3 requests-simple.py``. You can use ``nano`` to create the Python file.
+
+.. literalinclude:: ./requests-simple.py
+    :language: python
+
+
+Deactivate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Deactivate the virtual environment and exit the "bubble". The ``(env)`` will disappear.
+
+  .. code-block:: console
+
+    deactivate
+
+
+Delete an existing virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- You can re-use the virtual environment as long as you need to. You can delete the virtual environment if something went wrong and you need to start from a clean slate. You can also delete it when you're so done with this mod.
+
+- To delete an existing virtual environment, delete the ~/env folder.
+
+
+Domain Name System
+------------------
+
+dig 
+^^^
+Query domain name servers
+
+- ``dig +short example.com``
+- ``dig +short ns.sg``
+- ``dig +short singnet.com``
+
+
+Web Application Programming Interface (optional)
+------------------------------------------------
+
+- Watch: https://www.youtube.com/watch?v=ZveW4_ZJtVY&list=PLF1hDMPPRqGxpYdo0ctaa7MxfOi9vjs1u&index=30
+
+HTTP REST
+^^^^^^^^^
+
+- Hyper Text Transfer Protocol Representational State Transfer (HTTP REST) is an architectural style that comprises some principles for building web services. 
+- Client-server architecture: This principle requires a clear separation between the client and server components, so that they can evolve independently.
+- Stateless communication: Each request from the client to the server should contain all the necessary information to be understood by the server. The server should not store any client context between requests.
+- Cacheability: Responses should be cacheable so that the client can reuse them if needed, reducing the number of requests made to the server.
+- Uniform interface: The interface between the client and server should be standardized, with common protocols and formats for communication. The uniform interface includes the use of HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources, and the use of a Uniform Resource Identifier (URI) to identify those resources.
+- HTTP REST APIs are designed to be scalable, flexible, and easily maintained, making them a popular choice for building web services.
+
+
+HTTP REST API
+^^^^^^^^^^^^^
+
+- An API (Application Programming Interface) is a set of protocols, routines, and tools for building software applications. It defines how different software components should interact with each other
+
+- A HTTP REST API (or HTTP RESTful API) is an API that uses HTTP REST principles for machines to communicate with other machines over the internet. Data formats like JSON or XML are commonly used. 
+
+
+JavaScript Object Notation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- A data format that is easy for humans to read and write and easy for machines to parse and generate
+- Language-independent, uses conventions that are familiar to programmers
+- Built on two structures: a collection of name/value pairs and an ordered list of values
+- Name/value pair: a string that specifies a name followed by a colon and a value. 
+- Values can be strings in double quotes, numbers, objects, arrays, true, false, or null. 
+
+
+Example::
+
+    { "key1": "value1", "key2": 123567, "key3": "value3" }
+
+Example::
+
+    { "name": "John", "age": 30, "city": "York" }
+
+
+Example::
+
+    [
+        {
+            "title": "Hound Dog",
+            "artist": "Elvis Presley",
+            "year": 1956
+        },
+        {
+            "title": "Jailhouse Rock",
+            "artist": "Elvis Presley",
+            "year": 1957
+        },
+        {
+            "title": "Hey Jude",
+            "artist": "Beatles",
+            "year": 1968
+        }
+    ]
+
+
+Example::
+
+    {
+        "this": "succeeded",
+        "by": "getting",
+        "the": "dweets",
+        "with": [
+            {
+                "thing": "my-thing-name",
+                "created": "2014-01-15T18:41:17.166Z",
+                "content": {
+                    "this": "is cool!"
+                }
+            },
+            {
+                "thing": "my-thing-name",
+                "created": "2014-01-15T18:41:01.583Z",
+                "content": {
+                    "hello": "world",
+                    "foo": "bar"
+                }
+            }
+        ]
+    }
+
+Example::
+
+    {"menu": {
+        "id": "file",
+        "value": "File",
+        "popup": {
+            "menuitem": [
+            {"value": "New", "onclick": "CreateNewDoc()"},
+            {"value": "Open", "onclick": "OpenDoc()"},
+            {"value": "Close", "onclick": "CloseDoc()"}
+            ]
+        }
+    }}
+
+Example::
+
+    curl "https://jsonplaceholder.typicode.com/posts/1" | python3 -m json.tool
+
+Example::
+
+    curl "https://jsonplaceholder.typicode.com/posts/2" | python3 -m json.tool
+
+Example::
+
+    https "https://jsonplaceholder.typicode.com/posts/1"
+
+
+Other Network Tools (optional)
+------------------------------
+
+ncat 
+^^^^
+
+General-purpose network tool
+
+- Start a server on 127.0.0.1:20000
+
+  ``ncat --listen --keep-open 127.0.0.1 20000``
+
+- Start a client, connect to a server on 127.0.0.1:20000 
+
+  ``ncat 127.0.0.1 20000``
+
+- Start a simple web server on 127.0.0.1:8080
+ 
+  ``ncat --listen --keep-open --sh-exec "echo -e 'HTTP/1.1 200 OK\r\n' ; echo heyz ; date" 127.0.0.1 8080``
+
+- Start a simple web server on 127.0.0.1:8443, with Transport Layer Security
+
+  ``ncat --listen --keep-open --sh-exec "echo -e 'HTTP/1.1 200 OK\r\n' ; echo heyz ; date" --ssl 127.0.0.1 8443``
+
+
+ss 
+^^
+
+Shows socket statistics
+
+- https://phoenixnap.com/kb/ss-command
+
+
+nmap 
+^^^^
+
+Network mapper, for discovering hosts, and security probing
+
+- https://phoenixnap.com/kb/nmap-commands
+
+
+ip 
+^^
+
+For working with network interfaces
+
+- https://access.redhat.com/sites/default/files/attachments/rh_ip_command_cheatsheet_1214_jcs_print.pdf
+- https://phoenixnap.com/kb/linux-ip-command-examples 
+
+
+mtr
+^^^
+
+Traces the path of network packets to a specific destination
+
+- https://www.bitwizard.nl/mtr/
+
+
+ping 
+^^^^
+
+Connectivity tester
+
+- https://www.redhat.com/sysadmin/ping-usage-basics
+
+
+httpie
+^^^^^^
+
+A command-line HTTP client designed for testing, debugging, and generally interacting with APIs & HTTP servers.
+
+- https://httpie.io/docs
+
+
+dweepy
+^^^^^^
+
+A simple Python client for dweet.io, which is an online service that allows us to send data to the cloud with simple web API. .
+
+- https://dweet.io/
+- https://pypi.org/project/dweepy/

@@ -1,0 +1,212 @@
+=====
+Basic
+=====
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/basic
+
+
+Show number
+-----------
+
+- Show a number on the LED screen. It will slide left if it has more than one digit::
+
+    def basic.show_number(value: number, interval: number): None
+
+- Parameters
+
+  - ``value`` is a number. If it is not a single-digit number, it will scroll on the display
+  - ``interval`` is an optional number. It means the number of milliseconds before sliding the value left by one LED each time. Bigger intervals make the sliding slower.
+
+- Show the number 0 on the screen::
+
+    basic.show_number(0)
+
+- ``basic`` is a *library*. It contains a collection of code which other people wrote. These collections of code are organized into *functions*
+- ``show_number()`` is a function. We can *call* this function to perform a certain task
+- ``0`` is called the *argument*, or *parameter*, of the function. A function can have 0 or more parameters.
+-  ``basic.show_number(0)`` uses the ``basic`` library to call the ``show_number()`` function. We tell ``show_number()`` to display ``0`` by putting ``0`` between the parentheses ``(`` and ``)``
+
+
+- 🤔 What happens if the number is very long? ::
+
+    basic.show_number(123567)
+
+- To change the scrolling speed::
+
+    basic.show_number(123567, interval = 500)
+
+
+Show icon
+---------
+
+- Shows the selected icon on the LED screen::
+
+    def basic.show_icon(icon: IconNames, interval: number): None
+
+- Parameters
+
+    - ``icon``: the identifier of the icon to display
+    - ``interval`` (optional), the time to display in milliseconds. Default is 600.
+
+
+- Show an icon::
+
+    basic.show_icon(IconNames.HEART)
+
+- ``IconNames`` is an *object*. The image we want to display is a part of the ``IconNames`` object and called ``HEART``. We tell ``show_icon()`` to use it by putting it between the parentheses.
+- 🤔 How to find out the possible IconNames? Try typing ``basic.show_icon(``, pause for 2-3 seconds, and see what happens
+
+
+Show LEDs
+---------
+
+- Shows a picture on the LED screen::
+
+    def basic.show_leds(leds: str, interval: int32): None
+
+- Parameters
+
+    - ``leds``: a string that controls which LEDs are on and off
+    - ``interval``: an optional number that means how many milliseconds to wait after showing a picture. Default is 400ms
+
+- Show an icon on the LED screen::
+
+    basic.show_leds("""
+        . . # . .
+        . . # . .
+        # # # # #
+        . . # . .
+        . . # . .
+        """)
+
+- Show an icon on the LED screen::
+
+    basic.show_leds("""
+        . # . # .
+        # # # # #
+        # # # # #
+        . # # # .
+        . . # . .
+        """)
+
+
+Show string
+-----------
+
+- Show a string on the LED screen. It will scroll left if it's bigger than the screen::
+
+    def basic.show_string(text: str, interval: int32): None
+
+- Parameters
+
+    - ``text``: a String. It can contain letters, numbers, and punctuation.
+    - ``interval``: an optional Number. It means the number of milliseconds before sliding the String left by one LED each time. Bigger intervals make the sliding slower.
+
+- Display a string of characters::
+
+    basic.show_string("issa lit")
+
+- Make it snappy::
+
+    basic.show_string("issa lit", interval=10)
+
+
+Clear screen
+------------
+
+- Turn off all LEDs::
+
+    def basic.clear_screen(): None
+
+- Show a heart on the screen, then clear it::
+
+    basic.show_leds("""
+        . # . # . 
+        # # # # # 
+        # # # # # 
+        . # # # . 
+        . . # . .
+        """)
+    basic.clear_screen()
+
+
+Run code forever
+----------------
+
+- Keep running part of a program in the background::
+
+    def basic.forever(f: () -> None): None
+
+- Parameters
+
+  - ``f``: a function to run forever. In Python, functions can be passed to other functions as parameters.
+  - ``f : () -> None`` 
+
+    - ``f`` is a function
+    - ``()`` means ``f`` takes in zero parameters
+    - ``-> None`` means ``f`` doesn't return anything 
+
+- You can have part of a program continuously by placing it in an forever loop. The forever loop will *yield* to the other code in your program though, allowing other code to have time to run when needs to.
+
+- Keep showing the number stored in a variable. When you press button A, the number gets bigger::
+
+    num = 0
+
+    def on_forever():
+        basic.show_number(num)
+    basic.forever(on_forever)
+
+    def on_button_pressed_a():
+        global num
+        num = num + 1
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+- If different parts of a program are each trying to show something on the LED screen at the same time, you may get unexpected results::
+
+    def on_forever():
+        basic.show_number(6789)
+    basic.forever(on_forever)
+
+    def on_button_pressed_a():
+        basic.show_number(2)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+- Run some code forever::
+
+    def on_forever():
+        basic.show_number(0)
+        basic.clear_screen()
+        basic.show_number(1)
+        basic.clear_screen()
+    basic.forever(on_forever)
+
+- ``def on_forever():`` defines a function that does a certain task. The task is described in the body of the function::
+
+        basic.show_number(0)
+        basic.clear_screen()
+        basic.show_number(1)
+        basic.clear_screen()
+
+- ``basic.forever(on_forever)`` calls the ``basic.forever()`` function, and tells it, "Keep running the ``on_forever()`` function, forever and ever"
+
+
+
+Pause
+-----
+
+- Pause for a number of milliseconds. 1000ms = 1s::
+
+    def basic.pause(ms: int32): None
+
+- Parameters
+
+  - ``ms`` is the number of milliseconds that you want to pause
+
+- Pause for a number of milliseconds (1000ms = 1s)::
+
+    basic.pause(1000)
+

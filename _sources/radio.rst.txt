@@ -1,0 +1,122 @@
+=====
+Radio
+=====
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/radio
+- Behind the MakeCode Hardware - Radio in micro\:bit https://youtu.be/Re3H2ISfQE8
+
+
+Set Group
+---------
+
+- Set the Radio Group for a micro\:bit ::
+
+    def radio.set_group(id: int32): None
+
+- Parameters
+
+    - ``id``: a number from 0 to 255.
+
+
+- A group is like a walkie-talkie channel. A micro\:bit can only send or receive in one group at a time.
+
+- Two micro\:bits that want to talk to each other must be in the same group.
+
+- Always set the Radio Group to be the same as your team number. If you do not tell your micro\:bit which Radio Group to use, it will try to figure out its own Radio Group by itself, but sometimes it won't be successful.
+
+- This program makes the Radio Group equal 128. ::
+
+    radio.set_group(128)
+
+
+Send Value
+----------
+
+- Broadcast a string and number together by radio to other micro\:bits. The maximum length of ``name`` is 8 characters. ::
+
+    def radio.send_value(name: str, value: number): None
+
+- Parameters
+
+    - ``name``: a string that is the name of the value to send.
+    - ``value``: a number that is the value to send.
+
+- This program sends your micro\:bit's acceleration in the x direction (left and right) to other micro\:bits::
+
+    radio.set_group(99)
+
+    def on_button_pressed_a():
+        radio.send_value("acc", input.acceleration(Dimension.X))
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+On Received Value
+-----------------
+
+- Run an event handler when the micro\:bit receives a name-value pair (sometimes also called a key-value pair) over radio. ::
+
+    def radio.on_received_value(cb: (str, number) -> None): None
+
+- Parameters
+
+    - ``name``: a string that is a name for the value received.
+    - ``value``: a number that is the value received.
+
+- This event handler can only be created once, due to hardware restrictions
+
+- This program keeps sending acceleration values. When it receives numbers for the same thing from nearby micro\:bits, show the numbers as a bar graph. ::
+
+    radio.set_group(1)
+
+    def on_forever():
+        radio.send_value("accel-x", input.acceleration(Dimension.X))
+    basic.forever(on_forever)
+
+    def on_received_value(name, value):
+        if name == "accel-x":
+            led.plot_bar_graph(value, 1023)
+    radio.on_received_value(on_received_value)
+
+
+
+Received Packet
+---------------
+
+- Get one of the properties from the last received radio packet ::
+
+    def radio.received_packet(type: number): number
+
+- In addition to a number, string, or name-value pair, the packet received also contains other information about the transmission of the packet. You can get this additional information by selecting a property from the packet.
+
+- Parameters
+
+    - ``type``: the property type to get from the packet. These are:
+
+        - ``signal strength``: the strength of the radio signal when the packet was received.
+        - ``serial number``: the serial number of the micro\:bit sending the packet.
+        - ``time``: the time when the packet was sent.
+
+- Returns a number depending on the property type:
+
+    - ``signal strength``: the signal strength at the receiver, ranging from -128 up to -28 (-128 means a weak signal and -28 means a strong one.)
+    - ``serial number``: the serial number of the micro\:bit sending the packet.
+    - ``time``: the system time, in microseconds, of the sender at the time when the packet was sent.
+
+- Measurement of the received signal strength is dependent on what version of micro\:bit you have. The micro\:bit v1 can typically measure a signal strength up to -42 dBm. The v2 can typically measure a signal strength up to -28 dBm.
+
+- This program displays the signal strength from received packets::
+
+    radio.set_group(1)
+
+    def on_forever():
+        radio.send_number(0)
+    basic.forever(on_forever)
+
+    def on_received_number(receivedNumber):
+        rssi = radio.received_packet(RadioPacketProperty.SIGNAL_STRENGTH)
+        serial.write_line(str(rssi))
+    radio.on_received_number(on_received_number)

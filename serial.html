@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21. Serial &mdash; IS114 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/contentui.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="22. Music" href="music.html" />
+    <link rel="prev" title="20. Radio" href="radio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">1. Week 1: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-topics">1.1. Week 1 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-exercises">1.2. Week 1 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-2-tools">2. Week 2: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-topics">2.1. Week 2 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-exercises">2.2. Week 2 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#combining-tools">2.2.1. Combining tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#file-editing">2.2.2. File Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#storage-optional">2.2.3. Storage (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#process-management-optional">2.2.4. Process Management (Optional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-3-networking">3. Week 3: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-topics">3.1. Week 3 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-exercises">3.2. Week 3 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-4-networking">4. Week 4: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-topics">4.1. Week 4 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-exercises">4.2. Week 4 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-5-lan-setup">5. Week 5: LAN Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-topics">5.1. Week 5 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-exercise">5.2. Week 5 Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#network-tests-optional">5.3. Network Tests (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-6-cloud-web-server">6. Week 6: Cloud Web Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-topics">6.1. Week 6 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises">6.2. Week 6 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises-optional">6.3. Week 6 Exercises (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-7-physical-computing">7. Week 7: Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-topics">7.1. Week 7 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-exercises">7.2. Week 7 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-8">8. Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-9-light-buttons-radio-leds">9. Week 9: Light, Buttons, Radio, LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-topics">9.1. Week 9 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-exercises">9.2. Week 9 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-10-event-driven-coding-time">10. Week 10: Event-driven coding, Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-topics">10.1. Week 10 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-exercises">10.2. Week 10 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-11-accelerometer-magnetometer">11. Week 11: Accelerometer, Magnetometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-topics">11.1. Week 11 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-exercises">11.2. Week 11 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-12">12. Week 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-13">13. Week 13</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">14. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#windows-subsystem-for-linux">14.1. Windows Subsystem for Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-management">14.2. File management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#text">14.3. Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#process-management-optional">14.4. Process management (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-permissions">14.5. File Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#other-useful-stuff-optional">14.6. Other useful stuff (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#screen-recording-optional">14.7. Screen Recording (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">15. Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol">15.1. Hyper Text Transfer Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#curl">15.1.1. curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol-secure">15.1.2. Hyper Text Transfer Protocol Secure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-access-optional">15.2. Remote access (Optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#server">15.2.1. Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-file-transfer">15.3. Remote File Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#python">15.4. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-virtual-environment">15.4.1. Python Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#create-a-virtual-environment">15.4.2. Create a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#activate-the-virtual-environment">15.4.3. Activate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#install-libraries-inside-the-virtual-environment">15.4.4. Install libraries inside the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-requests">15.4.5. Python Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#deactivate-the-virtual-environment">15.4.6. Deactivate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#delete-an-existing-virtual-environment">15.4.7. Delete an existing virtual environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#domain-name-system">15.5. Domain Name System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dig">15.5.1. dig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#web-application-programming-interface-optional">15.6. Web Application Programming Interface (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest">15.6.1. HTTP REST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest-api">15.6.2. HTTP REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#javascript-object-notation">15.6.3. JavaScript Object Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#other-network-tools-optional">15.7. Other Network Tools (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ncat">15.7.1. ncat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ss">15.7.2. ss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#nmap">15.7.3. nmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ip">15.7.4. ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#mtr">15.7.5. mtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ping">15.7.6. ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#httpie">15.7.7. httpie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dweepy">15.7.8. dweepy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical-computing.html">16. Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#physical-computing-systems">16.1. Physical Computing Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#the-micro-bit">16.2. The micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-editor">16.3. MakeCode editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#development-workflow">16.4. Development workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#troubleshooting">16.5. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-python">16.6. MakeCode Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#machine-to-machine-communication">16.7. Machine-to-machine communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#python-on-laptop">16.8. Python on Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#serial-communication-using-pyserial">16.9. Serial Communication using pySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-micro-bit">16.9.1. On the micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-laptop">16.9.2. On the Laptop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#note">16.9.3. Note</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#debugging-optional">16.10. Debugging (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#debugger">16.10.1. Debugger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#features">16.10.2. Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#examples">16.10.3. Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#concurrency-optional">16.11. Concurrency (optional)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (core)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basic.html">17. Basic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#references">17.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-number">17.2. Show number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-icon">17.3. Show icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-leds">17.4. Show LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-string">17.5. Show string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#clear-screen">17.6. Clear screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#run-code-forever">17.7. Run code forever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#pause">17.8. Pause</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">18. Input</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input.html#references">18.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-driven-coding">18.2. Event-driven coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-button-pressed">18.3. On Button Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-handlers">18.4. Event Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-gesture">18.5. On Gesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#button-is-pressed">18.6. Button Is Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#compass-heading">18.7. Compass Heading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#temperature">18.8. Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#acceleration">18.9. Acceleration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#rotation">18.10. Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#light-level">18.11. Light Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#magnetic-force">18.12. Magnetic Force</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#running-time">18.13. Running Time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="led.html">19. LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="led.html#references">19.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#display">19.2. Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot">19.3. Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#unplot">19.4. Unplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#point">19.5. Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#toggle">19.6. Toggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#brightness">19.7. Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-brightness">19.8. Plot Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#set-brightness">19.9. Set Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#enable">19.10. Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#stop-animation-optional">19.11. Stop Animation (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-bar-graph-optional">19.12. plot Bar Graph (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="radio.html">20. Radio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#references">20.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#send-value">20.2. Send Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#on-received-value">20.3. On Received Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#received-packet">20.4. Received Packet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#set-group">20.5. Set Group</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">21. Serial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references">21.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-from-micro-bit-to-laptop">21.2. Data from micro:bit to laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#end-of-line">21.3. End of Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buffering">21.4. Buffering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-write-line">21.5. Serial Write Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-write-number">21.6. Serial Write Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#write-value">21.7. Write Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-write-string">21.8. Serial Write String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-write-numbers">21.9. Serial Write Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-read-until">21.10. Serial Read Until</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-read-line">21.11. Serial Read Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-read-string">21.12. Serial Read String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-on-data-received">21.13. Serial On Data Received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-pyserial">21.14. Using PySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#micro-bit">21.14.1. micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laptop">21.14.2. Laptop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (optional)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="music.html">22. Music</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music.html#references">22.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#start-melody">22.2. Start Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#stop-melody">22.3. Stop Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#on-event">22.4. On Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#change-tempo-by">22.5. Change Tempo By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-tempo">22.6. Set Tempo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-volume">22.7. Set Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#activities">22.8. Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">23. Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#references">23.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for">23.2. For</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for-of">23.3. For … of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#while">23.4. While</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#every-interval">23.5. every Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">24. Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#references">24.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#if">24.2. If</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#boolean">24.3. Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">25. Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#references">25.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#usage">25.2. Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#declaring-variables">25.3. Declaring Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#changing-variables">25.4. Changing Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">25.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">26. Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#references">26.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#math-functions">26.2. Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#exercises">26.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">27. Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#objectives">27.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#references">27.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#index">27.3. index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#push">27.4. push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#pop">27.5. pop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#shift">27.6. shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#unshift">27.7. unshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#insert-at">27.8. Insert at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#remove-at">27.9. Remove at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#reverse">27.10. Reverse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">28. Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#references">28.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#char-at">28.2. Char At</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#compare">28.3. Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#substr">28.4. Substr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#parse-int">28.5. Parse Int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#convert-to-text">28.6. Convert to text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#exercises">28.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">29. Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control.html#objectives">29.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#references">29.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#reset">29.3. Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-name">29.4. Device Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-serial-number">29.5. Device Serial Number</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IS114</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">21. </span>Serial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="serial">
+<h1><span class="section-number">21. </span>Serial<a class="headerlink" href="#serial" title="Permalink to this heading"></a></h1>
+<section id="references">
+<h2><span class="section-number">21.1. </span>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makecode.microbit.org/reference/serial">https://makecode.microbit.org/reference/serial</a></p></li>
+</ul>
+</section>
+<section id="data-from-micro-bit-to-laptop">
+<h2><span class="section-number">21.2. </span>Data from micro:bit to laptop<a class="headerlink" href="#data-from-micro-bit-to-laptop" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer">https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer</a></p></li>
+<li><p><a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000095729-displaying-live-serial-data-from-the-micro-bit-in-the-makecode-console">https://support.microbit.org/support/solutions/articles/19000095729-displaying-live-serial-data-from-the-micro-bit-in-the-makecode-console</a>- (the “WebUSB” method, it’s incompatible with some browser/OS combinations, especially non-Chrome browsers)</p></li>
+</ul>
+</section>
+<section id="end-of-line">
+<h2><span class="section-number">21.3. </span>End of Line<a class="headerlink" href="#end-of-line" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>History: <a class="reference external" href="https://www.youtube.com/watch?v=VdVvXr5ZigM">https://www.youtube.com/watch?v=VdVvXr5ZigM</a></p></li>
+<li><p>Computers use certain characters to mark the end of lines. There are 2 characters used (in some combination) to mark the end of a line:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code> aka “Carriage Return” aka CR</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> aka “Line Feed” aka LF</p></li>
+</ul>
+</li>
+<li><p>These characters are invisible. You don’t see them when using apps, but apps need them to know where to “draw” the new lines.</p></li>
+<li><p>Different Operating Systems use different ways to mark the end of a line:</p>
+<ul>
+<li><p>Linux and macOS use <code class="docutils literal notranslate"><span class="pre">\n</span></code> aka <strong>LF</strong></p></li>
+<li><p>Windows uses <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> aka <strong>CRLF</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="buffering">
+<h2><span class="section-number">21.4. </span>Buffering<a class="headerlink" href="#buffering" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Buffering in computer systems is the process of temporarily holding data in memory, called a buffer. The buffered data is stored in a computer’s memory, until the computer is ready to process it.</p></li>
+<li><p>Buffers are used to optimize the transfer of data, especially when the rate at which data is being produced is faster than the rate at which it can be processed. By using a buffer, the data can be temporarily stored until it can be processed, which helps to prevent data loss or errors.</p></li>
+<li><p>The micro:bit and the computer both have serial ports. Each serial port is associated with a buffer.</p></li>
+<li><p>When the micro:bit sends data to the computer via USB, the computer receives it and stores it in its buffer.</p></li>
+<li><p>The size of the buffer is limited, so if data arrives at a faster rate than the computer can process it, the buffer will fill up and the excess data will be lost.</p></li>
+<li><p>An app needs to be explicitly run on the computer to read data from the micro:bit. The app reads data from the computer’s serial buffer. Once a piece of data is read from the buffer, it is removed from the buffer forever, and other apps cannot read that same piece of data from the buffer.</p></li>
+</ul>
+</section>
+<section id="serial-write-line">
+<h2><span class="section-number">21.5. </span>Serial Write Line<a class="headerlink" href="#serial-write-line" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Write a string and <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> to the serial port</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code>: the string to write to the serial port</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Write something to the serial port repeatedly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-write-number">
+<h2><span class="section-number">21.6. </span>Serial Write Number<a class="headerlink" href="#serial-write-number" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Write a number to the serial port, without adding  <code class="docutils literal notranslate"><span class="pre">\r\n</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">write_number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> is the number to write to the serial port</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>This program repeatedly writes a 3-digit number to the serial port</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_number</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="write-value">
+<h2><span class="section-number">21.7. </span>Write Value<a class="headerlink" href="#write-value" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Write a name:value pair and <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> to the serial port</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is the string to write to the serial port</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> is the number to write to the serial port</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The example below sends the temperature and light level to the serial port every 2 seconds.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">temperature</span><span class="p">())</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">())</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-write-string">
+<h2><span class="section-number">21.8. </span>Serial Write String<a class="headerlink" href="#serial-write-string" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Write a string to the serial port, without adding <code class="docutils literal notranslate"><span class="pre">\r\n</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write something to the serial port repeatedly, without adding <code class="docutils literal notranslate"><span class="pre">\r\n</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-write-numbers">
+<h2><span class="section-number">21.9. </span>Serial Write Numbers<a class="headerlink" href="#serial-write-numbers" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Write a list of numbers and <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> to the serial port.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">write_numbers</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">number</span><span class="p">]):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Instead of writing a single number at a time using write number, you can write multiple numbers to the serial port at once. They are written as <em>Comma Separated Values (CSV)</em>.</p></li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>: the list of numbers to write to the serial port</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>This program repeatedly writes a 3-number list to the serial port.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-read-until">
+<h2><span class="section-number">21.10. </span>Serial Read Until<a class="headerlink" href="#serial-read-until" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Read a text from the serial port until a delimiter is found.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="n">delimiter</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code>:  a character that specifies the boundary between separate values</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Returns a string containing input from the serial port up to the delimiter</p></li>
+<li><p>The following example reads strings separated by <code class="docutils literal notranslate"><span class="pre">,</span></code> and shows them on the LED screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-read-line">
+<h2><span class="section-number">21.11. </span>Serial Read Line<a class="headerlink" href="#serial-read-line" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Read a line of text from the serial port.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">read_line</span><span class="p">():</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns a string containing input from the serial port</p></li>
+<li><p>The following example asks the user’s name, then repeats it to the user.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;Who dis?&quot;</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">read_line</span><span class="p">()</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="s2">&quot;Hello,&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-read-string">
+<h2><span class="section-number">21.12. </span>Serial Read String<a class="headerlink" href="#serial-read-string" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Read the buffered serial data as a string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">read_string</span><span class="p">():</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns a string containing input from the serial port. The string is empty if no data is available.</p></li>
+<li><p>The following program scrolls text on the screen as it arrives.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="n">serial</span><span class="o">.</span><span class="n">read_string</span><span class="p">())</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="serial-on-data-received">
+<h2><span class="section-number">21.13. </span>Serial On Data Received<a class="headerlink" href="#serial-on-data-received" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Registers an event to be fired when one of the delimiter is matched.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial</span><span class="o">.</span><span class="n">on_data_received</span><span class="p">(</span><span class="n">delimiters</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">delimiters</span></code>: a string containing any of the characters to match</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Read values separated by <code class="docutils literal notranslate"><span class="pre">,</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_data_received</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="n">serial</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">on_data_received</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">on_data_received</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="using-pyserial">
+<h2><span class="section-number">21.14. </span>Using PySerial<a class="headerlink" href="#using-pyserial" title="Permalink to this heading"></a></h2>
+<p>Use a Python app to receive data from your micro:bit.</p>
+<section id="micro-bit">
+<h3><span class="section-number">21.14.1. </span>micro:bit<a class="headerlink" href="#micro-bit" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Plug in your micro:bit to your laptop.</p></li>
+<li><p>Run this program on your micro:bit. This sends the time in seconds to the serial port, in the format <code class="docutils literal notranslate"><span class="pre">time:T</span></code>, where <code class="docutils literal notranslate"><span class="pre">T</span></code> is the time in seconds.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">t</span>
+
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="s2">&quot;time:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">toggle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="laptop">
+<h3><span class="section-number">21.14.2. </span>Laptop<a class="headerlink" href="#laptop" title="Permalink to this heading"></a></h3>
+<p>If typing <code class="docutils literal notranslate"><span class="pre">pip3</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span></code> don’t work, use <code class="docutils literal notranslate"><span class="pre">pip</span></code> and/or <code class="docutils literal notranslate"><span class="pre">python</span></code> instead.</p>
+<ol class="arabic">
+<li><p>If your micro:bit is paired to your browser using WebUSB, unpair it now.</p></li>
+<li><p>Plug your micro:bit out from your laptop, and plug it in again. This helps to lower the chances that another app is reading from the micro:bit</p></li>
+<li><p>Open a terminal (a.k.a. console, command prompt, command line, shell, anaconda prompt).</p></li>
+<li><p>If you have installed <code class="docutils literal notranslate"><span class="pre">pyserial</span></code> on your laptop, skip this step. Type <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pyserial</span></code>. You should see some text, and eventually <code class="docutils literal notranslate"><span class="pre">Successfully</span> <span class="pre">installed</span> <span class="pre">pyserial-X.X</span></code>. This installs a Python library called <a class="reference external" href="https://pyserial.readthedocs.io/">pySerial</a>, which provides some useful code and tools to read data from your micro:bit. After you’re done with this mod, type <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">uninstall</span> <span class="pre">pyserial</span></code> to uninstall it.</p></li>
+<li><p>Show your laptop’s serial ports using</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.list_ports<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>You should see something similar to the below, but not exactly the same.</p>
+<ul>
+<li><p>This is an example from Windows. In this case, the serial port is <code class="docutils literal notranslate"><span class="pre">COM777</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COM777</span>
+    <span class="n">desc</span><span class="p">:</span> <span class="n">USB</span> <span class="n">Serial</span> <span class="n">Device</span> <span class="p">(</span><span class="n">COM777</span><span class="p">)</span>
+    <span class="n">hwid</span><span class="p">:</span> <span class="n">USB</span> <span class="n">VID</span><span class="p">:</span><span class="n">PID</span><span class="o">=</span><span class="mi">0</span><span class="n">D28</span><span class="p">:</span><span class="mi">0204</span> <span class="n">SER</span><span class="o">=</span><span class="mi">9905360200052833933</span><span class="n">DF9DD1DDE1D80000000006E052820</span> <span class="n">LOCATION</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span><span class="n">x</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>This is an example from macOS. In this case, the serial port is <code class="docutils literal notranslate"><span class="pre">/dev/cu.usbmodem123567</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbmodem123567</span>
+    <span class="n">desc</span><span class="p">:</span> <span class="n">BBC</span> <span class="n">micro</span><span class="p">:</span><span class="n">bit</span> <span class="n">CMSIS</span><span class="o">-</span><span class="n">DAP</span> <span class="o">-</span> <span class="n">mbed</span> <span class="n">Serial</span> <span class="n">Port</span>
+    <span class="n">hwid</span><span class="p">:</span> <span class="n">USB</span> <span class="n">VID</span><span class="p">:</span><span class="n">PID</span><span class="o">=</span><span class="mi">0</span><span class="n">D28</span><span class="p">:</span><span class="mi">0204</span> <span class="n">SER</span><span class="o">=</span><span class="mi">9905360200052833</span><span class="n">b53d21262edad78b000000006e052820</span> <span class="n">LOCATION</span><span class="o">=</span><span class="mi">20</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Whatever your serial port is, whenever you see <code class="docutils literal notranslate"><span class="pre">INSERT_YOUR_SERIAL_PORT_HERE_DUN_ANYHOW_COPY_PASTA_BLINDLY_UWU</span></code>, place it there.</p></li>
+<li><p>Run the miniterm tool to receive data from your micro:bit</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.miniterm<span class="w"> </span>INSERT_YOUR_SERIAL_PORT_HERE_DUN_ANYHOW_COPY_PASTA_BLINDLY_UWU<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+<p>You should see this output from your micro:bit (similar, but not the same):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Miniterm</span> <span class="n">on</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbmodem123567</span>  <span class="mi">115200</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span> <span class="o">---</span>
+<span class="o">---</span> <span class="n">Quit</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="p">]</span> <span class="o">|</span> <span class="n">Menu</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="o">|</span> <span class="n">Help</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">H</span> <span class="o">---</span>
+
+<span class="n">time</span><span class="p">:</span><span class="mi">113</span>
+<span class="n">time</span><span class="p">:</span><span class="mi">114</span>
+<span class="n">time</span><span class="p">:</span><span class="mi">115</span>
+<span class="n">time</span><span class="p">:</span><span class="mi">116</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To exit miniterm, press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">]</kbd>. You should see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">exit</span> <span class="o">---</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 🫰🏼 · 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

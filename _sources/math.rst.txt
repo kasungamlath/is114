@@ -1,0 +1,41 @@
+====
+Math
+====
+
+References
+----------
+
+- https://makecode.microbit.org/reference/math
+
+
+Math Functions
+--------------
+
+- ``Math.sqrt(X)`` returns the square root of a number
+- ``Math.max(X, Y)`` returns the largest of two numbers
+- ``Math.min(X, Y)`` returns the smallest of two numbers
+- ``Math.abs(X)`` returns the absolute value of a number
+- ``Math.random_boolean()`` returns ``true`` or ``false`` randomly
+- ``randint(min, max)`` returns a random number between ``min`` and ``max``, both included
+
+
+Exercises
+---------
+
+1. What does ``Math.constrain(value, low, high)`` do? Find out by running the code below, and writing your own code to experiment::
+
+    basic.show_number(Math.constrain(-1, 0, 10))
+    basic.show_number(Math.constrain(0, 0, 10))
+    basic.show_number(Math.constrain(2, 0, 10))
+    basic.show_number(Math.constrain(8, 0, 10))
+    basic.show_number(Math.constrain(10, 0, 10))
+    basic.show_number(Math.constrain(11, 0, 10))
+    basic.show_number(Math.constrain(100, 0, 10))
+
+#. What does ``Math.map(value, fromLow, fromHigh, toLow, toHigh)`` do? Find out by running the code below, and writing your own code to experiment::
+
+    basic.show_number(Math.map( 0, 0, 10, 100, 200))
+    basic.show_number(Math.map( 5, 0, 10, 100, 200))
+    basic.show_number(Math.map(10, 0, 10, 100, 200))
+    basic.show_number(Math.map(-1, 0, 10, 100, 200))
+    basic.show_number(Math.map(11, 0, 10, 100, 200))

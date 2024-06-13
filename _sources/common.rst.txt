@@ -1,0 +1,12 @@
+.. |win-key| raw:: html
+
+   <i class="fa fa-windows"></i>
+
+.. |br| raw:: html
+
+   <br />
+
+.. headings: # (with overline), * (with overline), =, -, ^, "  https://devguide.python.org/documenting/#sections 
+
+
+.. ➜

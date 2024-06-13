@@ -1,0 +1,62 @@
+.. raw:: html
+
+   <meta http-equiv='cache-control' content='no-cache'> 
+   <meta http-equiv='expires' content='0'> 
+   <meta http-equiv='pragma' content='no-cache'>
+
+############################
+IS114 Computing Fundamentals
+############################
+
+Content adapted from: 
+
+- https://microbit-micropython.readthedocs.io/
+- https://makecode.microbit.org/docs
+- https://gaia.cs.umass.edu/kurose_ross/index.php
+- https://missing.csail.mit.edu/
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Labs
+   :numbered:
+
+   labs
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Topics
+   :numbered:
+
+   tools
+   networking
+   physical-computing
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: micro:bit docs (core)
+   :numbered:
+
+   basic
+   input
+   led
+   radio
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: micro:bit docs (optional)
+   :numbered:
+
+   serial
+   music
+   loops
+   logic
+   variables
+   math
+   arrays
+   text
+   control
+   extra-exercises-microbit

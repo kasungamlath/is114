@@ -1,0 +1,302 @@
+======
+Serial
+======
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/serial
+
+
+Data from micro\:bit to laptop
+------------------------------
+
+- https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer
+- https://support.microbit.org/support/solutions/articles/19000095729-displaying-live-serial-data-from-the-micro-bit-in-the-makecode-console- (the "WebUSB" method, it's incompatible with some browser/OS combinations, especially non-Chrome browsers)
+
+
+End of Line
+-----------
+
+- History: https://www.youtube.com/watch?v=VdVvXr5ZigM
+
+- Computers use certain characters to mark the end of lines. There are 2 characters used (in some combination) to mark the end of a line:
+
+  - ``\r`` aka "Carriage Return" aka CR
+  - ``\n`` aka "Line Feed" aka LF
+
+- These characters are invisible. You don't see them when using apps, but apps need them to know where to "draw" the new lines.
+
+- Different Operating Systems use different ways to mark the end of a line:
+
+  - Linux and macOS use ``\n`` aka **LF**
+  - Windows uses ``\r\n`` aka **CRLF**
+
+
+Buffering
+---------
+
+- Buffering in computer systems is the process of temporarily holding data in memory, called a buffer. The buffered data is stored in a computer's memory, until the computer is ready to process it. 
+
+- Buffers are used to optimize the transfer of data, especially when the rate at which data is being produced is faster than the rate at which it can be processed. By using a buffer, the data can be temporarily stored until it can be processed, which helps to prevent data loss or errors.
+
+- The micro\:bit and the computer both have serial ports. Each serial port is associated with a buffer. 
+
+- When the micro\:bit sends data to the computer via USB, the computer receives it and stores it in its buffer.
+
+- The size of the buffer is limited, so if data arrives at a faster rate than the computer can process it, the buffer will fill up and the excess data will be lost.
+
+- An app needs to be explicitly run on the computer to read data from the micro\:bit. The app reads data from the computer's serial buffer. Once a piece of data is read from the buffer, it is removed from the buffer forever, and other apps cannot read that same piece of data from the buffer.
+
+
+Serial Write Line
+-----------------
+
+- Write a string and ``\r\n`` to the serial port ::
+
+    def serial.write_line(text: str): None
+
+
+- Parameters
+
+    - ``text``: the string to write to the serial port
+
+- Write something to the serial port repeatedly::
+
+    def on_forever():
+        serial.write_line("xoxo")
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+
+Serial Write Number
+-------------------
+
+- Write a number to the serial port, without adding  ``\r\n`` ::
+
+    def serial.write_number(value: number): None
+
+- Parameters
+
+    - ``value`` is the number to write to the serial port
+
+- This program repeatedly writes a 3-digit number to the serial port ::
+
+    def on_forever():
+        serial.write_number(123)
+        basic.pause(5000)
+    basic.forever(on_forever)
+
+
+Write Value
+-----------
+
+- Write a name:value pair and ``\r\n`` to the serial port ::
+
+    def serial.write_value(name: str, value: number): None
+
+- Parameters
+
+    - ``name`` is the string to write to the serial port
+    - ``value`` is the number to write to the serial port
+
+- The example below sends the temperature and light level to the serial port every 2 seconds. ::
+
+    def on_forever():
+        serial.write_value("temp", input.temperature())
+        serial.write_value("light", input.light_level())
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+
+Serial Write String
+-------------------
+
+- Write a string to the serial port, without adding ``\r\n`` ::
+
+    def serial.write_string(text: str): None
+
+- Write something to the serial port repeatedly, without adding ``\r\n``::
+
+    def on_forever():
+        serial.write_string("xoxo")
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+
+Serial Write Numbers
+--------------------
+
+- Write a list of numbers and ``\r\n`` to the serial port. ::
+
+    def serial.write_numbers(values: List[number]): None
+
+- Instead of writing a single number at a time using write number, you can write multiple numbers to the serial port at once. They are written as *Comma Separated Values (CSV)*.
+
+- Parameters
+
+    - ``values``: the list of numbers to write to the serial port
+
+- This program repeatedly writes a 3-number list to the serial port. ::
+
+    def on_forever():
+        serial.write_numbers([1, 2, 3])
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+
+Serial Read Until
+-----------------
+
+- Read a text from the serial port until a delimiter is found. ::
+
+    def serial.read_until(delimiter: str): str
+
+- Parameters
+
+    - ``delimiter``:  a character that specifies the boundary between separate values
+
+- Returns a string containing input from the serial port up to the delimiter
+
+- The following example reads strings separated by ``,`` and shows them on the LED screen::
+
+    def on_forever():
+        answer = serial.read_until(",")
+        basic.show_string(answer)
+    basic.forever(on_forever)
+
+
+Serial Read Line
+----------------
+
+- Read a line of text from the serial port. ::
+
+    def serial.read_line(): str
+
+- Returns a string containing input from the serial port
+
+- The following example asks the user's name, then repeats it to the user. ::
+
+    def on_forever():
+        serial.write_line("Who dis?")
+        answer = serial.read_line()
+        serial.write_string("Hello,")
+        serial.write_line(answer)
+    basic.forever(on_forever)
+
+
+Serial Read String
+------------------
+
+- Read the buffered serial data as a string ::
+
+    def serial.read_string(): str
+
+- Returns a string containing input from the serial port. The string is empty if no data is available.
+
+- The following program scrolls text on the screen as it arrives. ::
+
+    def on_forever():
+        basic.show_string(serial.read_string())
+    basic.forever(on_forever)
+
+
+Serial On Data Received
+-----------------------
+
+- Registers an event to be fired when one of the delimiter is matched. ::
+
+    def serial.on_data_received(delimiters: str, body: () -> None): None
+
+- Parameters
+
+    - ``delimiters``: a string containing any of the characters to match
+
+- Read values separated by ``,`` ::
+
+    def on_data_received():
+        basic.show_string(serial.read_until(","))
+    serial.on_data_received(",", on_data_received)
+
+
+Using PySerial
+--------------
+
+Use a Python app to receive data from your micro\:bit. 
+
+micro\:bit
+^^^^^^^^^^
+
+1. Plug in your micro\:bit to your laptop.
+
+#. Run this program on your micro\:bit. This sends the time in seconds to the serial port, in the format ``time:T``, where ``T`` is the time in seconds. ::
+
+        t = 0
+
+        def on_forever():
+            global t
+
+            serial.write_string("time:" + str(t) + "\n")
+            t = t + 1
+            led.toggle(2, 2)
+            basic.pause(1000)
+        basic.forever(on_forever)
+
+
+
+Laptop
+^^^^^^
+
+If typing ``pip3`` and ``python3`` don't work, use ``pip`` and/or ``python`` instead.
+
+#. If your micro\:bit is paired to your browser using WebUSB, unpair it now.
+
+#. Plug your micro\:bit out from your laptop, and plug it in again. This helps to lower the chances that another app is reading from the micro\:bit
+
+#. Open a terminal (a.k.a. console, command prompt, command line, shell, anaconda prompt). 
+
+#. If you have installed ``pyserial`` on your laptop, skip this step. Type ``pip3 install pyserial``. You should see some text, and eventually ``Successfully installed pyserial-X.X``. This installs a Python library called `pySerial <https://pyserial.readthedocs.io/>`_, which provides some useful code and tools to read data from your micro\:bit. After you're done with this mod, type ``pip3 uninstall pyserial`` to uninstall it.
+
+#. Show your laptop's serial ports using
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.list_ports -v
+        
+    You should see something similar to the below, but not exactly the same.
+
+    - This is an example from Windows. In this case, the serial port is ``COM777`` ::
+
+        COM777
+            desc: USB Serial Device (COM777)
+            hwid: USB VID:PID=0D28:0204 SER=9905360200052833933DF9DD1DDE1D80000000006E052820 LOCATION=1-7:x.1
+
+    - This is an example from macOS. In this case, the serial port is ``/dev/cu.usbmodem123567`` ::
+
+        /dev/cu.usbmodem123567
+            desc: BBC micro:bit CMSIS-DAP - mbed Serial Port
+            hwid: USB VID:PID=0D28:0204 SER=9905360200052833b53d21262edad78b000000006e052820 LOCATION=20-3
+
+#. Whatever your serial port is, whenever you see ``INSERT_YOUR_SERIAL_PORT_HERE_DUN_ANYHOW_COPY_PASTA_BLINDLY_UWU``, place it there.
+
+#. Run the miniterm tool to receive data from your micro\:bit
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.miniterm INSERT_YOUR_SERIAL_PORT_HERE_DUN_ANYHOW_COPY_PASTA_BLINDLY_UWU 115200
+        
+    You should see this output from your micro\:bit (similar, but not the same)::
+
+        -- Miniterm on /dev/cu.usbmodem123567  115200,8,N,1 ---
+        --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+            
+        time:113
+        time:114
+        time:115
+        time:116
+
+#. To exit miniterm, press :kbd:`Ctrl` :kbd:`]`. You should see::
+
+        --- exit ---
+

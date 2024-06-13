@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Week 1: Tools &mdash; IS114 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/contentui.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="14. Tools" href="tools.html" />
+    <link rel="prev" title="IS114 Computing Fundamentals" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Week 1: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-1-topics">1.1. Week 1 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-1-exercises">1.2. Week 1 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-2-tools">2. Week 2: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-2-topics">2.1. Week 2 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-2-exercises">2.2. Week 2 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#combining-tools">2.2.1. Combining tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-editing">2.2.2. File Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage-optional">2.2.3. Storage (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-management-optional">2.2.4. Process Management (Optional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-3-networking">3. Week 3: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-3-topics">3.1. Week 3 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-3-exercises">3.2. Week 3 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-4-networking">4. Week 4: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-4-topics">4.1. Week 4 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-4-exercises">4.2. Week 4 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-5-lan-setup">5. Week 5: LAN Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-5-topics">5.1. Week 5 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-5-exercise">5.2. Week 5 Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#network-tests-optional">5.3. Network Tests (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-6-cloud-web-server">6. Week 6: Cloud Web Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-6-topics">6.1. Week 6 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-6-exercises">6.2. Week 6 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#http-server-on-aws-ec2">6.2.1. HTTP Server on AWS EC2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#week-6-exercises-optional">6.3. Week 6 Exercises (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-7-physical-computing">7. Week 7: Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-7-topics">7.1. Week 7 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-7-exercises">7.2. Week 7 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-8">8. Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#week-9-light-buttons-radio-leds">9. Week 9: Light, Buttons, Radio, LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-9-topics">9.1. Week 9 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-9-exercises">9.2. Week 9 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-10-event-driven-coding-time">10. Week 10: Event-driven coding, Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-10-topics">10.1. Week 10 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-10-exercises">10.2. Week 10 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-11-accelerometer-magnetometer">11. Week 11: Accelerometer, Magnetometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#week-11-topics">11.1. Week 11 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#week-11-exercises">11.2. Week 11 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#week-12">12. Week 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#week-13">13. Week 13</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">14. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#windows-subsystem-for-linux">14.1. Windows Subsystem for Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-management">14.2. File management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#text">14.3. Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#process-management-optional">14.4. Process management (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-permissions">14.5. File Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#other-useful-stuff-optional">14.6. Other useful stuff (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#screen-recording-optional">14.7. Screen Recording (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">15. Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol">15.1. Hyper Text Transfer Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#curl">15.1.1. curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol-secure">15.1.2. Hyper Text Transfer Protocol Secure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-access-optional">15.2. Remote access (Optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#server">15.2.1. Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-file-transfer">15.3. Remote File Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#python">15.4. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-virtual-environment">15.4.1. Python Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#create-a-virtual-environment">15.4.2. Create a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#activate-the-virtual-environment">15.4.3. Activate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#install-libraries-inside-the-virtual-environment">15.4.4. Install libraries inside the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-requests">15.4.5. Python Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#deactivate-the-virtual-environment">15.4.6. Deactivate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#delete-an-existing-virtual-environment">15.4.7. Delete an existing virtual environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#domain-name-system">15.5. Domain Name System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dig">15.5.1. dig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#web-application-programming-interface-optional">15.6. Web Application Programming Interface (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest">15.6.1. HTTP REST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest-api">15.6.2. HTTP REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#javascript-object-notation">15.6.3. JavaScript Object Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#other-network-tools-optional">15.7. Other Network Tools (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ncat">15.7.1. ncat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ss">15.7.2. ss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#nmap">15.7.3. nmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ip">15.7.4. ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#mtr">15.7.5. mtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ping">15.7.6. ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#httpie">15.7.7. httpie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dweepy">15.7.8. dweepy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical-computing.html">16. Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#physical-computing-systems">16.1. Physical Computing Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#the-micro-bit">16.2. The micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-editor">16.3. MakeCode editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#development-workflow">16.4. Development workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#troubleshooting">16.5. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-python">16.6. MakeCode Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#machine-to-machine-communication">16.7. Machine-to-machine communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#python-on-laptop">16.8. Python on Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#serial-communication-using-pyserial">16.9. Serial Communication using pySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-micro-bit">16.9.1. On the micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-laptop">16.9.2. On the Laptop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#note">16.9.3. Note</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#debugging-optional">16.10. Debugging (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#debugger">16.10.1. Debugger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#features">16.10.2. Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#examples">16.10.3. Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#concurrency-optional">16.11. Concurrency (optional)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (core)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">17. Basic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#references">17.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-number">17.2. Show number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-icon">17.3. Show icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-leds">17.4. Show LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-string">17.5. Show string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#clear-screen">17.6. Clear screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#run-code-forever">17.7. Run code forever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#pause">17.8. Pause</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">18. Input</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input.html#references">18.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-driven-coding">18.2. Event-driven coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-button-pressed">18.3. On Button Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-handlers">18.4. Event Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-gesture">18.5. On Gesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#button-is-pressed">18.6. Button Is Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#compass-heading">18.7. Compass Heading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#temperature">18.8. Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#acceleration">18.9. Acceleration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#rotation">18.10. Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#light-level">18.11. Light Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#magnetic-force">18.12. Magnetic Force</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#running-time">18.13. Running Time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="led.html">19. LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="led.html#references">19.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#display">19.2. Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot">19.3. Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#unplot">19.4. Unplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#point">19.5. Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#toggle">19.6. Toggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#brightness">19.7. Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-brightness">19.8. Plot Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#set-brightness">19.9. Set Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#enable">19.10. Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#stop-animation-optional">19.11. Stop Animation (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-bar-graph-optional">19.12. plot Bar Graph (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="radio.html">20. Radio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#references">20.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#send-value">20.2. Send Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#on-received-value">20.3. On Received Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#received-packet">20.4. Received Packet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#set-group">20.5. Set Group</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (optional)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">21. Serial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#references">21.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#data-from-micro-bit-to-laptop">21.2. Data from micro:bit to laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#end-of-line">21.3. End of Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#buffering">21.4. Buffering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-line">21.5. Serial Write Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-number">21.6. Serial Write Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#write-value">21.7. Write Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-string">21.8. Serial Write String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-numbers">21.9. Serial Write Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-until">21.10. Serial Read Until</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-line">21.11. Serial Read Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-string">21.12. Serial Read String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-on-data-received">21.13. Serial On Data Received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#using-pyserial">21.14. Using PySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#micro-bit">21.14.1. micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#laptop">21.14.2. Laptop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="music.html">22. Music</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music.html#references">22.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#start-melody">22.2. Start Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#stop-melody">22.3. Stop Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#on-event">22.4. On Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#change-tempo-by">22.5. Change Tempo By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-tempo">22.6. Set Tempo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-volume">22.7. Set Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#activities">22.8. Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">23. Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#references">23.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for">23.2. For</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for-of">23.3. For … of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#while">23.4. While</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#every-interval">23.5. every Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">24. Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#references">24.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#if">24.2. If</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#boolean">24.3. Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">25. Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#references">25.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#usage">25.2. Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#declaring-variables">25.3. Declaring Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#changing-variables">25.4. Changing Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">25.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">26. Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#references">26.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#math-functions">26.2. Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#exercises">26.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">27. Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#objectives">27.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#references">27.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#index">27.3. index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#push">27.4. push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#pop">27.5. pop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#shift">27.6. shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#unshift">27.7. unshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#insert-at">27.8. Insert at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#remove-at">27.9. Remove at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#reverse">27.10. Reverse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">28. Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#references">28.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#char-at">28.2. Char At</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#compare">28.3. Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#substr">28.4. Substr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#parse-int">28.5. Parse Int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#convert-to-text">28.6. Convert to text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#exercises">28.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">29. Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control.html#objectives">29.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#references">29.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#reset">29.3. Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-name">29.4. Device Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-serial-number">29.5. Device Serial Number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra-exercises-microbit.html">30. Extra Exercises</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IS114</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Week 1: Tools</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Take good care of all hardware, so that you and future students can have an awesome learning experience.</p></li>
+<li><p>Return everything, including small items like packaging and cable ties, do not dispose anything</p></li>
+</ul>
+</div>
+<section id="week-1-tools">
+<h1><span class="section-number">1. </span>Week 1: Tools<a class="headerlink" href="#week-1-tools" title="Permalink to this heading"></a></h1>
+<p>For weeks 1 and 2, we’ll be using this <a class="reference external" href="https://www.datacamp.com/groups/shared_links/73153143f7b9128f761257fdd5de9847fc8806713d2799682d518d1f6230bbb8">DataCamp classroom</a>. Sign in using your SMU Google e-mail account.
+(Note: Sign in as <a class="reference external" href="mailto:SOMETHING&#37;&#52;&#48;smu&#46;edu&#46;sg">SOMETHING<span>&#64;</span>smu<span>&#46;</span>edu<span>&#46;</span>sg</a>, not <a class="reference external" href="mailto:SOMETHING&#37;&#52;&#48;scis&#46;smu&#46;edu&#46;sg">SOMETHING<span>&#64;</span>scis<span>&#46;</span>smu<span>&#46;</span>edu<span>&#46;</span>sg</a>)</p>
+<section id="week-1-topics">
+<h2><span class="section-number">1.1. </span>Week 1 Topics<a class="headerlink" href="#week-1-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="tools.html#tools"><span class="std std-ref">Tools</span></a></p></li>
+</ul>
+</section>
+<section id="week-1-exercises">
+<h2><span class="section-number">1.2. </span>Week 1 Exercises<a class="headerlink" href="#week-1-exercises" title="Permalink to this heading"></a></h2>
+<p>From DataCamp:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://campus.datacamp.com/courses/introduction-to-shell/manipulating-files-and-directories">Manipulating files and directories</a></p></li>
+<li><p><a class="reference external" href="https://campus.datacamp.com/courses/introduction-to-shell/manipulating-data">Manipulating data</a></p></li>
+</ol>
+</section>
+</section>
+<section id="week-2-tools">
+<h1><span class="section-number">2. </span>Week 2: Tools<a class="headerlink" href="#week-2-tools" title="Permalink to this heading"></a></h1>
+<section id="week-2-topics">
+<h2><span class="section-number">2.1. </span>Week 2 Topics<a class="headerlink" href="#week-2-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="tools.html#tools"><span class="std std-ref">Tools</span></a> (revision)</p></li>
+</ul>
+</section>
+<section id="week-2-exercises">
+<h2><span class="section-number">2.2. </span>Week 2 Exercises<a class="headerlink" href="#week-2-exercises" title="Permalink to this heading"></a></h2>
+<p>Note: except for <a class="reference internal" href="#combining-tools"><span class="std std-ref">Combining tools</span></a>, do the other exercises in the DataCamp <a class="reference external" href="https://campus.datacamp.com/courses/introduction-to-shell/creating-new-tools">Creating new tools</a> environment. Do not do the DataCamp “Creating new tools” exercises, just use the environment.</p>
+<section id="combining-tools">
+<h3><span class="section-number">2.2.1. </span>Combining tools<a class="headerlink" href="#combining-tools" title="Permalink to this heading"></a></h3>
+<p>From DataCamp:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://campus.datacamp.com/courses/introduction-to-shell/combining-tools">Combining tools</a></p></li>
+</ol>
+</section>
+<section id="file-editing">
+<h3><span class="section-number">2.2.2. </span>File Editing<a class="headerlink" href="#file-editing" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Do: <a class="reference external" href="https://www.pragmaticlinux.com/2020/05/first-steps-with-the-nano-text-editor/">First steps with the Nano text editor</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Note: do not run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/timezone</span></code> (this is just an example given in the tutorial)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>For reference:  <a class="reference external" href="https://linuxhandbook.com/cut-copy-paste-nano/">How to cut, copy and paste text in Nano</a></p></li>
+</ol>
+</section>
+<section id="storage-optional">
+<h3><span class="section-number">2.2.3. </span>Storage (optional)<a class="headerlink" href="#storage-optional" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Create a file with the contents below (be careful not to add any newlines). How many bytes does this file occupy? How many bytes does one character occupy? (You can use <code class="docutils literal notranslate"><span class="pre">nano</span></code> or any other method)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">12345</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a file with the contents below (be careful not to add any newlines). How many bytes does this file occupy? How many bytes does one emoji occupy? (You can use <code class="docutils literal notranslate"><span class="pre">nano</span></code> or any other method)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>🍜🍨🧁
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="process-management-optional">
+<h3><span class="section-number">2.2.4. </span>Process Management (Optional)<a class="headerlink" href="#process-management-optional" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">nano</span></code>, create a file called <strong>timer.sh</strong> in the home folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">timer</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</li>
+<li><p>Copy-paste this content into the file.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># This is a 15-minute countdown timer.</span>
+
+<span class="nv">end_time</span><span class="o">=</span><span class="k">$((</span><span class="nv">SECONDS</span><span class="o">+</span><span class="m">900</span><span class="k">))</span><span class="w">  </span><span class="c1"># Set the end time to 15 minutes (900 seconds) from now</span>
+
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SECONDS</span><span class="w"> </span>-lt<span class="w"> </span><span class="nv">$end_time</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">remaining_seconds</span><span class="o">=</span><span class="k">$((</span><span class="nv">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">SECONDS</span><span class="k">))</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Time remaining: </span><span class="nv">$remaining_seconds</span><span class="s2"> seconds&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">1</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Countdown complete! Ring...&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Save the file and exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>.</p></li>
+<li><p>Display the contents of <strong>timer.sh</strong> to verify that the file has been created successfully. Note: <strong>timer.sh</strong> is a shell script file that contains a series of commands.</p></li>
+<li><p>Update the file permission of <strong>timer.sh</strong> by granting execute permission to owner.</p></li>
+<li><p>Run <strong>timer.sh</strong> in the background <strong>5 times</strong> (ie. execute the following command 5 times):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">timer</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Note: A process of <strong>timer.sh</strong> is created each time you execute this command. The <strong>&amp;</strong> symbol enables <strong>timer.sh</strong> to run in the background.</p>
+<ol class="arabic simple" start="6">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">ps</span></code> and <code class="docutils literal notranslate"><span class="pre">grep</span></code> in a single command, identify the <strong>process ID</strong> of each of the <strong>timer.sh</strong> processes executed in the previous step.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">top</span></code>, refer to the details of any of the timer.sh processes. What additional information does it provide as compared to <code class="docutils literal notranslate"><span class="pre">ps</span></code>?</p></li>
+<li><p>Kill all the <strong>timer.sh</strong> processes.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="week-3-networking">
+<h1><span class="section-number">3. </span>Week 3: Networking<a class="headerlink" href="#week-3-networking" title="Permalink to this heading"></a></h1>
+<section id="week-3-topics">
+<h2><span class="section-number">3.1. </span>Week 3 Topics<a class="headerlink" href="#week-3-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="networking.html#hyper-text-transfer-protocol"><span class="std std-ref">Hyper Text Transfer Protocol</span></a></p></li>
+<li><p><a class="reference internal" href="networking.html#python-requests"><span class="std std-ref">Python Requests</span></a></p></li>
+<li><p><a class="reference internal" href="networking.html#curl"><span class="std std-ref">curl</span></a></p></li>
+</ul>
+</section>
+<section id="week-3-exercises">
+<h2><span class="section-number">3.2. </span>Week 3 Exercises<a class="headerlink" href="#week-3-exercises" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Do research on how to find your laptop and phone’s IP addresses. Find out the IP addresses, subnet masks, and default gateway of your laptop and your phone in these scenarios:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Laptop connected to WiFi, phone connected to cellular</p></li>
+<li><p>Both connected to WiFi</p></li>
+<li><p>Phone connected to cellular, phone’s hotspot switched on, laptop connected to phone’s hotspot</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Follow these steps to run a web server on your laptop using <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span></code></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Open a Terminal, navigate to your home folder</p></li>
+<li><p>Create a new subfolder named <strong>var-www-html</strong></p></li>
+<li><p>Navigate to <strong>var-www-html</strong></p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">curl</span></code> to save <a class="reference external" href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html</a> into a file</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8000</span></code>. This starts a Python web server on your laptop.</p></li>
+<li><p>You should see a message similar to <code class="docutils literal notranslate"><span class="pre">Serving</span> <span class="pre">HTTP</span> <span class="pre">on</span> <span class="pre">0.0.0.0</span> <span class="pre">port</span> <span class="pre">8000</span></code>.</p></li>
+<li><p>Open a web browser and navigate to <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>. You should see the web page.</p></li>
+<li><p>Open a web browser and navigate to <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. You should see the web page.</p></li>
+<li><p>Kill the server process.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Open 2 terminals. In each of them, do <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8000</span></code>. What happens, and why?</p></li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">requests-simple.py</span></code> (previously created in <a class="reference internal" href="networking.html#python-requests"><span class="std std-ref">Python Requests</span></a>), change the URL to <strong>https://www.example.com/anything</strong>. Run the program. What’s the status code now? What does this status code mean?</p></li>
+</ol>
+</section>
+</section>
+<section id="week-4-networking">
+<h1><span class="section-number">4. </span>Week 4: Networking<a class="headerlink" href="#week-4-networking" title="Permalink to this heading"></a></h1>
+<section id="week-4-topics">
+<h2><span class="section-number">4.1. </span>Week 4 Topics<a class="headerlink" href="#week-4-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="networking.html#hyper-text-transfer-protocol-secure"><span class="std std-ref">Hyper Text Transfer Protocol Secure</span></a></p></li>
+<li><p><a class="reference internal" href="networking.html#domain-name-system"><span class="std std-ref">Domain Name System</span></a></p></li>
+<li><p><a class="reference internal" href="networking.html#dig"><span class="std std-ref">dig</span></a></p></li>
+</ul>
+</section>
+<section id="week-4-exercises">
+<h2><span class="section-number">4.2. </span>Week 4 Exercises<a class="headerlink" href="#week-4-exercises" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Using tools such as curl, grep, etc, extract all the e-mail addresses ending in <strong>&#64;newcastle.edu.my</strong> from <a class="reference external" href="https://www.ncl.ac.uk/numed/people/">https://www.ncl.ac.uk/numed/people/</a></p></li>
+<li><p>Start a web server on your laptop using <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8000</span></code>. Create a suitable file and place it on your laptop, such that when opening <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> in your browser, the browser displays “yololu &#64; smululu”</p></li>
+<li><p><strong>The Secret Smugger Hunt</strong>. Somewhere in the building, there lies hidden a WiFi device which broadcasts a specific SSID. Your mission is to find out the room number where the device is located. You can use any tools at your disposal, including AI tools. First team to find the device and send the room number to the teacher wins! After the activity, write down</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Whether you managed to find the device or not</p></li>
+<li><p>The approach (the steps involved) that you took to find the device, with justifications on why you took each step.</p></li>
+<li><p>Challenges faced, and how you overcame them. If you use an AI tool to answer this, highlight the differences between the AI tool’s response, and your own personal experience.</p></li>
+<li><p>Any other learning experiences and reflections</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="week-5-lan-setup">
+<h1><span class="section-number">5. </span>Week 5: LAN Setup<a class="headerlink" href="#week-5-lan-setup" title="Permalink to this heading"></a></h1>
+<section id="week-5-topics">
+<h2><span class="section-number">5.1. </span>Week 5 Topics<a class="headerlink" href="#week-5-topics" title="Permalink to this heading"></a></h2>
+<p>None.</p>
+</section>
+<section id="week-5-exercise">
+<h2><span class="section-number">5.2. </span>Week 5 Exercise<a class="headerlink" href="#week-5-exercise" title="Permalink to this heading"></a></h2>
+<p>In this lab, we’ll set up a Local Area Network (LAN) using a router and up to 10 devices. This Local Area Network is similar to the setup you use at home.</p>
+<ol class="arabic">
+<li><p>Power up the router.</p></li>
+<li><p>Connect one laptop to the router using an Ethernet cable or WiFi.</p></li>
+<li><p>Access the router’s configuration page: open a web browser and enter the router’s IP address in the address bar. Log in to the router using the default username and password.</p></li>
+<li><p>Change the password to something more secure. Each team needs to know their own password, but do not share it across teams</p></li>
+<li><p>Configure the router’s Service Set Identifier (SSID) and Pre-Shared Key (PSK) (ie. passphrase).</p></li>
+<li><p>Configure the router’s IP address to be 192.168.T.1, where T == the team’s number.</p></li>
+<li><p>Configure the router’s DHCP server to assign IP addresses 192.168.T.10 to 192.168.T.100, where T == the team’s number. Use subnet mask 255.255.255.0.</p></li>
+<li><p>Ensure that all devices can ping the router and ping each other. It may be necessary to disable Windows Firewall temporarily (remember to enable it after the lesson).</p></li>
+<li><p>Run a web server on one of the laptops (in a non-sensitive folder). Ensure other team members can connect to that web server. On Windows, use Windows Terminal or similar, not WSL.</p></li>
+<li><p>Draw the network topology diagram for the network. include</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Devices: phones, laptop, router</p></li>
+<li><p>Connections between devices: Ethernet, WiFi</p></li>
+<li><p>Hostnames and IP addresses, subnet masks, and gateway addresses of each device</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="network-tests-optional">
+<h2><span class="section-number">5.3. </span>Network Tests (Optional)<a class="headerlink" href="#network-tests-optional" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Download and save this <a class="reference external" href="https://drive.google.com/open?id=1fkiZKcQEI96lxKI98MAxQ3eKQSAYWW-m&amp;usp=drive_fs">video file</a> onto one of the team members’ laptops.</p></li>
+<li><p>Disconnect this laptop from the internet and connect to the LAN through the router.</p></li>
+<li><p>In this laptop, run a web server from the folder where the video file is saved.</p></li>
+<li><p>Ensure that other team members on the LAN can connect and download the video file from that web server. It may be necessary to disable Windows Firewall temporarily (remember to enable it after the lesson).</p></li>
+<li><p>How many devices could proceed with the download before the speed slows down significantly?</p></li>
+</ol>
+</section>
+</section>
+<section id="week-6-cloud-web-server">
+<h1><span class="section-number">6. </span>Week 6: Cloud Web Server<a class="headerlink" href="#week-6-cloud-web-server" title="Permalink to this heading"></a></h1>
+<section id="week-6-topics">
+<h2><span class="section-number">6.1. </span>Week 6 Topics<a class="headerlink" href="#week-6-topics" title="Permalink to this heading"></a></h2>
+<p>None.</p>
+</section>
+<section id="week-6-exercises">
+<h2><span class="section-number">6.2. </span>Week 6 Exercises<a class="headerlink" href="#week-6-exercises" title="Permalink to this heading"></a></h2>
+<section id="http-server-on-aws-ec2">
+<h3><span class="section-number">6.2.1. </span>HTTP Server on AWS EC2<a class="headerlink" href="#http-server-on-aws-ec2" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Amazon Web Services (AWS) is a cloud service provider. In this lab, we’ll learn how to start an AWS instance (a virtual computer) on the cloud, to serve web pages</p></li>
+</ul>
+<p><strong>Login to the AWS Learner Lab, open the AWS Management Console</strong></p>
+<ol class="arabic simple">
+<li><p>Retrieve the AWS invitation email you received. Copy the email address mentioned in the invitation email used for account creation.</p></li>
+<li><p>Go to <a class="reference external" href="https://www.awsacademy.com/vforcesite/LMS_Login">https://www.awsacademy.com/vforcesite/LMS_Login</a></p></li>
+<li><p>Choose <strong>Student Login</strong> ➜ Login using your e-mail address (use ONLY the email address mentioned in the invitation email) and password used for account creation.</p></li>
+<li><p>Go to Courses ➜ AWS Academy Learner Lab [#####] ➜ Modules ➜ Learner Lab ➜ Start Lab</p></li>
+<li><p>Wait for AWS🔴 to become AWS🟢</p></li>
+<li><p>Click on AWS🟢. This launches the AWS Management Console</p></li>
+</ol>
+<p><strong>Launch an EC2 instance</strong></p>
+<p>An Elastic Compute 2 (EC2) instance is like a computer somewhere on the cloud that you can use.</p>
+<ol class="arabic">
+<li><p>AWS Management Console ➜ Search ➜ EC2 ➜ Instances ➜ Launch an instance</p></li>
+<li><p>Name and tags: <strong>http-server</strong></p></li>
+<li><p>Application and OS Images: <strong>Ubuntu</strong></p></li>
+<li><p>Instance type: <strong>t2.micro</strong></p></li>
+<li><p>Key pair: <strong>Create new key pair</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Key pair name: <strong>is114-http-keypair</strong></p></li>
+<li><p>Key pair type: <strong>RSA</strong></p></li>
+<li><p>Private key file format: <strong>.pem</strong></p></li>
+<li><p>Create key pair</p></li>
+<li><p>A file named <strong>is114-http-keypair.pem</strong> will be saved to your computer. This is your private key for accessing the server. Remember where you saved this file, it’s needed later.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Network settings:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Allow SSH traffic from the internet</p></li>
+<li><p>Allow HTTPS traffic from the internet</p></li>
+<li><p>Allow HTTP traffic from the internet</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Leave other settings as default</p></li>
+<li><p>Click <strong>Launch instance</strong></p></li>
+<li><p>Wait for instance to be launched</p></li>
+<li><p>Click <strong>View all instances</strong></p></li>
+<li><p>Look for the <strong>Public IPv4 Address</strong> of the instance, copy it somewhere. When you see <code class="docutils literal notranslate"><span class="pre">YOUR_EC2_INSTANCE_IP_ADDRESS</span></code> below, insert this address</p></li>
+</ol>
+<p><strong>Launch a CloudShell instance</strong></p>
+<p>AWS CloudShell is a browser-based shell. You can think of it as yet another computer. It is not the same as the EC2 instance launched previously.</p>
+<ol class="arabic">
+<li><p>Start AWS CloudShell</p></li>
+<li><p>Notice that the prompt is <code class="docutils literal notranslate"><span class="pre">cloudshell-user&#64;SOMETHING</span></code>. This means you’re logged into the CloudShell instance.</p></li>
+<li><p>Actions ➜ Upload file ➜ Upload your private key, <strong>is114-http-keypair.pem</strong>. Note: usually, you would keep the private key on only one computer, and not copy it to other computers. In this case, it’s for practice only and it’s fine.</p></li>
+<li><p>Change the permissions of your private key to prevent people from viewing it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="mi">600</span> <span class="n">is114</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">keypair</span><span class="o">.</span><span class="n">pem</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>SSH from the CloudShell instance to the EC2 instance</strong></p>
+<ol class="arabic">
+<li><p>SSH from the CloudShell instance into the EC2 instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="n">is114</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">keypair</span><span class="o">.</span><span class="n">pem</span> <span class="n">ubuntu</span><span class="nd">@YOUR_EC2_INSTANCE_IP_ADDRESS</span>
+</pre></div>
+</div>
+</li>
+<li><p>The prompt changes to <code class="docutils literal notranslate"><span class="pre">ubuntu&#64;ip-SOMETHING</span></code>. This means you are logged in to the EC2 instance.</p></li>
+<li><p>Check your Public IP address. It should be the same as <code class="docutils literal notranslate"><span class="pre">YOUR_EC2_INSTANCE_IP_ADDRESS</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">checkip</span><span class="o">.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Update software on the EC2 instance</strong></p>
+<ol class="arabic">
+<li><p>Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.</p></li>
+<li><p>Update the EC2 instance software:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span>
+</pre></div>
+</div>
+</li>
+<li><p>Reboot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+</li>
+<li><p>After rebooting, the prompt changes to <code class="docutils literal notranslate"><span class="pre">cloudshell-user&#64;SOMETHING</span></code>, this means you are not logged in to the server anymore, you’re back at the CloudShell instance</p></li>
+<li><p>Wait for a few minutes for the EC2 instance to reboot</p></li>
+</ol>
+<p><strong>Create a file on the CloudShell instance, copy it to the EC2 instance</strong></p>
+<ol class="arabic">
+<li><p>Are you logged into the CloudShell instance (check the prompt)? If not, make sure that you are.</p></li>
+<li><p>On the CloudShell instance, create a file <strong>index.html</strong>, with any content, for example this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            body {
+                background-color: #2f3742;
+                color: #dfe0e4;
+                font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif;
+            }
+            h1 {
+                font-size: 80px;
+                color: #fff;
+                text-align: center;
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+                animation: blinker 1s linear infinite;
+
+            }
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h1&gt;DELULU IS THE SOLULU MAY YOUR YOLULU COME TRULULU AT SMULULU&lt;/h1&gt;
+        &lt;p&gt;Gennermen, where is your berry&lt;/p&gt;
+        &lt;p&gt;&lt;b&gt;If you cannot, you also must can&lt;/b&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;i&gt;At the end of the day, the day ends&lt;/i&gt;&lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Copy this file from the CloudShell instance to the EC2 instance using the Secure Copy command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="o">-</span><span class="n">i</span> <span class="n">is114</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">keypair</span><span class="o">.</span><span class="n">pem</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">ubuntu</span><span class="nd">@YOUR_EC2_INSTANCE_IP_ADDRESS</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Run a web server on the EC2 instance, using Python</strong></p>
+<ol class="arabic">
+<li><p>Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.</p></li>
+<li><p>Start a Python web server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="mi">80</span>
+</pre></div>
+</div>
+</li>
+<li><p>On your laptop browser, visit <strong>http://YOUR_EC2_INSTANCE_IP_ADDRESS</strong>. Make sure to use <strong>http</strong>, not <strong>https</strong>. You should see the page you created.</p></li>
+</ol>
+<p><strong>Run a web server, using nginx</strong> (optional)</p>
+<ol class="arabic">
+<li><p>Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.</p></li>
+<li><p>Install nginx:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">nginx</span>
+</pre></div>
+</div>
+</li>
+<li><p>On your laptop, visit <strong>http://YOUR_EC2_INSTANCE_IP_ADDRESS</strong>. You should see a “Welcome to nginx!” page</p></li>
+</ol>
+<p><strong>Stop the EC2 instance</strong></p>
+<ol class="arabic simple">
+<li><p>AWS Management Console ➜ Search ➜ EC2 ➜ Instances ➜ Choose the correct instance ➜ Stop the instance</p></li>
+</ol>
+</section>
+</section>
+<section id="week-6-exercises-optional">
+<h2><span class="section-number">6.3. </span>Week 6 Exercises (Optional)<a class="headerlink" href="#week-6-exercises-optional" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">curl</span></code> and other tools, get a list of result links from <strong>https://api.duckduckgo.com/?q=pizza&amp;l=1&amp;no_redirect=1&amp;skip_disambig=1&amp;format=json</strong></p></li>
+<li><p>Setup and activate a Python virtual environment. Inside the virtual environment, install</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><a class="reference external" href="https://httpie.io/docs/cli/pypi">httpie</a> (see Installation ➜ Universal ➜ PyPI)</p></li>
+<li><p><a class="reference external" href="https://github.com/paddycarey/dweepy#installation">dweepy</a></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Get the list of abilities from <a class="reference external" href="https://pokeapi.co/api/v2/pokemon/chandelure">https://pokeapi.co/api/v2/pokemon/chandelure</a>. Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flash</span><span class="o">-</span><span class="n">fire</span>
+<span class="n">flame</span><span class="o">-</span><span class="n">body</span>
+<span class="n">infiltrator</span>
+</pre></div>
+</div>
+</li>
+<li><p>Read <a class="reference external" href="https://randomuser.me/documentation">https://randomuser.me/documentation</a>. Using <strong>httpie</strong>, do the following.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Generate 2 users</p></li>
+<li><p>Generate 2 users, in CSV format</p></li>
+<li><p>Generate 2 users, with passwords consisting of lowercase and numbers, between 4-8 characters long</p></li>
+<li><p>Generate 10 users, with only name, location, and email fields</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Read the documentation at <a class="reference external" href="https://dweet.io/">https://dweet.io/</a>. Do the below, once with <code class="docutils literal notranslate"><span class="pre">curl</span></code> and once with <strong>httpie</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p>Send a dweet with these parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>my-thing-name</strong> : <code class="docutils literal notranslate"><span class="pre">sensor-values-NNNN</span></code>, where <code class="docutils literal notranslate"><span class="pre">NNNN</span></code> is a random number of your choice</p></li>
+<li><p><strong>light</strong> : 3.14</p></li>
+<li><p><strong>temperature</strong> : 30</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Read the dweet, make sure the values are correct</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Modify and run the Python code below to send a dweet to dweet.io, with the key-value pairs <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'light_level'</span> <span class="pre">:</span> <span class="pre">'777'</span> <span class="pre">,</span> <span class="pre">'status'</span> <span class="pre">:</span> <span class="pre">'bright'</span> <span class="pre">}</span></code>. Using <strong>httpie</strong>, read the dweet.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">dweepy</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Don&#39;t need to understand all the code below, only the relevant parts</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># the thing name to send dweets to</span>
+    <span class="n">thing_name</span> <span class="o">=</span> <span class="s2">&quot;CHANGE_THIS_TO_SOMETHING_UNIQUE&quot;</span> 
+
+    <span class="c1"># the json payload to send</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;light_level&#39;</span><span class="p">:</span> <span class="s1">&#39;114&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span> <span class="p">:</span> <span class="s1">&#39;dark&#39;</span><span class="p">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;thing_name = </span><span class="si">{</span><span class="n">thing_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;payload =&quot;</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="c1"># send dweet, get response</span>
+    <span class="c1"># response tells you whether the dweet was successful or not</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">dweepy</span><span class="o">.</span><span class="n">dweet_for</span><span class="p">(</span><span class="n">thing_name</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dweet&#39;s response:&quot;</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Send a HTTP request to https://dweet.io/get/latest/dweet/for/</span><span class="si">{</span><span class="n">thing_name</span><span class="si">}</span><span class="s2"> to see the dweet&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Modify and run the Python code below to continuously receive dweets. Using <strong>httpie</strong>, send some dweets and make sure they are received correctly.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">dweepy</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Don&#39;t need to understand all the code below, only the relevant parts</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># the thing name to get dweets from</span>
+    <span class="n">thing_name</span> <span class="o">=</span> <span class="s2">&quot;CHANGE_THIS_TO_SOMETHING_UNIQUE&quot;</span>
+
+    <span class="c1"># go into a loop, waiting for dweets</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Use try except, cos of https://github.com/paddycarey/dweepy/issues/14</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">dweet</span> <span class="ow">in</span> <span class="n">dweepy</span><span class="o">.</span><span class="n">listen_for_dweets_from</span><span class="p">(</span><span class="n">thing_name</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dweet received:&quot;</span><span class="p">)</span>
+                <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dweet</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dweet.io closed the connection, reconnecting&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Tilt</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p>Visit <a class="reference external" href="https://dweet.io/">https://dweet.io/</a> using your phone (or tablet), and tap <strong>Try It Now</strong>. A thing name will be generated.</p></li>
+<li><p>Observe the values shown on the site. You should see something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tilt_x&quot;</span> <span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">&quot;tilt_y&quot;</span> <span class="p">:</span> <span class="mi">567</span><span class="p">,</span>
+    <span class="s2">&quot;tilt_z&quot;</span> <span class="p">:</span> <span class="mi">999</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make the phone screen face upwards and downwards, and observe how the values change.</p></li>
+<li><p>Modify and run the Python code below to display <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">up</span></code> if the phone screen is facing upwards, and <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">down</span></code> if the screen is facing downwards.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">dweepy</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Don&#39;t need to understand all the code below, only the relevant parts</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># the thing name to get dweets from</span>
+    <span class="n">thing_name</span> <span class="o">=</span> <span class="s2">&quot;CHANGE_THIS_TO_SOMETHING_UNIQUE&quot;</span>
+
+    <span class="c1"># go into a loop, waiting for dweets</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Use try except, cos of https://github.com/paddycarey/dweepy/issues/14</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">dweet</span> <span class="ow">in</span> <span class="n">dweepy</span><span class="o">.</span><span class="n">listen_for_dweets_from</span><span class="p">(</span><span class="n">thing_name</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dweet received:&quot;</span><span class="p">)</span>
+                <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dweet</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dweet.io closed the connection, reconnecting&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="week-7-physical-computing">
+<h1><span class="section-number">7. </span>Week 7: Physical Computing<a class="headerlink" href="#week-7-physical-computing" title="Permalink to this heading"></a></h1>
+<section id="week-7-topics">
+<h2><span class="section-number">7.1. </span>Week 7 Topics<a class="headerlink" href="#week-7-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="physical-computing.html#physical-computing"><span class="std std-ref">Physical Computing</span></a></p></li>
+<li><p><a class="reference internal" href="basic.html#basic"><span class="std std-ref">Basic</span></a></p></li>
+</ul>
+</section>
+<section id="week-7-exercises">
+<h2><span class="section-number">7.2. </span>Week 7 Exercises<a class="headerlink" href="#week-7-exercises" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Run the code below on the micro:bit. What does this code do? How many times does <code class="docutils literal notranslate"><span class="pre">xoxo</span></code> get printed? Modify the number <code class="docutils literal notranslate"><span class="pre">1000</span></code> (all of them) to make the code print <code class="docutils literal notranslate"><span class="pre">xoxo</span></code> once every 3 seconds.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Run the code below on the micro:bit. What does this code do? How many times does <code class="docutils literal notranslate"><span class="pre">xoxo</span></code> get printed? Modify the number <code class="docutils literal notranslate"><span class="pre">1000</span></code> to make the code print <code class="docutils literal notranslate"><span class="pre">xoxo</span></code> once every 3 seconds.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Code the following</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>print <code class="docutils literal notranslate"><span class="pre">lol.0</span></code></p></li>
+<li><p>pause for 1 second</p></li>
+<li><p>print <code class="docutils literal notranslate"><span class="pre">lol.1</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Code the following</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>print <code class="docutils literal notranslate"><span class="pre">bff.0</span></code></p></li>
+<li><p>pause for 1 second</p></li>
+<li><p>print <code class="docutils literal notranslate"><span class="pre">bff.1</span></code></p></li>
+<li><p>repeat the above indefinitely</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>On the micro:bit, write code that sends <code class="docutils literal notranslate"><span class="pre">123456789</span></code> to the serial port, exactly once. On the laptop, open a terminal. Run the command below. Reset the micro:bit a few times, about 3-5 seconds apart. What is displayed on the terminal?</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.miniterm<span class="w"> </span>INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>On the micro:bit, write code that sends <code class="docutils literal notranslate"><span class="pre">123456789</span></code> to the serial port, exactly once. On the laptop, open 2 terminals. Run the exact same command below on both terminals. Press reset on the micro:bit a few times, about 3-5 seconds apart. What is displayed on each terminal? Why?</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.miniterm<span class="w"> </span>INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="week-8">
+<h1><span class="section-number">8. </span>Week 8<a class="headerlink" href="#week-8" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>No labs. Recess.</p></li>
+</ul>
+</section>
+<section id="week-9-light-buttons-radio-leds">
+<h1><span class="section-number">9. </span>Week 9: Light, Buttons, Radio, LEDs<a class="headerlink" href="#week-9-light-buttons-radio-leds" title="Permalink to this heading"></a></h1>
+<section id="week-9-topics">
+<h2><span class="section-number">9.1. </span>Week 9 Topics<a class="headerlink" href="#week-9-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="input.html#light-level"><span class="std std-ref">Light Level</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#on-button-pressed"><span class="std std-ref">On Button Pressed</span></a></p></li>
+<li><p><a class="reference internal" href="radio.html#radio"><span class="std std-ref">Radio</span></a></p></li>
+<li><p><a class="reference internal" href="led.html#leds"><span class="std std-ref">LEDs</span></a></p></li>
+</ul>
+</section>
+<section id="week-9-exercises">
+<h2><span class="section-number">9.2. </span>Week 9 Exercises<a class="headerlink" href="#week-9-exercises" title="Permalink to this heading"></a></h2>
+<p><strong>Light</strong></p>
+<ol class="arabic">
+<li><p>Run the code below on the micro:bit. Shine your phone torch on the micro:bit’s LEDs, and watch the values change. Modify the code to make the values display every 3 seconds.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">()</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Display the light level every 1s as a percentage, with 0% being no light, and 100% being the brightest light detectable.</p></li>
+<li><p>Write the code below on the editor. A problem appears on the bottom of the screen in the code editor. What is wrong? Fix the code so that it works.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">()</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Buttons</strong></p>
+<ol class="arabic">
+<li><p>Every time Button A is pressed, display the total number of times that Button A has been pressed.</p></li>
+<li><p>Scroll a long string continuously on the screen. Toggle the screen on/off whenever button A is pressed.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;icu lukin at mah p i c&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">is_screen_on</span>
+
+    <span class="k">if</span> <span class="n">is_screen_on</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">is_screen_on</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">is_screen_on</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">pass</span>
+
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+
+<span class="n">is_screen_on</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Code a program with these functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print_led(s)</span></code>: prints the string <code class="docutils literal notranslate"><span class="pre">s</span></code> to the LEDs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print_serial(s)</span></code>: writes the string <code class="docutils literal notranslate"><span class="pre">s</span></code> to the serial port</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printf(s)</span></code>: outputs the string <code class="docutils literal notranslate"><span class="pre">s</span></code> to either the LED or the serial port.</p></li>
+<li><p>Button A can be pressed to toggle the output between the LED or the serial port.</p></li>
+<li><p>A forever loop that calls <code class="docutils literal notranslate"><span class="pre">printf('xoxo')</span></code> once every 5 seconds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Radio</strong></p>
+<p>For these exercises, use <a class="reference internal" href="radio.html#send-value"><span class="std std-ref">Send Value</span></a>. Use <code class="docutils literal notranslate"><span class="pre">randint()</span></code> from <a class="reference internal" href="math.html#math-functions"><span class="std std-ref">Math Functions</span></a> for random number generation.</p>
+<ol class="arabic simple">
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/mood-radio">https://makecode.microbit.org/projects/mood-radio</a></p></li>
+<li><p>Code your own version of this: <a class="reference external" href="https://microbit.org/projects/make-it-code-it/group-teleporting-duck/">https://microbit.org/projects/make-it-code-it/group-teleporting-duck/</a></p></li>
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/multi-dice">https://makecode.microbit.org/projects/multi-dice</a></p></li>
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/voting-machine">https://makecode.microbit.org/projects/voting-machine</a></p></li>
+<li><p>Code a program that extinguishes the LEDs of half the micro:bits (randomly chosen) in the group, when a button is pressed.</p></li>
+<li><p>Code a variation of the WiFi treasure hunt game, using the micro:bit. Use 1 micro:bit as a sender. It continuously sends messages at 5s intervals. All other micro:bits are receivers. When they are near the sender, their LEDs blink faster. When they are further away, their LEDs blink slower. This may require up distances of between 10-50m  micro:bits.</p></li>
+<li><p>Perform an experiment to find out the transmission range of the micro:bit, either outdoors or along a very long corridor, with line of sight (i.e. no obstacles in between, the micro:bits can visually see each other if they had eyes).</p></li>
+</ol>
+<p><strong>LEDs</strong></p>
+<ol class="arabic">
+<li><p>Display an icon on the LED. When button A is pressed, decrease the brightness of the LED. When button B is pressed, increase the brightness.</p></li>
+<li><p>Blink an LED at a random location. Blink means: turn it on for one second, then turn it off. Use <code class="docutils literal notranslate"><span class="pre">randint()</span></code> from <a class="reference internal" href="math.html#math-functions"><span class="std std-ref">Math Functions</span></a>.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">unplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Display a pulsating icon - the brightness fades in and out gradually</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">led_brightness</span>
+    <span class="k">while</span> <span class="n">led_brightness</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">led_brightness</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">led_brightness</span> <span class="o">&lt;</span> <span class="mi">255</span><span class="p">:</span>
+        <span class="n">led_brightness</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">led_brightness</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">led_brightness</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+
+<span class="n">led_brightness</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">toggle2()</span></code> that works exactly like <code class="docutils literal notranslate"><span class="pre">toggle()</span></code> (see <a class="reference internal" href="led.html#toggle"><span class="std std-ref">Toggle</span></a>). In this function, use <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">unplot()</span></code>, and <code class="docutils literal notranslate"><span class="pre">point()</span></code> to make <code class="docutils literal notranslate"><span class="pre">toggle2()</span></code> behave like <code class="docutils literal notranslate"><span class="pre">toggle()</span></code>.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led_state</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">toggle2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">led_state</span>
+
+    <span class="k">if</span> <span class="n">led_state</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">led_state</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">led_state</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">led_state</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">unplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">toggle2</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="n">toggle2</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Fusion</strong></p>
+<ol class="arabic">
+<li><p>Draw an icon on the screen. The brightness of the icon depends on the light level; it’s brighter when the light level is low, and dimmer when the light level is high. Like smart street lamps.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">MAX_LED_BRIGHTNESS</span> <span class="o">=</span> <span class="mi">255</span>
+    <span class="n">light_level</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">()</span>
+    <span class="n">led_brightness</span> <span class="o">=</span> <span class="n">MAX_LED_BRIGHTNESS</span> <span class="o">-</span> <span class="n">light_level</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">led_brightness</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>When button <code class="docutils literal notranslate"><span class="pre">A</span></code> is pressed, display the light level</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">light_level</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">()</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">light_level</span><span class="p">))</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="week-10-event-driven-coding-time">
+<h1><span class="section-number">10. </span>Week 10: Event-driven coding, Time<a class="headerlink" href="#week-10-event-driven-coding-time" title="Permalink to this heading"></a></h1>
+<section id="week-10-topics">
+<h2><span class="section-number">10.1. </span>Week 10 Topics<a class="headerlink" href="#week-10-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="input.html#event-driven-coding"><span class="std std-ref">Event-driven coding</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#event-handlers"><span class="std std-ref">Event Handlers</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#running-time"><span class="std std-ref">Running Time</span></a></p></li>
+</ul>
+</section>
+<section id="week-10-exercises">
+<h2><span class="section-number">10.2. </span>Week 10 Exercises<a class="headerlink" href="#week-10-exercises" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Do a 5s countdown from 5 to 0, displaying the numbers <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>. The countdown should restart everytime the micro:bit’s reset button is pressed.</p></li>
+<li><p>When Button A is pressed for more than 3 seconds, display <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">press</span></code>. If it is pressed for less than 3 seconds, display <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">press</span></code>.</p></li>
+<li><p>When Button A is pressed twice within 2s, display <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">click</span></code>. If it is pressed once within 2s, display <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">click</span></code>.</p></li>
+<li><p>When button <code class="docutils literal notranslate"><span class="pre">A</span></code> is pressed, display the running time in seconds</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">control</span><span class="o">.</span><span class="n">millis</span><span class="p">()</span> <span class="o">//</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>When button <code class="docutils literal notranslate"><span class="pre">A</span></code> is pressed, display the running time in <code class="docutils literal notranslate"><span class="pre">MM:SS</span></code> format.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">timenow</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">running_time</span><span class="p">()</span> <span class="o">//</span> <span class="mi">1000</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timenow</span> <span class="o">//</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timenow</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">minutes</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">minutes</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">seconds</span>
+
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="n">minutes</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">seconds</span><span class="p">)</span>
+
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>7-second game. Press button A, count 7 seconds in your head, then press button A again. The micro:bit displays how many seconds you were away from 7. e.g. if you pressed after 6 seconds, the display would show <code class="docutils literal notranslate"><span class="pre">-1</span></code>. If you pressed after 9 seconds, it would show <code class="docutils literal notranslate"><span class="pre">2</span></code>. You can display this on the LED or on the serial port.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<p>See <a class="reference external" href="https://makecode.microbit.org/projects/7-seconds">https://makecode.microbit.org/projects/7-seconds</a> (similar, not exactly the same)</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Display a pulsating icon - the brightness fades in and out gradually. Pressing buttons A and B control the speed of the pulsation</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">led_brightness</span><span class="p">,</span> <span class="n">pulsating_speed</span>
+    <span class="k">while</span> <span class="n">led_brightness</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">led_brightness</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">pulsating_speed</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">led_brightness</span> <span class="o">&lt;</span> <span class="mi">255</span><span class="p">:</span>
+        <span class="n">led_brightness</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">pulsating_speed</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">led_brightness</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">set_brightness</span><span class="p">(</span><span class="n">led_brightness</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+
+<span class="n">led_brightness</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pulsating_speed</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pulsating_speed</span>
+    <span class="n">pulsating_speed</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">pulsating_speed</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pulsating_speed</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_button_pressed_b</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pulsating_speed</span>
+    <span class="n">pulsating_speed</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">pulsating_speed</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">pulsating_speed</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">on_button_pressed_b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_button_pressed_ab</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pulsating_speed</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">pulsating_speed</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+    <span class="k">pass</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">AB</span><span class="p">,</span> <span class="n">on_button_pressed_ab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reaction game. When button A is pressed, an image shows up on the screen at a random time between 1-5s. When the image shows up, press button B. The screen displays the time taken (in milliseconds) between the image showing up and the button B press.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">time_image_displayed_ms</span>
+
+    <span class="c1"># If we&#39;re waiting for the display</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">WAITING_FOR_DISPLAY</span><span class="p">:</span>
+        <span class="c1"># Wait for some random time</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">))</span>
+
+        <span class="c1"># Change the state</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">WAITING_FOR_BUTTON</span>
+
+        <span class="c1"># Record the time that the icon was displayed</span>
+        <span class="n">time_image_displayed_ms</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">millis</span><span class="p">()</span>
+
+        <span class="c1"># Display the icon</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">time_image_displayed_ms</span>
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">WAITING_FOR_BUTTON</span><span class="p">:</span>
+        <span class="c1"># Calculate the reaction time and display it</span>
+        <span class="n">reaction_time_ms</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">millis</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_image_displayed_ms</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">reaction_time_ms</span><span class="p">)</span>
+
+        <span class="c1"># Do a countdown, then go to the WAITING_FOR_DISPLAY state</span>
+        <span class="n">countdown</span><span class="p">()</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">WAITING_FOR_DISPLAY</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># We&#39;re not waiting for a button; show a no and clear the screen</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+    <span class="k">pass</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+
+<span class="n">INITIAL_STATE</span>       <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">WAITING_FOR_BUTTON</span>  <span class="o">=</span> <span class="mi">0</span>
+<span class="n">WAITING_FOR_DISPLAY</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># First, set the state to INITIAL_STATE</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">INITIAL_STATE</span>
+<span class="n">time_image_displayed_ms</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Do a countdown</span>
+<span class="n">countdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Make a countdown timer.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When the micro:bit is switched on, the LEDs display a numeric value, X</p></li>
+<li><p>Initially, X == 5</p></li>
+<li><p>Pressing A decrements X; pressing B increments X</p></li>
+<li><p>X is limited to the range 1 to 9 only; both 1 and 9 inclusive</p></li>
+<li><p>Pressing both buttons causes X to count down to zero, in approximately 1s intervals</p></li>
+<li><p>When X reaches 0, the display resets to 5</p></li>
+</ul>
+<div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">countdown_time_s</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">SET_TIMER</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">COUNTDOWN</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">SET_TIMER</span>
+
+
+<span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">countdown_time_s</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">countdown_time_s</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">COUNTDOWN</span><span class="p">:</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="n">countdown_time_s</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">countdown_time_s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">countdown_time_s</span> <span class="o">=</span> <span class="mi">5</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">SET_TIMER</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">countdown_time_s</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">SET_TIMER</span> <span class="ow">and</span> <span class="n">countdown_time_s</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">countdown_time_s</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_button_pressed_b</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">countdown_time_s</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">SET_TIMER</span> <span class="ow">and</span> <span class="n">countdown_time_s</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="n">countdown_time_s</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">on_button_pressed_b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_button_pressed_ab</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">countdown_time_s</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">COUNTDOWN</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">AB</span><span class="p">,</span> <span class="n">on_button_pressed_ab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/tele-potato">https://makecode.microbit.org/projects/tele-potato</a></p></li>
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/red-light-green-light">https://makecode.microbit.org/projects/red-light-green-light</a></p></li>
+<li><p>Code your own version of this: <a class="reference external" href="https://makecode.microbit.org/projects/best-friends">https://makecode.microbit.org/projects/best-friends</a></p></li>
+</ol>
+</section>
+</section>
+<section id="week-11-accelerometer-magnetometer">
+<h1><span class="section-number">11. </span>Week 11: Accelerometer, Magnetometer<a class="headerlink" href="#week-11-accelerometer-magnetometer" title="Permalink to this heading"></a></h1>
+<section id="week-11-topics">
+<h2><span class="section-number">11.1. </span>Week 11 Topics<a class="headerlink" href="#week-11-topics" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="input.html#on-gesture"><span class="std std-ref">On Gesture</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#rotation"><span class="std std-ref">Rotation</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#magnetic-force"><span class="std std-ref">Magnetic Force</span></a></p></li>
+<li><p><a class="reference internal" href="input.html#compass-heading"><span class="std std-ref">Compass Heading</span></a></p></li>
+</ul>
+</section>
+<section id="week-11-exercises">
+<h2><span class="section-number">11.2. </span>Week 11 Exercises<a class="headerlink" href="#week-11-exercises" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">input.onGesture()</span></code> to display gestures that are performed: shake, logo up, logo down, screen up, screen down, tilt left, tilt right, or free fall. For example: when the micro:bit is tilted right, display <code class="docutils literal notranslate"><span class="pre">tilted</span> <span class="pre">right</span></code> once; when it has is its logo up, display <code class="docutils literal notranslate"><span class="pre">logo</span> <span class="pre">up</span></code> once, etc.</p></li>
+<li><p>Run the code below on the micro:bit. Place the micro:bit next to a metallic object, and bring it further away. How does <code class="docutils literal notranslate"><span class="pre">value</span></code> change? (It becomes larger|smaller when it is nearer|further)</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">magnetic_force</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">STRENGTH</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>While the micro:bit moves, display <code class="docutils literal notranslate"><span class="pre">moving</span></code> on the serial port every 1s. While it is not moving (e.g. placed on a table), display <code class="docutils literal notranslate"><span class="pre">stopped</span></code> every 1s. Use the accelerometer values to do this.</p></li>
+<li><p>Whenever the micro:bit transitions from moving to stopped, wait for 3 seconds, then display <code class="docutils literal notranslate"><span class="pre">stopped</span></code> only once.</p></li>
+<li><p>Display the accelerometer values every 1s, in this format:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">:</span><span class="n">XX</span>
+<span class="n">y</span><span class="p">:</span><span class="n">YY</span>
+<span class="n">z</span><span class="p">:</span><span class="n">ZZ</span>
+<span class="n">pitch</span><span class="p">:</span><span class="n">PP</span>
+<span class="n">roll</span><span class="p">:</span><span class="n">RR</span>
+</pre></div>
+</div>
+<div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">X</span><span class="p">))</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Y</span><span class="p">))</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Z</span><span class="p">))</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;pitch&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">PITCH</span><span class="p">))</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_value</span><span class="p">(</span><span class="s2">&quot;roll&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">ROLL</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Display the accelerometer values every 1s, in this format:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TT</span><span class="p">,</span><span class="n">XX</span><span class="p">,</span><span class="n">YY</span><span class="p">,</span><span class="n">ZZ</span><span class="p">,</span><span class="n">PP</span><span class="p">,</span><span class="n">RR</span>
+</pre></div>
+</div>
+<div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">control</span><span class="o">.</span><span class="n">millis</span><span class="p">()</span> <span class="o">//</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span>
+        <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span>
+        <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span>
+        <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span>
+        <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">PITCH</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span>
+        <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">ROLL</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Display a random number on the LED while the micro:bit is shaken, and any button is pressed, at the same time. When the micro:bit’s no button is pressed, the screen should not display anything.</p></li>
+<li><p>This is similar to unlocking a phone using a gesture. On the micro:bit, display an icon on the LED when the user performs this sequence of actions in this exact order, within 10 seconds: button B pressed, micro:bit shaken, button A pressed.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">isGesture()</span></code> to display <code class="docutils literal notranslate"><span class="pre">shookt</span></code> whenever the micro:bit is shaken</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">is_gesture</span><span class="p">(</span><span class="n">Gesture</span><span class="o">.</span><span class="n">SHAKE</span><span class="p">):</span>
+        <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">&quot;shookt&quot;</span><span class="p">))</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">input.onGesture()</span></code> to display <code class="docutils literal notranslate"><span class="pre">shookt</span></code> whenever the micro:bit is shaken</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_gesture_shake</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">&quot;shookt&quot;</span><span class="p">))</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_gesture</span><span class="p">(</span><span class="n">Gesture</span><span class="o">.</span><span class="n">SHAKE</span><span class="p">,</span> <span class="n">on_gesture_shake</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Draw an icon on the screen and make it auto-rotate when the screen is tilted, just like your phone.</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<p>It’s important to understand the thought process behind solving this question. Getting the thought process is more important than getting the solution right. It goes like this:</p>
+<ol class="arabic simple">
+<li><p>Rotate the micro:bit to an upright position. You can choose whatever orientation you want as “upright”, it doesn’t matter. But make sure that the micro:bit is perpendicular to the ground, not parallel. Imagine holding the micro:bit’s USB cable, and letting the micro:bit hang loosely. That’s perpendicular. If you place the micro:bit flat on the floor, that’s parallel. Observe the x, y, z accelerometer values.</p></li>
+<li><p>Rotate the micro:bit clockwise by 90°. Observe the x, y, z accelerometer values. Keep rotating until you get back to the original position.</p></li>
+<li><p>You should observe that there are certain patterns in terms of the x, y, z values. Based on these patterns, you can form the solution.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">accel_x</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">accel_y</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span>
+    <span class="n">accel_z</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">accel_y</span> <span class="o">&gt;</span> <span class="mi">900</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_z</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">show_leds</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            . . . . .</span>
+<span class="s2">            . # . # .</span>
+<span class="s2">            . . . . .</span>
+<span class="s2">            # . . . #</span>
+<span class="s2">            . # # # .</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">accel_x</span> <span class="o">&gt;</span> <span class="mi">900</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_z</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">show_leds</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            . . . # .</span>
+<span class="s2">            . # . . #</span>
+<span class="s2">            . . . . #</span>
+<span class="s2">            . # . . #</span>
+<span class="s2">            . . . # .</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">accel_y</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">900</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_z</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">show_leds</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            . # # # .</span>
+<span class="s2">            # . . . #</span>
+<span class="s2">            . . . . .</span>
+<span class="s2">            . # . # .</span>
+<span class="s2">            . . . . .</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">accel_x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">900</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">accel_z</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">show_leds</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            . # . . .</span>
+<span class="s2">            # . . # .</span>
+<span class="s2">            # . . . .</span>
+<span class="s2">            # . . # .</span>
+<span class="s2">            . # . . .</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Draw a dot on the LED screen, make it move along the screen according to how much the micro:bit is tilted, like a drop of water on a surface. (difficult)</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">pitch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">pos_x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">pos_y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">ROLL</span><span class="p">)</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="n">constrain</span><span class="p">(</span><span class="n">roll</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">pitch</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">Rotation</span><span class="o">.</span><span class="n">PITCH</span><span class="p">)</span>
+    <span class="n">pitch</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="n">constrain</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+
+    <span class="n">pos_x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">roll</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">pos_y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pos_x</span><span class="p">,</span> <span class="n">pos_y</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Make a multi-player reaction game. Each player scores points for reacting quickly to an event, e.g. shaking the micro:bit when LEDs are lit</p></li>
+<li><p>Create a fun orientation game using the radio and as many micro:bit components as possible</p></li>
+</ol>
+</section>
+</section>
+<section id="week-12">
+<h1><span class="section-number">12. </span>Week 12<a class="headerlink" href="#week-12" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>No labs. Information Systems Analysis and project consultations.</p></li>
+</ul>
+</section>
+<section id="week-13">
+<h1><span class="section-number">13. </span>Week 13<a class="headerlink" href="#week-13" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>No labs. Design Challenge presentations.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 🫰🏼 · 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

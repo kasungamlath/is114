@@ -1,0 +1,577 @@
+.. include:: ./common.rst
+
+.. important:: Take good care of all hardware, so that you and future students can have an awesome learning experience
+
+.. important:: Return all packaging, including small items like cable ties, do not dispose anything
+
+==================
+Physical Computing
+==================
+
+Physical Computing Systems
+--------------------------
+
+- Interactive systems that can sense the world around them, and control some aspect of the environment.
+- Physical computing devices typically have these features:
+
+  - Sensing (inputs): the ability to measure and quantify physical parameters in a form that computers can use
+
+  - Actuating (outputs): the ability to control the physical world in some way, e.g. by driving a motor, pumping water, moving a robotic arm, blowing air, etc
+
+  - Computation: process sensor data to extract meaning from them
+
+  - Networking: be able to communicate with other devices, over networks that are nearby, or across the global Internet
+
+
+The micro\:bit
+--------------
+- Safety
+
+  - https://microbit.org/get-started/user-guide/safety/
+  - https://microbit.org/get-started/user-guide/electrical-product-guidance/
+  
+- Overview: https://microbit.org/get-started/user-guide/overview/
+- Features: https://microbit.org/get-started/user-guide/features-in-depth/
+
+.. important:: Read the links on safety, content might come out in the quizzes/exam
+
+
+MakeCode editor
+---------------
+
+- https://makecode.microbit.org/ 
+- Simulator: https://makecode.microbit.org/device/simulator 
+- Debugger
+- Editor
+
+  - Features: autocomplete, Ctrl-D, multiple cursors (Alt-click), Ctrl-Space
+  - Multi-editor, useful for coding 2 different programs that talk to each other https://makecode.microbit.org/---multi#
+
+
+Development workflow
+--------------------
+
+1. Write code in the MakeCode editor. 
+
+#. Use the simulator and debugger to test the program on MakeCode.
+
+#. Transfer the program over to the micro\:bit. This is also called "flashing" the micro\:bit, or uploading a program to the micro\:bit. There are 2 methods. Try both methods and use the one that works best for you.
+
+   - Drag and Drop method: https://microbit.org/get-started/first-steps/set-up/#drag-and-drop 
+   - Direct flashing method: https://microbit.org/get-started/first-steps/set-up/#direct-flashing. This requires a Chrome or Edge web browser that supports a feature called WebUSB. There are occasional incompatibilities with some laptops/browsers. If this doesn’t work for you, use the Drag and Drop method instead.
+
+#. The program will then run on the micro\:bit. Only one program can run on the micro\:bit at any one time. Uploading a new program will overwrite the previous program.
+
+.. warning:: if you don't flash the micro\:bit, the program will not run. The code in MakeCode is not automatically transferred to the micro\:bit every time you make a change to the code. It is only transferred when you click Download
+
+
+Troubleshooting
+---------------
+
+- Error codes: https://support.microbit.org/support/solutions/articles/19000016969-micro-bit-error-codes
+- Help & Support: https://support.microbit.org
+- There may be issues with flashing on Apple Silicon machines. Some workarounds:
+
+  - The offline app: https://makecode.microbit.org/offline-app
+  - Mobile apps: https://support.microbit.org/support/solutions/articles/19000023511-what-apps-are-available-for-the-micro-bit-. Copy the hex file over to the mobile phone, use the mobile app to flash the micro\:bit.
+
+
+.. Terminal
+.. --------
+
+.. - Synonyms: console, command prompt, command line, shell, Anaconda prompt.
+.. - Not the same as: Jupyter notebook.
+.. - A terminal lets us interact with our computer's Operating System by typing commands.
+.. - To open a terminal:
+
+..   - Windows: https://support.kaspersky.com/common/windows/14637
+
+..   - macOS: https://support.apple.com/en-sg/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac
+
+
+MakeCode Python
+---------------
+
+- CPython (used in IS111) cannot be used fully on the micro\:bit, because the micro\:bit does not have enough computing power to run it.
+- There are 2 different variants of Python that can be used with the micro\:bit
+
+  - MakeCode Python https://makecode.microbit.org/python
+  - MicroPython https://python.microbit.org/v/2 
+
+- What's the diff? 
+
+  - `MicroPython vs MakeCode Python <https://support.microbit.org/support/solutions/articles/19000111744-makecode-python-and-micropython>`__
+  - `MicroPython vs CPython <https://docs.micropython.org/en/latest/genrst/index.html>`__
+
+- We will use MakeCode Python for this mod.
+
+- Why MakeCode Python?
+
+  - Has debugger, simulator
+  - Has constructs for event-driven programming / concurrency
+
+
+.. Python Modules
+.. --------------
+
+.. - Synonyms: libraries, packages
+.. - Python modules are files containing Python code that can be used inside other Python programs.
+.. - To install: use a program called pip, which installs the libraries on your laptop
+.. - To use: in your Python programs, use the import keyword to inform Python that you'd like to use a specific library
+
+
+Machine-to-machine communication 
+--------------------------------
+
+- In CPython, we use the ``print()`` function to display some text on our laptop screen.
+- The micro\:bit does not have an attached screen. It needs to send the text over to our laptop first via the USB cable; the laptop will then display the text on the laptop screen.
+- There are many ways that 2 machines (in this case, the micro\:bit and laptop) can communicate. For this course, we will use a method called *serial communication* for the micro\:bit and laptop to communicate.
+- When the micro\:bit and laptop are connected via a USB cable, a *serial connection* exists between them. There is a *serial port* at the laptop's end of the connection.
+- When the micro\:bit wants to send data to the laptop:
+
+  - It *writes* the data to the laptop's serial port
+  - The laptop *reads* this data from the laptop's serial port.
+
+- (Optional) You can explore other ways to use serial communication between the micro\:bit and laptop. In particular, the WebUSB method is very convenient. Unfortunately, it does not work for all machines/browsers, which is why we use pySerial for this course.
+
+  - https://makecode.microbit.org/device/serial
+  - https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer
+
+
+Python on Laptop
+----------------
+
+- Python needs to be installed on your laptop. If you use Windows, it needs to be installed in Windows, not Ubuntu/WSL.
+- Do this at least 2 weeks before the IS111 lab test, or right after the lab test, in case it messes up your Python installation
+
+**Windows users with Anaconda**
+
+- |win-key| ➜ **Anaconda Prompt** ➜ ``python -V`` ➜ Should see ``Python 3.XX.XX``
+
+**Windows users without Anaconda**
+
+1. |win-key| ➜ **Command Prompt** ➜ ``python -V`` ➜ if you see ``Python 3.XX.XX``, you're done, stop. If not, continue.
+#. Do `How to Add Python to PATH on Windows <https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-windows>`_
+#. |win-key| ➜ **Command Prompt** ➜ ``python -V`` ➜ Should see ``Python 3.XX.XX``
+
+**Windows users exempted from IS111**
+
+1. Install `Python <https://www.python.org/downloads/>`_
+#. Do `How to Add Python to PATH on Windows <https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-windows>`_
+#. |win-key| ➜ Command Prompt ➜ ``python -V`` ➜ Should see ``Python 3.XX.XX``
+
+**macOS users**
+
+- Terminal ➜ ``python3 -V`` ➜ Should see ``Python 3.XX.XX``
+
+**macOS users exempted from IS111**
+
+1. Install `Python <https://www.python.org/downloads/>`_
+#. Terminal ➜ ``python3 -V`` ➜ Should see ``Python 3.XX.XX``
+
+
+
+Serial Communication using pySerial 
+-----------------------------------
+
+
+On the micro\:bit
+^^^^^^^^^^^^^^^^^
+
+Run this program on your micro\:bit. This sends a string from the micro\:bit to the laptop using serial communication::
+
+  serial.write_line("xoxo")
+
+When the micro\:bit is turned on, or its :kbd:`Reset` button is pressed, it sends the string ``xoxo`` to the laptop's serial port. If the laptop is not connected to the micro\:bit during this time, then the data sent is not received by the laptop. It is simply lost forever.
+
+
+On the Laptop
+^^^^^^^^^^^^^
+
+We will install a Python module called `pySerial <https://pyserial.readthedocs.io/>`_, which provides some useful features to read data from your micro\:bit.
+
+
+1. Plug in the micro\:bit to the laptop.
+
+#. Open a terminal. On Windows, use Anaconda Prompt or the Command Prompt, not WSL.
+
+#. Type::
+
+    python3 -m pip install pyserial
+   
+   You should see some text, and eventually this line (``X.X`` may differ)::
+    
+    Successfully installed pyserial-X.X
+    
+#. Show your laptop's *serial ports* using
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.list_ports -v
+        
+   You should see something similar to the below, but not exactly the same.
+
+    - This is an example from Windows. In this case, the serial port is ``COM9`` ::
+
+        COM9
+            desc: USB Serial Device (COM9)
+            hwid: USB VID:PID=0D28:0204 SER=9905360200052833933DF9DD1DDE1D80000000006E052820 LOCATION=1-7:x.1
+
+    - This is an example from macOS. In this case, the serial port is ``/dev/cu.usbmodem123567`` ::
+
+        /dev/cu.usbmodem123567
+            desc: BBC micro:bit CMSIS-DAP - mbed Serial Port
+            hwid: USB VID:PID=0D28:0204 SER=9905360200052833b53d21262edad78b000000006e052820 LOCATION=20-3
+
+
+#. Whatever your serial port is, whenever you see ``INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU``, place it there.
+
+#. Run the pySerial miniterm tool to receive data from your micro\:bit and display it on the screen.
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.miniterm INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU 115200
+        
+    Press the micro\:bit's :kbd:`Reset` button. You should see this output (similar, but not the same)::
+
+        -- Miniterm on INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU  115200,8,N,1 ---
+        --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+            
+        xoxo
+
+#. Whenever the micro\:bit is reset (by pressing the reset button), another line is displayed on the screen::
+
+        -- Miniterm on INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU  115200,8,N,1 ---
+        --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+            
+        xoxo
+
+#. Exit miniterm by pressing :kbd:`Ctrl` :kbd:`]` together. You should see::
+
+        --- exit ---
+
+
+.. note::
+
+  After you're done with this mod, uninstall pySerial by running this command::
+  
+    python3 -m pip uninstall pyserial
+
+
+
+
+Debugging (optional)
+--------------------
+
+
+Debugger
+^^^^^^^^
+
+- A debugger is a software that helps coders run code line by line, and tracks several important information about the code, such as variable values, which line of code is being run, etc.
+- In MakeCode, we can use the debugger by clicking on the debugger icon.
+
+Features
+^^^^^^^^
+
+- Step into: runs the next line of code
+- Pause: pauses the program
+- Continue: runs the program until the next breakpoint, or until the code ends
+- Breakpoint: stops execution at a certain line
+
+
+Examples
+^^^^^^^^
+
+Use the debugger to fix the given code.
+
+#. Given 3 integers, compute the maximum.
+
+    .. code-block:: python
+
+        a = 4
+        b = 2
+        c = 6
+
+        maximum = a
+
+        if a > b:
+            maximum = a
+        else:
+            maximum = b
+
+        if b > c:
+            maximum = c
+        else:
+            maximum = b
+
+
+        serial.write_line("maximum == " + maximum)
+
+#. Swap two numbers
+
+    .. code-block:: python
+
+        a = 5
+        b = 7
+
+        a = b
+        b = a
+
+        serial.write_line("a == " + a)
+        serial.write_line("b == " + b)
+
+
+
+Concurrency (optional)
+----------------------
+
+Most computers, like the micro\:bit, need to be able to do several things at the same time (concurrently). But the micro\:bit only has one CPU for executing your program, which means it can only execute one task at a time. It can, however, execute millions of instructions in a single second. 
+
+In our laptops and phones, the Operating System manages multiple tasks that want to run. The micro\:bit does not have an Operating System. Instead, there is some software called the micro\:bit runtime scheduler that manages this. The scheduler maintains a queue of functions to run. This queue is like a to-do list for the scheduler. The scheduler runs the first function in the queue, then the second, third, and so on. Sometimes, the functions could be placed back into the queue.
+
+Whenever a function is done, it needs to tell the scheduler that it's done, and the scheduler will move on to the next function in the queue. There are 2 cases where the scheduler decides that a function is done. In both cases, the scheduler will stop running the function, and run the next function in the queue
+
+    - The function exits on its own
+    - The function calls ``basic.pause()``
+    - The function calls another function that calls ``basic.pause()``. Some functions call ``basic.pause()``: e.g. ``basic.show_leds()``, ``basic.show_number()``, and some others. 
+
+Here's a simplified explanation of how the scheduler works:
+
+    1. Dequeue the function at the head (front) of the queue
+
+    #. Run the function until the function is done, i.e. either of these happens
+
+        a. The function exits on its own
+        #. The function calls ``basic.pause()``
+        #. The function calls another function that calls ``basic.pause()``
+    #. If ``basic.forever()`` was used to "register" the function, enqueue the function into the tail (back) of the queue.
+    #. Repeat step 1.
+
+
+Here are some examples to help us understand concurrency better. 
+
+#. This code runs a function once, then stops. The scheduler runs the function once, then stops because there is nothing else to do. The function exits the queue and doesn't re-join it.
+
+    .. code-block:: python
+
+        def on_forever():
+            basic.show_icon(IconNames.DIAMOND)
+            basic.pause(1000)
+            basic.clear_screen()
+
+        on_forever()
+
+
+#. This is the exact same code, except that ``basic.forever()`` is called. The scheduler puts the ``on_forever()`` function into a queue. It is the only function inside the queue. It then runs the function's code until the function is done. When the function is done, the scheduler makes the function re-join the queue again. The micro\:bit then runs the next function in the queue. In this case, since there is only one function, the function keeps running, re-joining the queue, running, re-joining the queue, etc.
+
+    .. code-block:: python
+
+        def on_forever():
+            basic.show_icon(IconNames.DIAMOND)
+            basic.clear_screen()
+
+        basic.forever(on_forever)
+
+
+#. Here there are 3 functions; note the use of ``basic.forever()``. What's the sequence in which the text is displayed? Try using the debugger to run through the code line by line. Is it helpful? Why not?
+
+    .. code-block:: python
+
+        def f1():
+            serial.write_line("x:1")
+            serial.write_line("x:2")
+            basic.pause(1000)
+        basic.forever(f1)
+
+        def f2():
+            serial.write_line("x:3")
+            serial.write_line("x:4")
+            basic.pause(1000)
+        basic.forever(f2)
+
+        def f3():
+            serial.write_line("x:5")
+            serial.write_line("x:6")
+            basic.pause(1000)
+        basic.forever(f3)
+
+
+#. Does this code have the same effect?
+
+    .. code-block:: python
+
+        def f1():
+            serial.write_line("x:1")
+            serial.write_line("x:2")
+            basic.pause(1000)
+
+        def f2():
+            serial.write_line("x:3")
+            serial.write_line("x:4")
+            basic.pause(1000)
+
+        def f3():
+            serial.write_line("x:5")
+            serial.write_line("x:6")
+            basic.pause(1000)
+
+        basic.forever(f1)
+        basic.forever(f2)
+        basic.forever(f3)
+
+#. When a pause is introduced, what's the sequence in which the text is displayed? Why?
+
+    .. code-block:: python
+
+        def f1():
+            serial.write_line("x:1")
+            basic.pause(1)
+            serial.write_line("x:2")
+            basic.pause(1000)
+
+        def f2():
+            serial.write_line("x:3")
+            basic.pause(1)
+            serial.write_line("x:4")
+            basic.pause(1000)
+
+        def f3():
+            serial.write_line("x:5")
+            basic.pause(1)
+            serial.write_line("x:6")
+            basic.pause(1000)
+
+        basic.forever(f1)
+        basic.forever(f2)
+        basic.forever(f3)
+
+
+#. Some functions call ``basic.pause``. For example:
+
+    .. code-block:: python
+
+        def f1():
+            basic.show_number(1)
+            # pauses here and yields control to the next function 
+            basic.show_number(2)
+        basic.forever(f1)
+
+        def f2():
+            basic.show_number(3)
+            # pauses here and yields control to the next function 
+            basic.show_number(4)
+        basic.forever(f2)
+
+        def f3():
+            basic.show_number(5)
+            # pauses here and yields control to the next function 
+            basic.show_number(6)
+        basic.forever(f3)
+
+
+#. It's possible for one function to hog the processor and never let other functions run
+
+    .. code-block:: python
+
+        def f1():
+            i = 0
+            while True:
+                i = i + 1
+        basic.forever(f1)
+
+        def f2():
+            basic.show_number(2)
+        basic.forever(f2)
+
+        def f3():
+            basic.show_number(3)
+        basic.forever(f3)
+
+
+#. Write two ``basic.forever()`` blocks. One clears the screen every 1s, and one scrolls a string on the screen continuously. What happens, and why?
+
+    .. toggle-header::
+        :header: 🙄
+
+        Every 1s, the screen gets cleared; whatever happens to be on display at that time disappears
+
+        .. code-block:: python
+
+            def on_forever():
+                basic.show_string("123567ordlohxoxo")
+            basic.forever(on_forever)
+
+            def on_forever2():
+                basic.clear_screen()
+                basic.pause(1000)
+            basic.forever(on_forever2)
+
+
+#. Try running the 2 code samples below and observe the difference between the two, in terms of the pattern that the numbers follow. How does the order of writing multiple ``basic.forever()`` change the way the code runs? 
+
+    **Code Sample 1** ::
+
+        def on_forever0():
+            basic.show_number(0)
+            basic.clear_screen()
+
+        def on_forever1():
+            basic.show_number(1)
+            basic.clear_screen()
+
+        def on_forever2():
+            basic.show_number(2)
+            basic.clear_screen()
+
+        basic.forever(on_forever0)
+        basic.forever(on_forever1)
+        basic.forever(on_forever2)
+
+    **Code Sample 2** ::
+
+        def on_forever0():
+            basic.show_number(0)
+            basic.clear_screen()
+
+        def on_forever1():
+            basic.show_number(1)
+            basic.clear_screen()
+
+        def on_forever2():
+            basic.show_number(2)
+            basic.clear_screen()
+
+        basic.forever(on_forever2)
+        basic.forever(on_forever0)
+        basic.forever(on_forever1)
+
+
+    .. toggle-header::
+        :header: 🙄
+
+        The pattern of the numbers follows the order that ``basic.forever()`` is called. This is regardless of the order of the function definitions (the ``def on_forever()`` parts). You can think of it as a queue; whenever ``basic.forever()`` is called, it adds a function to the queue. The functions in the queue take turns to run, one after another. After running, each function re-joins the queue again. This way of scheduling tasks is called round-robin scheduling.
+
+#. Run the code below. What is the pattern of the numbers, and why?
+
+    .. code-block:: python
+
+            def on_forever1():
+                basic.show_string("1")
+                basic.pause(1000)
+            basic.forever(on_forever1)
+
+            def on_forever2():
+                basic.show_string("2")
+                basic.pause(2000)
+            basic.forever(on_forever2)
+
+            def on_forever5():
+                basic.show_string("5")
+                basic.pause(5000)
+            basic.forever(on_forever5)
+
+
+    .. toggle-header::
+        :header: 🙄
+
+        The pattern is not obvious, because of the pause. Each ``on_forever()`` will only run if it has paused for a sufficient time. The number 1 appears every 1s, the number 2 appears every 2s, and the number 5 appears every 5s.

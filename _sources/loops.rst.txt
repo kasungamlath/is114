@@ -1,0 +1,75 @@
+=====
+Loops
+=====
+
+References
+----------
+- https://makecode.microbit.org/blocks/loops
+
+
+For
+---
+
+- Run some code the number of times you say using an index variable
+- This program will show the numbers 0, 1, 2, 3, and 4 one after another on the LED screen. ::
+    
+    def on_button_pressed_a():
+    for i in range(5):
+        basic.show_number(i)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+For ... of
+----------
+
+- Run some code for each element in a list. 
+
+- Find the highest number in a list of numbers. Display the highest number on the screen. ::
+
+    list2: List[number] = []
+    highest = 0
+    highest = 0
+    list2 = [5, 8, 6, 2, 4, 3, 7, 1]
+    for value in list2:
+        if value > highest:
+            highest = value
+    basic.show_number(highest)
+
+
+While
+-----
+
+- Repeat code while a Boolean condition is true.
+
+- The following example uses a while loop to make a diagonal line on the LED screen (points 0, 0, 1, 1, 2, 2, 3, 3, 4, 4). ::
+
+    def on_button_pressed_a():
+        index = 4
+        while index >= 0:
+            led.plot(index, index)
+            index -= 1
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+every Interval
+--------------
+
+- Run some code in a loop continuously at a time interval. ::
+
+    def loops.every_interval(interval: number, a: () -> None): None
+
+- Parameters
+
+    - ``interval``: amount of time in milliseconds to wait before running the loop again.
+
+- Every 200 milliseconds, check if either the ``A`` or ``B`` button is pressed. If so, show on the screen which one is pressed. ::
+
+    def on_every_interval():
+        if input.button_is_pressed(Button.A):
+            basic.show_string("A")
+        elif input.button_is_pressed(Button.B):
+            basic.show_string("B")
+        else:
+            basic.clear_screen()
+    loops.every_interval(200, on_every_interval)
+

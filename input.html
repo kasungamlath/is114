@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18. Input &mdash; IS114 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/contentui.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="19. LEDs" href="led.html" />
+    <link rel="prev" title="17. Basic" href="basic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">1. Week 1: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-topics">1.1. Week 1 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-exercises">1.2. Week 1 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-2-tools">2. Week 2: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-topics">2.1. Week 2 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-exercises">2.2. Week 2 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#combining-tools">2.2.1. Combining tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#file-editing">2.2.2. File Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#storage-optional">2.2.3. Storage (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#process-management-optional">2.2.4. Process Management (Optional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-3-networking">3. Week 3: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-topics">3.1. Week 3 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-exercises">3.2. Week 3 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-4-networking">4. Week 4: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-topics">4.1. Week 4 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-exercises">4.2. Week 4 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-5-lan-setup">5. Week 5: LAN Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-topics">5.1. Week 5 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-exercise">5.2. Week 5 Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#network-tests-optional">5.3. Network Tests (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-6-cloud-web-server">6. Week 6: Cloud Web Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-topics">6.1. Week 6 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises">6.2. Week 6 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#http-server-on-aws-ec2">6.2.1. HTTP Server on AWS EC2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises-optional">6.3. Week 6 Exercises (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-7-physical-computing">7. Week 7: Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-topics">7.1. Week 7 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-exercises">7.2. Week 7 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-8">8. Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-9-light-buttons-radio-leds">9. Week 9: Light, Buttons, Radio, LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-topics">9.1. Week 9 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-exercises">9.2. Week 9 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-10-event-driven-coding-time">10. Week 10: Event-driven coding, Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-topics">10.1. Week 10 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-exercises">10.2. Week 10 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-11-accelerometer-magnetometer">11. Week 11: Accelerometer, Magnetometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-topics">11.1. Week 11 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-exercises">11.2. Week 11 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-12">12. Week 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-13">13. Week 13</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">14. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#windows-subsystem-for-linux">14.1. Windows Subsystem for Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-management">14.2. File management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#text">14.3. Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#process-management-optional">14.4. Process management (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-permissions">14.5. File Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#other-useful-stuff-optional">14.6. Other useful stuff (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#screen-recording-optional">14.7. Screen Recording (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">15. Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol">15.1. Hyper Text Transfer Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#curl">15.1.1. curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol-secure">15.1.2. Hyper Text Transfer Protocol Secure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-access-optional">15.2. Remote access (Optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#server">15.2.1. Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-file-transfer">15.3. Remote File Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#python">15.4. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-virtual-environment">15.4.1. Python Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#create-a-virtual-environment">15.4.2. Create a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#activate-the-virtual-environment">15.4.3. Activate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#install-libraries-inside-the-virtual-environment">15.4.4. Install libraries inside the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-requests">15.4.5. Python Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#deactivate-the-virtual-environment">15.4.6. Deactivate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#delete-an-existing-virtual-environment">15.4.7. Delete an existing virtual environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#domain-name-system">15.5. Domain Name System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dig">15.5.1. dig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#web-application-programming-interface-optional">15.6. Web Application Programming Interface (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest">15.6.1. HTTP REST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest-api">15.6.2. HTTP REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#javascript-object-notation">15.6.3. JavaScript Object Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#other-network-tools-optional">15.7. Other Network Tools (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ncat">15.7.1. ncat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ss">15.7.2. ss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#nmap">15.7.3. nmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ip">15.7.4. ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#mtr">15.7.5. mtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ping">15.7.6. ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#httpie">15.7.7. httpie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dweepy">15.7.8. dweepy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical-computing.html">16. Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#physical-computing-systems">16.1. Physical Computing Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#the-micro-bit">16.2. The micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-editor">16.3. MakeCode editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#development-workflow">16.4. Development workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#troubleshooting">16.5. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#makecode-python">16.6. MakeCode Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#machine-to-machine-communication">16.7. Machine-to-machine communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#python-on-laptop">16.8. Python on Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#serial-communication-using-pyserial">16.9. Serial Communication using pySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-micro-bit">16.9.1. On the micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#on-the-laptop">16.9.2. On the Laptop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#debugging-optional">16.10. Debugging (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#debugger">16.10.1. Debugger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#features">16.10.2. Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physical-computing.html#examples">16.10.3. Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="physical-computing.html#concurrency-optional">16.11. Concurrency (optional)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (core)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basic.html">17. Basic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#references">17.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-number">17.2. Show number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-icon">17.3. Show icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-leds">17.4. Show LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-string">17.5. Show string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#clear-screen">17.6. Clear screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#run-code-forever">17.7. Run code forever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#pause">17.8. Pause</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. Input</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references">18.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-driven-coding">18.2. Event-driven coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-button-pressed">18.3. On Button Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-handlers">18.4. Event Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-gesture">18.5. On Gesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#button-is-pressed">18.6. Button Is Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compass-heading">18.7. Compass Heading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temperature">18.8. Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acceleration">18.9. Acceleration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rotation">18.10. Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#light-level">18.11. Light Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#magnetic-force">18.12. Magnetic Force</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-time">18.13. Running Time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="led.html">19. LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="led.html#references">19.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#display">19.2. Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot">19.3. Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#unplot">19.4. Unplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#toggle">19.5. Toggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#set-brightness">19.6. Set Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#stop-animation-optional">19.7. Stop Animation (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-bar-graph-optional">19.8. plot Bar Graph (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="radio.html">20. Radio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#references">20.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#set-group">20.2. Set Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#send-value">20.3. Send Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#on-received-value">20.4. On Received Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#received-packet">20.5. Received Packet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">21. Serial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#references">21.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#data-from-micro-bit-to-laptop">21.2. Data from micro:bit to laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#end-of-line">21.3. End of Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#buffering">21.4. Buffering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-line">21.5. Serial Write Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-number">21.6. Serial Write Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#write-value">21.7. Write Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-string">21.8. Serial Write String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-numbers">21.9. Serial Write Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-until">21.10. Serial Read Until</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-line">21.11. Serial Read Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-string">21.12. Serial Read String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-on-data-received">21.13. Serial On Data Received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#using-pyserial">21.14. Using PySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#micro-bit">21.14.1. micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#laptop">21.14.2. Laptop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (optional)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="music.html">22. Music</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music.html#references">22.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#start-melody">22.2. Start Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#stop-melody">22.3. Stop Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#on-event">22.4. On Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#change-tempo-by">22.5. Change Tempo By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-tempo">22.6. Set Tempo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-volume">22.7. Set Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#activities">22.8. Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">23. Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#references">23.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for">23.2. For</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for-of">23.3. For … of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#while">23.4. While</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#every-interval">23.5. every Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">24. Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#references">24.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#if">24.2. If</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#boolean">24.3. Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">25. Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#references">25.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#usage">25.2. Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#declaring-variables">25.3. Declaring Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#changing-variables">25.4. Changing Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">25.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">26. Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#references">26.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#math-functions">26.2. Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#exercises">26.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">27. Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#objectives">27.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#references">27.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#index">27.3. index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#push">27.4. push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#pop">27.5. pop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#shift">27.6. shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#unshift">27.7. unshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#insert-at">27.8. Insert at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#remove-at">27.9. Remove at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#reverse">27.10. Reverse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">28. Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#references">28.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#char-at">28.2. Char At</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#compare">28.3. Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#substr">28.4. Substr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#parse-int">28.5. Parse Int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#convert-to-text">28.6. Convert to text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#exercises">28.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">29. Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control.html#objectives">29.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#references">29.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#reset">29.3. Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-name">29.4. Device Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-serial-number">29.5. Device Serial Number</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IS114</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">18. </span>Input</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="input">
+<h1><span class="section-number">18. </span>Input<a class="headerlink" href="#input" title="Permalink to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Take good care of all hardware, so that you and future students can have an awesome learning experience.</p></li>
+<li><p>Return everything, including small items like packaging and cable ties, do not dispose anything</p></li>
+</ul>
+</div>
+<section id="references">
+<h2><span class="section-number">18.1. </span>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makecode.microbit.org/reference/input">https://makecode.microbit.org/reference/input</a></p></li>
+<li><p><a class="reference external" href="https://makecode.microbit.org/reference/event-handler">https://makecode.microbit.org/reference/event-handler</a></p></li>
+</ul>
+</section>
+<section id="event-driven-coding">
+<h2><span class="section-number">18.2. </span>Event-driven coding<a class="headerlink" href="#event-driven-coding" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><em>Event</em>: something that happens, e.g. a button press, a shake, etc</p></li>
+<li><p><em>Event handler</em>: some code that handles a specific event</p></li>
+<li><p><a class="reference external" href="https://youtu.be/6HVd7fhhdW8">https://youtu.be/6HVd7fhhdW8</a></p></li>
+<li><p>How is this different from the coding paradigm in IS111?</p></li>
+</ul>
+</section>
+<section id="on-button-pressed">
+<h2><span class="section-number">18.3. </span>On Button Pressed<a class="headerlink" href="#on-button-pressed" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Behind the MakeCode Hardware - Buttons on micro:bit <a class="reference external" href="https://www.youtube.com/watch?v=t_Qujjd_38o">https://www.youtube.com/watch?v=t_Qujjd_38o</a></p></li>
+<li><p>Run an event handler. The code in this handler runs when any of these events happen:</p>
+<ul>
+<li><p>button <code class="docutils literal notranslate"><span class="pre">A</span></code> is pressed</p></li>
+<li><p>button <code class="docutils literal notranslate"><span class="pre">B</span></code> is pressed</p></li>
+<li><p>button <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are both pressed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">button</span><span class="p">:</span> <span class="n">Button</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">button</span></code>: the button that is pressed - either of <code class="docutils literal notranslate"><span class="pre">Button.A</span></code>, <code class="docutils literal notranslate"><span class="pre">Button.B</span></code>, <code class="docutils literal notranslate"><span class="pre">Button.AB</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">body</span></code>: the function to run when the button is pressed</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>For button <code class="docutils literal notranslate"><span class="pre">A</span></code> or <code class="docutils literal notranslate"><span class="pre">B</span></code>: This handler works when the button is pushed down and released within 1 second.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> together: This handler works when <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are both pushed down, then one of them is released within 1.5 seconds of pushing down the second button.</p></li>
+<li><p>When button A is pressed, display something:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>When button A is pressed, display something:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="event-handlers">
+<h2><span class="section-number">18.4. </span>Event Handlers<a class="headerlink" href="#event-handlers" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>There can only be one event handler for an event:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">on_button_pressed_a2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run this code and press Button A twice quickly. What happens? Press Button A 10 times, as quickly as possible. What happens?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;uWu lol&quot;</span><span class="p">,</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="on-gesture">
+<h2><span class="section-number">18.5. </span>On Gesture<a class="headerlink" href="#on-gesture" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>This handler works when you do a <strong>gesture</strong> (like shaking the micro:bit):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">on_gesture</span><span class="p">(</span><span class="n">gesture</span><span class="p">:</span> <span class="n">Gesture</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">):</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>Parameters</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gesture</span></code> means the way you hold or move the micro:bit. How do you find out the possible gestures?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">body</span></code>: the function to run when the gesture is performed</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Show an icon when the micro:bit is shaken:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_gesture_shake</span><span class="p">():</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">ASLEEP</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_gesture</span><span class="p">(</span><span class="n">Gesture</span><span class="o">.</span><span class="n">SHAKE</span><span class="p">,</span> <span class="n">on_gesture_shake</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="button-is-pressed">
+<h2><span class="section-number">18.6. </span>Button Is Pressed<a class="headerlink" href="#button-is-pressed" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Check whether a button is pressed right now:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">button_is_pressed</span><span class="p">(</span><span class="n">button</span><span class="p">:</span> <span class="n">Button</span><span class="p">):</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">button</span></code>: the button to check, either <code class="docutils literal notranslate"><span class="pre">Button.A</span></code>, <code class="docutils literal notranslate"><span class="pre">Button.B</span></code>, <code class="docutils literal notranslate"><span class="pre">Button.AB</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Returns a boolean value: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the button you are checking is pressed, <code class="docutils literal notranslate"><span class="pre">false</span></code> if it is not pressed.</p></li>
+<li><p>Continuously check if button A is pressed, and do something if it is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">button_is_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">):</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">button_is_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">B</span><span class="p">):</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>What happens if a pause is added?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">button_is_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">):</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">button_is_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">B</span><span class="p">):</span>
+        <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="compass-heading">
+<h2><span class="section-number">18.7. </span>Compass Heading<a class="headerlink" href="#compass-heading" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Find which direction on a compass the micro:bit is facing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">compass_heading</span><span class="p">():</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns a number from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">359</span></code> degrees, which means the compass heading.</p></li>
+<li><p>The micro:bit measures the compass heading from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">359</span></code> degrees with its magnetometer chip. Different numbers mean north, east, south, and west.</p></li>
+<li><p>If the compass isn’t ready, the compass heading may display <code class="docutils literal notranslate"><span class="pre">-1003</span></code></p></li>
+<li><p>The compass needs to be calibrated before use: <a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass">https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass</a></p></li>
+<li><p>Show the compass heading when Button A is pressed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">compass_heading</span><span class="p">())</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="temperature">
+<h2><span class="section-number">18.8. </span>Temperature<a class="headerlink" href="#temperature" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Behind the MakeCode Hardware - Temperature Sensor on micro:bit <a class="reference external" href="https://www.youtube.com/watch?v=_T4N8O9xsMA">https://www.youtube.com/watch?v=_T4N8O9xsMA</a></p></li>
+<li><p>Find the temperature where you are. The temperature is measured in Celsius:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">temperature</span><span class="p">():</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns a number that is the temperature in degrees Celsius</p></li>
+</ul>
+</section>
+<section id="acceleration">
+<h2><span class="section-number">18.9. </span>Acceleration<a class="headerlink" href="#acceleration" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Behind the MakeCode Hardware - Accelerometer on micro:bit <a class="reference external" href="https://www.youtube.com/watch?v=byngcwjO51U">https://www.youtube.com/watch?v=byngcwjO51U</a></p></li>
+<li><p>Get the acceleration value in one of three dimensions, or the combined force in all directions (x, y, and z):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">dimension</span><span class="p">:</span> <span class="n">Dimension</span><span class="p">):</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dimension</span></code>: the direction you are checking for acceleration.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimension.X</span></code>: acceleration in the left and right direction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimension.Y</span></code>: acceleration in the forward and backward direction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimension.Z</span></code>: acceleration in the up and down direction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimension.STRENGTH</span></code>: the resulting strength of acceleration from all three dimensions (directions).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Returns a number that means the amount of acceleration. When the micro:bit is lying flat on a surface with the screen pointing up, <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> is <code class="docutils literal notranslate"><span class="pre">-1023</span></code>, and strength is <code class="docutils literal notranslate"><span class="pre">1023</span></code>.</p></li>
+<li><p>Every 2s, show how much the micro:bit is being tilted in the X-axis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">X</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Every 2s, show how much the micro:bit is being shaken:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">STRENGTH</span><span class="p">))</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="rotation">
+<h2><span class="section-number">18.10. </span>Rotation<a class="headerlink" href="#rotation" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Find how much the micro:bit is tilted in different directions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">kind</span><span class="p">:</span> <span class="n">Rotation</span><span class="p">):</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code> means which direction you are checking: <code class="docutils literal notranslate"><span class="pre">Rotation.PITCH</span></code> (forward and backward) or <code class="docutils literal notranslate"><span class="pre">Rotation.ROLL</span></code> (left and right)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Returns: how much the micro:bit is tilted in the specified direction. This is a value in degrees between <code class="docutils literal notranslate"><span class="pre">-180</span></code> to <code class="docutils literal notranslate"><span class="pre">180</span></code>.</p></li>
+</ul>
+</section>
+<section id="light-level">
+<h2><span class="section-number">18.11. </span>Light Level<a class="headerlink" href="#light-level" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Find the light level (how bright or dark it is). Light level <code class="docutils literal notranslate"><span class="pre">0</span></code> means darkness and <code class="docutils literal notranslate"><span class="pre">255</span></code> means bright light. The micro:bit measures the light around it by using some of the LEDs on the LED screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">():</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns a number that means a light level from <code class="docutils literal notranslate"><span class="pre">0</span></code> (dark) to <code class="docutils literal notranslate"><span class="pre">255</span></code> (bright).</p></li>
+<li><p>The first time you use it, this function will say <code class="docutils literal notranslate"><span class="pre">0</span></code>. After that, it will say the real light level. This is because the light sensor (the part that can find the light level) has to be turned on first.</p></li>
+<li><p>Behind the MakeCode Hardware - Light Sensor on micro:bit <a class="reference external" href="https://www.youtube.com/watch?v=TKhCr-dQMBY">https://www.youtube.com/watch?v=TKhCr-dQMBY</a></p></li>
+<li><p>Display the light level when Button A is pressed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_a</span><span class="p">():</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">light_level</span><span class="p">()</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">on_button_pressed_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="magnetic-force">
+<h2><span class="section-number">18.12. </span>Magnetic Force<a class="headerlink" href="#magnetic-force" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>This needs a magnet, some metal, or Magneto to be placed near the micro:bit</p></li>
+<li><p>Find the amount of magnetic force (the strength of a magnet, or some metal, placed near the micro:bit) in one of the three directions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">magnetic_force</span><span class="p">(</span><span class="n">dimension</span><span class="p">:</span> <span class="n">Dimension</span><span class="p">):</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dimension</span></code>: this is the direction the micro:bit should measure magnetic force in: either <code class="docutils literal notranslate"><span class="pre">Dimension.X</span></code> (the left-right direction), <code class="docutils literal notranslate"><span class="pre">Dimension.Y</span></code> (the forward/backward direction), or <code class="docutils literal notranslate"><span class="pre">Dimension.Z</span></code> (the up/down direction)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Returns: a number in microteslas that means the strength of the magnet</p></li>
+<li><p>Create a metal detector by measuring the strength of magnetic force in the <code class="docutils literal notranslate"><span class="pre">X</span></code> direction. Display a bar graph to show the current level of magnetic force measured by the magnetometer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">plot_bar_graph</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">magnetic_force</span><span class="p">(</span><span class="n">Dimension</span><span class="o">.</span><span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="running-time">
+<h2><span class="section-number">18.13. </span>Running Time<a class="headerlink" href="#running-time" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Find how long it has been since the program started in milliseconds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input</span><span class="o">.</span><span class="n">running_time</span><span class="p">():</span> <span class="n">number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Returns: the number of milliseconds since the program started. 1 second = 1000 milliseconds</p></li>
+<li><p>When button <code class="docutils literal notranslate"><span class="pre">B</span></code> is pressed, display the number of milliseconds since the program started:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_button_pressed_b</span><span class="p">():</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">running_time</span><span class="p">()</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+<span class="nb">input</span><span class="o">.</span><span class="n">on_button_pressed</span><span class="p">(</span><span class="n">Button</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">on_button_pressed_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 🫰🏼 · 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

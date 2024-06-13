@@ -1,0 +1,1374 @@
+.. ====
+.. Labs
+.. ====
+
+.. include:: ./common-take-care-of-hardware.rst
+
+Week 1: Tools
+-------------
+
+For weeks 1 and 2, we'll be using this `DataCamp classroom <https://www.datacamp.com/groups/shared_links/73153143f7b9128f761257fdd5de9847fc8806713d2799682d518d1f6230bbb8>`_. Sign in using your SMU Google e-mail account.
+(Note: Sign in as SOMETHING@smu.edu.sg, not SOMETHING@scis.smu.edu.sg)
+
+Week 1 Topics
+^^^^^^^^^^^^^
+
+- :ref:`tools:Tools`
+
+
+Week 1 Exercises
+^^^^^^^^^^^^^^^^
+
+From DataCamp:
+
+1. `Manipulating files and directories <https://campus.datacamp.com/courses/introduction-to-shell/manipulating-files-and-directories>`_
+#. `Manipulating data <https://campus.datacamp.com/courses/introduction-to-shell/manipulating-data>`_
+
+
+Week 2: Tools
+-------------
+
+Week 2 Topics
+^^^^^^^^^^^^^
+
+- :ref:`tools:Tools` (revision)
+
+
+Week 2 Exercises
+^^^^^^^^^^^^^^^^
+
+Note: except for :ref:`labs:Combining tools`, do the other exercises in the DataCamp `Creating new tools <https://campus.datacamp.com/courses/introduction-to-shell/creating-new-tools>`_ environment. Do not do the DataCamp "Creating new tools" exercises, just use the environment.
+
+Combining tools
+"""""""""""""""
+
+From DataCamp:
+
+1. `Combining tools <https://campus.datacamp.com/courses/introduction-to-shell/combining-tools>`_
+
+
+File Editing
+""""""""""""
+
+1. Do: `First steps with the Nano text editor <https://www.pragmaticlinux.com/2020/05/first-steps-with-the-nano-text-editor/>`_
+
+    - Note: do not run ``sudo nano /etc/timezone`` (this is just an example given in the tutorial)
+
+2. For reference:  `How to cut, copy and paste text in Nano <https://linuxhandbook.com/cut-copy-paste-nano/>`_
+
+Storage (optional)
+""""""""""""""""""
+
+1. Create a file with the contents below (be careful not to add any newlines). How many bytes does this file occupy? How many bytes does one character occupy? (You can use ``nano`` or any other method) ::
+
+    12345
+
+#. Create a file with the contents below (be careful not to add any newlines). How many bytes does this file occupy? How many bytes does one emoji occupy? (You can use ``nano`` or any other method) ::
+
+    🍜🍨🧁
+
+
+Process Management (Optional)
+"""""""""""""""""""""""""""""
+
+1. Using ``nano``, create a file called **timer.sh** in the home folder::
+
+    nano timer.sh
+
+#. Copy-paste this content into the file. 
+
+    .. code-block:: bash
+
+        #!/bin/bash
+        # This is a 15-minute countdown timer.
+
+        end_time=$((SECONDS+900))  # Set the end time to 15 minutes (900 seconds) from now
+
+        while [ $SECONDS -lt $end_time ]; do
+            remaining_seconds=$((end_time - SECONDS))
+            echo "Time remaining: $remaining_seconds seconds" > /dev/null
+            sleep 1
+        done
+
+        echo "Countdown complete! Ring..."
+
+#. Save the file and exit ``nano``.
+
+#. Display the contents of **timer.sh** to verify that the file has been created successfully. Note: **timer.sh** is a shell script file that contains a series of commands.
+
+#. Update the file permission of **timer.sh** by granting execute permission to owner.
+
+#. Run **timer.sh** in the background **5 times** (ie. execute the following command 5 times)::
+
+    ./timer.sh &
+
+Note: A process of **timer.sh** is created each time you execute this command. The **&** symbol enables **timer.sh** to run in the background.
+
+6. Using ``ps`` and ``grep`` in a single command, identify the **process ID** of each of the **timer.sh** processes executed in the previous step.
+
+#. Using ``top``, refer to the details of any of the timer.sh processes. What additional information does it provide as compared to ``ps``?
+
+#. Kill all the **timer.sh** processes.
+    
+
+Week 3: Networking
+------------------
+
+Week 3 Topics
+^^^^^^^^^^^^^
+
+- :ref:`networking:Hyper Text Transfer Protocol`
+- :ref:`networking:Python Requests`
+- :ref:`networking:curl`
+
+
+Week 3 Exercises
+^^^^^^^^^^^^^^^^
+
+1. Do research on how to find your laptop and phone's IP addresses. Find out the IP addresses, subnet masks, and default gateway of your laptop and your phone in these scenarios:
+
+    a. Laptop connected to WiFi, phone connected to cellular
+    #. Both connected to WiFi
+    #. Phone connected to cellular, phone's hotspot switched on, laptop connected to phone's hotspot
+
+#. Follow these steps to run a web server on your laptop using ``python3 -m http.server``
+
+    a. Open a Terminal, navigate to your home folder
+    #. Create a new subfolder named **var-www-html**
+    #. Navigate to **var-www-html**
+    #. Use ``curl`` to save http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html into a file
+    #. Type ``python3 -m http.server 8000``. This starts a Python web server on your laptop.
+    #. You should see a message similar to ``Serving HTTP on 0.0.0.0 port 8000``.
+    #. Open a web browser and navigate to http://localhost:8000. You should see the web page. 
+    #. Open a web browser and navigate to http://127.0.0.1:8000. You should see the web page. 
+    #. Kill the server process.
+
+#. Open 2 terminals. In each of them, do ``python3 -m http.server 8000``. What happens, and why?
+
+#. Edit ``requests-simple.py`` (previously created in :ref:`networking:Python Requests`), change the URL to **https://www.example.com/anything**. Run the program. What's the status code now? What does this status code mean?
+
+
+Week 4: Networking
+------------------
+
+Week 4 Topics
+^^^^^^^^^^^^^
+
+- :ref:`networking:Hyper Text Transfer Protocol Secure`
+- :ref:`networking:Domain Name System`
+- :ref:`networking:dig`
+
+Week 4 Exercises
+^^^^^^^^^^^^^^^^
+
+1. Using tools such as curl, grep, etc, extract all the e-mail addresses ending in **@newcastle.edu.my** from https://www.ncl.ac.uk/numed/people/
+
+#. Start a web server on your laptop using ``python3 -m http.server 8000``. Create a suitable file and place it on your laptop, such that when opening http://127.0.0.1:8000 in your browser, the browser displays "yololu @ smululu"
+
+#. **The Secret Smugger Hunt**. Somewhere in the building, there lies hidden a WiFi device which broadcasts a specific SSID. Your mission is to find out the room number where the device is located. You can use any tools at your disposal, including AI tools. First team to find the device and send the room number to the teacher wins! After the activity, write down
+
+    - Whether you managed to find the device or not
+    - The approach (the steps involved) that you took to find the device, with justifications on why you took each step. 
+    - Challenges faced, and how you overcame them. If you use an AI tool to answer this, highlight the differences between the AI tool's response, and your own personal experience.
+    - Any other learning experiences and reflections
+
+
+Week 5: LAN Setup
+-----------------
+
+Week 5 Topics
+^^^^^^^^^^^^^
+
+None.
+
+
+Week 5 Exercise
+^^^^^^^^^^^^^^^
+
+In this lab, we'll set up a Local Area Network (LAN) using a router and up to 10 devices. This Local Area Network is similar to the setup you use at home.
+
+1. Power up the router.
+
+#. Connect one laptop to the router using an Ethernet cable or WiFi.
+
+#. Access the router's configuration page: open a web browser and enter the router's IP address in the address bar. Log in to the router using the default username and password.
+
+#. Change the password to something more secure. Each team needs to know their own password, but do not share it across teams
+
+#. Configure the router's Service Set Identifier (SSID) and Pre-Shared Key (PSK) (ie. passphrase). 
+
+#. Configure the router's IP address to be 192.168.T.1, where T == the team's number.
+
+#. Configure the router's DHCP server to assign IP addresses 192.168.T.10 to 192.168.T.100, where T == the team's number. Use subnet mask 255.255.255.0.
+
+#. Ensure that all devices can ping the router and ping each other. It may be necessary to disable Windows Firewall temporarily (remember to enable it after the lesson).
+
+#. Run a web server on one of the laptops (in a non-sensitive folder). Ensure other team members can connect to that web server. On Windows, use Windows Terminal or similar, not WSL.
+
+#. Draw the network topology diagram for the network. include
+
+    a. Devices: phones, laptop, router
+    #. Connections between devices: Ethernet, WiFi
+    #. Hostnames and IP addresses, subnet masks, and gateway addresses of each device
+
+
+Network Tests (Optional)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Download and save this `video file <https://drive.google.com/open?id=1fkiZKcQEI96lxKI98MAxQ3eKQSAYWW-m&usp=drive_fs>`_ onto one of the team members' laptops.
+
+#. Disconnect this laptop from the internet and connect to the LAN through the router. 
+
+#. In this laptop, run a web server from the folder where the video file is saved. 
+
+#. Ensure that other team members on the LAN can connect and download the video file from that web server. It may be necessary to disable Windows Firewall temporarily (remember to enable it after the lesson). 
+
+#. How many devices could proceed with the download before the speed slows down significantly?
+
+
+Week 6: Cloud Web Server
+------------------------
+
+
+Week 6 Topics
+^^^^^^^^^^^^^
+
+None.
+
+
+Week 6 Exercises
+^^^^^^^^^^^^^^^^
+
+HTTP Server on AWS EC2
+""""""""""""""""""""""
+
+- Amazon Web Services (AWS) is a cloud service provider. In this lab, we'll learn how to start an AWS instance (a virtual computer) on the cloud, to serve web pages 
+
+**Summary of this activity**
+
+- Launch an AWS EC2 instance
+- Launch a CloudShell instance
+- Create a file on the CloudShell instance
+- Copy the file over to the EC2 instance
+- Start a web server on the EC2 instance
+- The web server can now be accessed from the Internet.
+
+**Login to the AWS Learner Lab, open the AWS Management Console**
+
+1. Retrieve the AWS invitation email you received. Copy the email address mentioned in the invitation email used for account creation.
+#. Go to https://www.awsacademy.com/vforcesite/LMS_Login 
+#. Choose **Student Login** ➜ Login using your e-mail address (use ONLY the email address mentioned in the invitation email) and password used for account creation. 
+#. Go to Courses ➜ AWS Academy Learner Lab [#####] ➜ Modules ➜ Learner Lab ➜ Start Lab
+#. Wait for AWS🔴 to become AWS🟢
+#. Click on AWS🟢. This launches the AWS Management Console
+
+
+**Launch an EC2 instance**
+
+An Elastic Compute 2 (EC2) instance is like a computer somewhere on the cloud that you can use. Here's how to launch a EC2 instance.
+
+#. AWS Management Console ➜ Search ➜ EC2 ➜ Instances ➜ Launch an instance
+#. Name and tags: **http-server**
+#. Application and OS Images: **Ubuntu**
+#. Instance type: **t2.micro**
+#. Key pair: **Create new key pair**
+
+    a. Key pair name: **is114-http-keypair**
+    #. Key pair type: **RSA**
+    #. Private key file format: **.pem**
+    #. Create key pair
+    #. A file named **is114-http-keypair.pem** will be saved to your computer. This is your private key for logging into the EC2 instance. Remember where you saved this file, it's needed later.
+
+#. Network settings: 
+
+    a. Allow SSH traffic from the internet
+    #. Allow HTTPS traffic from the internet
+    #. Allow HTTP traffic from the internet
+
+#. Leave other settings as default
+#. Click **Launch instance**
+#. Wait for instance to be launched
+#. Click **View all instances**
+#. Look for the **Public IPv4 Address** of the instance, copy it somewhere. When you see ``YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS`` below, insert the **Public IPv4 Address**
+
+
+**Launch a CloudShell instance**
+
+AWS CloudShell is a browser-based shell. You can think of it as yet another computer. It is not the same as the EC2 instance launched previously. Here's how to start a CloudShell instance.
+
+#. Start AWS CloudShell
+#. Are you logged into the CloudShell instance? Check the prompt. If the prompt is ``cloudshell-user@SOMETHING_SOMETHING``, you're logged into the CloudShell instance.
+
+
+**Copy the private key from your laptop to the CloudShell instance**
+
+The private key is needed to login to the EC2 instance. Usually, you would keep the private key on only one computer, and not copy it to other computers. In this case, it's for practice only, it's fine. We'll copy the private key to the CloudShell instance, so that from the CloudShell instance, we can login to the EC2 instance.
+
+#. Actions ➜ Upload file ➜ Upload your private key, **is114-http-keypair.pem**. 
+#. Change the permissions of your private key to ensure only you can access it::
+
+    chmod 600 is114-http-keypair.pem
+
+
+**SSH from the CloudShell instance to the EC2 instance**
+
+From the CloudShell instance, we can now login to the EC2 instance.
+
+#. Are you logged into the CloudShell instance (check the prompt)? If not, make sure that you are.
+#. SSH from the CloudShell instance into the EC2 instance::
+
+    ssh -i is114-http-keypair.pem ubuntu@YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS
+
+#. Are you logged into the EC2 instance? Check the prompt. If the prompt is ``ubuntu@SOMETHING_SOMETHING``, you're logged into the EC2 instance.
+
+#. Check your EC2 instance's Public IP address. It should be the same as ``YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS``:: 
+
+    curl checkip.amazonaws.com
+
+
+**Update software on the EC2 instance**
+
+#. Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.
+#. Update the EC2 instance software::
+
+    sudo apt update
+    sudo apt upgrade
+
+#. Reboot::
+
+    sudo reboot
+
+#. After rebooting, the prompt changes to ``cloudshell-user@SOMETHING_SOMETHING``, this means you are not logged in to the server anymore, you're back at the CloudShell instance
+#. Wait a few minutes for the EC2 instance to reboot
+
+
+.. **Ping the server to check if it's up**
+
+.. #. Ping the server from the CloudShell instance::
+
+..     ping YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS
+
+.. #. Once you get replies, it means the server is up and running
+
+
+**Create a file on the CloudShell instance, copy it to the EC2 instance**
+
+#. Are you logged into the CloudShell instance (check the prompt)? If not, make sure that you are.
+#. On the CloudShell instance, create a file **index.html**, with any content, for example this::
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                body {
+                    background-color: #2f3742;
+                    color: #dfe0e4;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+                h1 {
+                    font-size: 80px;
+                    color: #fff;
+                    text-align: center;
+                    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+                    animation: blinker 1s linear infinite;
+
+                } 
+                @keyframes blinker {
+                    50% {
+                        opacity: 0;
+                    }
+                } 
+            </style>
+        </head>
+        <body>
+
+            <h1>IS DELULU THE SOLULU? MAY YOUR YOLULU COME TRULULU AT SMULULU</h1>
+            <br />
+            <p>Gennermen, where is your berry</p>
+            <p><b>If you cannot, you also must can</b></p>
+            <p><i>At the end of the day, the day ends</i></p>
+
+        </body>
+    </html>
+
+#. Copy this file from the CloudShell instance to the EC2 instance using the Secure Copy command::
+
+    scp -i is114-http-keypair.pem index.html ubuntu@YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:/home/ubuntu/
+
+
+**Run a web server on the EC2 instance, using Python**
+
+#. Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.
+
+#. Start a Python web server on port 80::
+
+    sudo python3 -m http.server 80
+
+#. On your laptop browser, visit **http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS**. Make sure to use **http**, not **https**. You should see the page you created.
+
+
+**Run a web server, using nginx** (optional)
+
+#. Are you logged into the EC2 instance (check the prompt)? If not, make sure that you are.
+#. Install nginx::
+
+    sudo apt install nginx
+
+#. On your laptop, visit **http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS**. You should see a “Welcome to nginx!” page
+#. After using nginx as the web server, can you still start a Python web server? Why?
+
+
+**Stop the EC2 instance**
+
+1. AWS Management Console ➜ Search ➜ EC2 ➜ Instances ➜ Choose the correct instance ➜ Stop the instance
+
+
+Week 6 Exercises (Optional) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Using ``curl`` and other tools, get a list of result links from **https://api.duckduckgo.com/?q=pizza&l=1&no_redirect=1&skip_disambig=1&format=json**
+
+#. Setup and activate a Python virtual environment. Inside the virtual environment, install
+
+    a. `httpie <https://httpie.io/docs/cli/pypi>`_ (see Installation ➜ Universal ➜ PyPI)
+    #. `dweepy <https://github.com/paddycarey/dweepy#installation>`_ 
+
+#. Get the list of abilities from https://pokeapi.co/api/v2/pokemon/chandelure. Expected output::
+
+    flash-fire
+    flame-body
+    infiltrator
+
+
+#. Read https://randomuser.me/documentation. Using **httpie**, do the following.
+
+    a. Generate 2 users
+    #. Generate 2 users, in CSV format
+    #. Generate 2 users, with passwords consisting of lowercase and numbers, between 4-8 characters long
+    #. Generate 10 users, with only name, location, and email fields
+
+
+#. Read the documentation at https://dweet.io/. Do the below, once with ``curl`` and once with **httpie**:
+
+    a. Send a dweet with these parameters
+
+        - **my-thing-name** : ``sensor-values-NNNN``, where ``NNNN`` is a random number of your choice
+        - **light** : 3.14
+        - **temperature** : 30
+
+    #. Read the dweet, make sure the values are correct
+
+
+#. Modify and run the Python code below to send a dweet to dweet.io, with the key-value pairs ``{ 'light_level' : '777' , 'status' : 'bright' }``. Using **httpie**, read the dweet.
+
+    .. literalinclude:: ./dweepy-send.py
+        :language: python
+
+#. Modify and run the Python code below to continuously receive dweets. Using **httpie**, send some dweets and make sure they are received correctly. 
+
+    .. literalinclude:: ./dweepy-recv.py
+        :language: python
+
+#. Tilt
+
+    a. Visit https://dweet.io/ using your phone (or tablet), and tap **Try It Now**. A thing name will be generated. 
+
+    #. Observe the values shown on the site. You should see something similar to::
+
+        {
+            "tilt_x" : 123,
+            "tilt_y" : 567,
+            "tilt_z" : 999
+        }
+
+    #. Make the phone screen face upwards and downwards, and observe how the values change.
+
+    #. Modify and run the Python code below to display ``screen up`` if the phone screen is facing upwards, and ``screen down`` if the screen is facing downwards.
+
+    .. literalinclude:: ./dweepy-recv.py
+        :language: python
+
+
+
+Week 7: Physical Computing
+--------------------------
+
+Week 7 Topics
+^^^^^^^^^^^^^
+
+- :ref:`physical-computing:Physical Computing`
+- :ref:`basic:Basic`
+
+
+Week 7 Exercises
+^^^^^^^^^^^^^^^^
+
+1. Run the code below on the micro\:bit. What does this code do? How many times does ``xoxo`` get printed? Modify the number ``1000`` (all of them) to make the code print ``xoxo`` once every 3 seconds.
+
+    .. code-block:: python
+
+        serial.write_line("xoxo")
+        basic.pause(1000)
+        serial.write_line("xoxo")
+        basic.pause(1000)
+        serial.write_line("xoxo")
+        basic.pause(1000)
+
+
+#. Run the code below on the micro\:bit. What does this code do? How many times does ``xoxo`` get printed? Modify the number ``1000`` to make the code print ``xoxo`` once every 3 seconds.
+
+    .. code-block:: python
+
+        def on_forever():
+            serial.write_line("xoxo")
+            basic.pause(1000)
+        basic.forever(on_forever)
+
+
+#. Code the following
+
+    - print ``lol.0``
+    - pause for 1 second
+    - print ``lol.1``
+
+
+#. Code the following
+
+    - print ``bff.0``
+    - pause for 1 second
+    - print ``bff.1``
+    - repeat the above indefinitely
+
+
+#. On the micro\:bit, write code that sends ``123456789`` to the serial port, exactly once. On the laptop, open a terminal. Run the command below. Reset the micro\:bit a few times, about 3-5 seconds apart. What is displayed on the terminal?
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.miniterm INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU 115200
+
+
+#. On the micro\:bit, write code that sends ``123456789`` to the serial port, exactly once. On the laptop, open 2 terminals. Run the exact same command below on both terminals. Press reset on the micro\:bit a few times, about 3-5 seconds apart. What is displayed on each terminal? Why? 
+
+    .. code-block:: shell
+
+        python3 -m serial.tools.miniterm INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU 115200
+
+
+Week 8
+------
+
+- No labs. Recess.
+
+
+Week 9: Light, Buttons, Radio, LEDs
+-----------------------------------
+
+Week 9 Topics
+^^^^^^^^^^^^^
+
+- :ref:`input:Light Level`
+- :ref:`input:On Button Pressed`
+- :ref:`radio:Radio`
+- :ref:`led:LEDs`
+
+
+Week 9 Exercises
+^^^^^^^^^^^^^^^^
+
+**Light**
+
+1. Run the code below on the micro\:bit. Shine your phone torch on the micro\:bit's LEDs, and watch the values change. Modify the code to make the values display every 3 seconds. 
+
+    .. code-block:: python
+
+        def on_forever():
+            value = input.light_level()
+            serial.write_line(str(value))
+            basic.pause(1000)
+        basic.forever(on_forever)
+
+
+#. Display the light level every 1s as a percentage, with 0% being no light, and 100% being the brightest light detectable.
+
+#. Write the code below on the editor. A problem appears on the bottom of the screen in the code editor. What is wrong? Fix the code so that it works.
+
+    .. code-block:: python
+
+        value = input.light_level()
+        serial.write_line(value)
+
+#. Draw an icon on the screen. The brightness of the icon depends on the light level; it's brighter when the light level is low, and dimmer when the light level is high. Like smart street lamps.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            basic.show_icon(IconNames.HEART)
+            def on_forever():
+                MAX_LED_BRIGHTNESS = 255
+                light_level = input.light_level()
+                led_brightness = MAX_LED_BRIGHTNESS - light_level
+                led.set_brightness(led_brightness)
+            basic.forever(on_forever)
+
+
+**Buttons**
+
+#. When button ``A`` is pressed, display the light level 
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_button_pressed_a():
+                light_level = input.light_level()
+                serial.write_line(str(light_level))
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+#. Every time Button A is pressed, display the total number of times that Button A has been pressed.
+
+#. Scroll a long string continuously on the screen. Toggle the screen on/off whenever button A is pressed.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                basic.show_string("kong long kang lang")
+            basic.forever(on_forever)
+
+            def on_button_pressed_a():
+                global is_screen_on
+                    
+                if is_screen_on:
+                    led.set_brightness(0)
+                    is_screen_on = False
+                else:
+                    led.set_brightness(255)
+                    is_screen_on = True
+
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+            is_screen_on = True
+
+#. Code a program with these functions:
+
+    - ``print_led(s)``: prints the string ``s`` to the LEDs
+    - ``print_serial(s)``: writes the string ``s`` to the serial port
+    - ``printf(s)``: outputs the string ``s`` to either the LED or the serial port. 
+    - Button A can be pressed to toggle the output between the LED or the serial port. 
+    - A forever loop that calls ``printf('xoxo')`` once every 5 seconds
+
+
+**Radio**
+
+For these exercises:
+
+- Do in groups of 2-5
+- Set your radio group to something that no other group uses.
+- Use :ref:`radio:Send Value` and :ref:`radio:On Received Value`. 
+- Use ``randint()`` from :ref:`math:Math Functions` for random number generation.
+
+#. Do this in groups of two. 1 sender, 1 receiver. Sender sends the light level to the receiver every 2s. Whenever sender sends a message, toggle any LED. Whenever receiver receives a message, toggle any LED, and do nothing else.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_forever():
+                light_level = input.light_level()
+                radio.send_value("light", light_level)
+                led.toggle(2,2)
+                basic.pause(2000)
+                pass
+            basic.forever(on_forever)
+
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_received_value(name, value):
+                led.toggle(1, 1)
+                pass
+            radio.on_received_value(on_received_value)
+
+
+#. In a group of 3-5:
+
+    a. One person is the receiver, the rest are senders
+    #. Each sender sends their own light level to the receiver every 2s
+    #. The receiver displays the light levels on the receiver's laptop via USB
+    #. How can the receiver differentiate between different senders?
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_forever():
+                light_level = input.light_level()
+                radio.send_value("light", light_level)
+
+                basic.show_arrow(ArrowNames.SOUTH)
+                basic.clear_screen()
+
+                basic.pause(2000)
+
+            basic.forever(on_forever)
+
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_received_value(name, value):
+                serial.write_line(name + ":" + value)
+                basic.show_arrow(ArrowNames.NORTH)
+                basic.clear_screen()
+
+            radio.on_received_value(on_received_value)
+
+
+#. In a group of 3-5:
+
+    a. One person is the receiver, the rest are senders
+    #. Each sender sends the message ``S:1`` to the receiver at 2s intervals, where S is the name of each sender, e.g. ``Cai``, ``Png``, etc
+    #. The receiver displays each sender's name and the RSSI from that sender
+    #. Each sender takes turns walking away from the receiver, watch as the RSSI values change
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_forever():
+                basic.show_arrow(ArrowNames.SOUTH)
+                basic.clear_screen()
+
+                light_level = input.light_level()
+                radio.send_value("light", light_level)
+
+                basic.pause(2000)
+
+            basic.forever(on_forever)
+
+
+        .. code-block:: python
+
+            radio.set_group(1)
+
+            def on_received_value(name, value):
+                basic.show_arrow(ArrowNames.NORTH)
+                basic.clear_screen()
+
+                rssi = radio.received_packet(name + ":" + RadioPacketProperty.SIGNAL_STRENGTH)
+                serial.write_line(str(rssi))
+
+            radio.on_received_value(on_received_value)
+
+
+**LEDs**
+
+#. Display an icon on the LED. When button A is pressed, decrease the LED display brightness. When button B is pressed, increase the brightness. 
+
+#. Blink an LED at a random location. Blink means: turn it on for one second, then turn it off. Use ``randint()`` from :ref:`math:Math Functions`.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                x = randint(0, 4)
+                y = randint(0, 4)
+                led.plot(x, y)
+                basic.pause(1000)
+                led.unplot(x, y)
+                basic.pause(1000)
+
+            basic.forever(on_forever)
+
+
+#. Create a function called ``toggle2()`` that works exactly like ``toggle()`` (see :ref:`led:toggle`). In this function, use ``plot()`` and ``unplot()`` to make ``toggle2()`` behave like ``toggle()``.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            led_state = [
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    ]
+
+            def toggle2(x, y):
+                global led_state
+
+                if led_state[x][y] == 0:
+                    led_state[x][y] = 1
+                    led.plot(x, y)
+                elif led_state[x][y] == 1:
+                    led_state[x][y] = 0
+                    led.unplot(x, y)
+
+            def on_forever():
+                toggle2(2, 3)
+                basic.pause(500)
+                pass
+            basic.forever(on_forever)
+
+            def on_forever2():
+                toggle2(4, 1)
+                basic.pause(500)
+                pass
+            basic.forever(on_forever2)
+
+
+#. Display a pulsating icon on the LEDs. The light fades in and out gradually
+
+    .. toggle-header::
+        :header: 🙄
+
+        Without while loops
+
+        .. code-block:: python
+
+            direction = "up"
+            led_brightness = 0
+            led.set_brightness(led_brightness)
+            basic.show_icon(IconNames.HEART)
+
+            def go_up():
+                global direction
+                global led_brightness
+
+                if direction == "up":
+                    led_brightness += 1
+                    basic.pause(5)
+                pass
+            basic.forever(go_up)
+
+            def go_down():
+                global direction
+                global led_brightness
+
+                if direction == "down":
+                    led_brightness -= 1
+                    basic.pause(5)
+                pass
+            basic.forever(go_down)
+
+
+            def swap_direction_when_limits_reached():
+                global direction
+                global led_brightness
+
+                if led_brightness < 0 and direction == "down":
+                    direction = "up"
+                if led_brightness > 255 and direction == "up":
+                    direction = "down"
+            basic.forever(swap_direction_when_limits_reached)
+
+
+            def set_the_brightness():
+                global led_brightness
+
+                led.set_brightness(led_brightness)
+                pass
+            basic.forever(set_the_brightness)
+
+        With while loops
+
+        .. code-block:: python
+
+            def on_forever():
+                global led_brightness
+                while led_brightness > 0:
+                    led_brightness -= 1
+                    basic.pause(10)
+                
+                while led_brightness < 255:
+                    led_brightness += 1
+                    basic.pause(10)
+            basic.forever(on_forever)
+
+            def on_forever2():
+                global led_brightness
+                led.set_brightness(led_brightness)
+            basic.forever(on_forever2)
+
+            led_brightness = 0
+            basic.show_icon(IconNames.HEART)
+
+
+Week 10: Event-driven coding, Time
+----------------------------------
+
+Week 10 Topics
+^^^^^^^^^^^^^^
+
+- :ref:`input:Event-driven coding`
+- :ref:`input:Event Handlers`
+- :ref:`input:Running Time`
+
+
+Week 10 Exercises
+^^^^^^^^^^^^^^^^^
+
+#. Do a 5s countdown from 5 to 0, displaying the numbers ``5``, ``4``, ``3``, ``2``, ``1``, ``0``. The countdown should restart everytime the micro\:bit's reset button is pressed.
+
+#. When Button A is pressed for more than 3 seconds, display ``long press``. If it is pressed for less than 3 seconds, display ``short press``.
+
+#. When Button A is pressed twice within 2s, display ``double click``. If it is pressed once within 2s, display ``single click``.
+
+#. When button ``A`` is pressed, display the running time in seconds
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_button_pressed_a():
+                serial.write_line(str(control.millis() // 1000))
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+#. When button ``A`` is pressed, display the running time in ``MM:SS`` format.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_button_pressed_a():
+                serial.write_line(str(control.millis() // 1000))
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+#. 7-second game. Press button A, count 7 seconds in your head, then press button A again. The micro\:bit displays how many seconds you were away from 7. e.g. if you pressed after 6 seconds, the display would show ``-1``. If you pressed after 9 seconds, it would show ``2``. You can display this on the LED or on the serial port.
+
+    .. toggle-header::
+        :header: 🙄
+
+        See https://makecode.microbit.org/projects/7-seconds (similar, not exactly the same)
+
+
+#. Display a pulsating icon - the brightness fades in and out gradually. Pressing buttons A and B control the speed of the pulsation
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                global led_brightness, pulsating_speed
+                while led_brightness > 0:
+                    led_brightness -= 1
+                    basic.pause(pulsating_speed)
+                
+                while led_brightness < 255:
+                    led_brightness += 1
+                    basic.pause(pulsating_speed)
+            basic.forever(on_forever)
+
+            def on_forever2():
+                global led_brightness
+                led.set_brightness(led_brightness)
+            basic.forever(on_forever2)
+
+            led_brightness = 0
+            pulsating_speed = 10
+            basic.show_icon(IconNames.HEART)
+
+            def on_button_pressed_a():
+                global pulsating_speed
+                pulsating_speed -= 1
+                pulsating_speed = max(pulsating_speed, 0)
+                pass
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+            def on_button_pressed_b():
+                global pulsating_speed
+                pulsating_speed += 1
+                pulsating_speed = min(pulsating_speed, 500)
+                pass
+            input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+            def on_button_pressed_ab():
+                global pulsating_speed
+                basic.show_number(pulsating_speed)
+                basic.show_icon(IconNames.HEART)
+                pass
+            input.on_button_pressed(Button.AB, on_button_pressed_ab)
+
+
+#. Reaction game. When button A is pressed, an image shows up on the screen at a random time between 1-5s. When the image shows up, press button B. The screen displays the time taken (in milliseconds) between the image showing up and the button B press.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def countdown():
+                for i in range(3, 0, -1):
+                    basic.show_number(i)
+                basic.clear_screen()
+
+            def on_forever():
+                global state, time_image_displayed_ms
+
+                # If we're waiting for the display
+                if state == WAITING_FOR_DISPLAY:
+                    # Wait for some random time
+                    basic.pause(randint(1000, 5000))
+
+                    # Change the state
+                    state = WAITING_FOR_BUTTON
+
+                    # Record the time that the icon was displayed
+                    time_image_displayed_ms = control.millis()
+                
+                    # Display the icon
+                    basic.show_icon(IconNames.HEART)
+                
+            basic.forever(on_forever)
+
+            def on_button_pressed_a():
+                global state, time_image_displayed_ms
+
+                if state == WAITING_FOR_BUTTON:
+                    # Calculate the reaction time and display it
+                    reaction_time_ms = control.millis() - time_image_displayed_ms
+                    basic.show_number(reaction_time_ms)
+
+                    # Do a countdown, then go to the WAITING_FOR_DISPLAY state
+                    countdown()
+                    state = WAITING_FOR_DISPLAY
+                else:
+                    # We're not waiting for a button; show a no and clear the screen
+                    basic.show_icon(IconNames.NO)
+                    basic.clear_screen()
+                
+                pass
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+            INITIAL_STATE       = -1
+            WAITING_FOR_BUTTON  = 0
+            WAITING_FOR_DISPLAY = 1
+
+            # First, set the state to INITIAL_STATE
+            state = INITIAL_STATE
+            time_image_displayed_ms = 0
+
+            # Do a countdown
+            countdown()
+
+
+#. Make a countdown timer.
+
+    - When the micro\:bit is switched on, the LEDs display a numeric value, X
+    - Initially, X == 5
+    - Pressing A decrements X; pressing B increments X
+    - X is limited to the range 1 to 9 only; both 1 and 9 inclusive
+    - Pressing both buttons causes X to count down to zero, in approximately 1s intervals
+    - When X reaches 0, the display resets to 5
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            countdown_time_s = 5
+
+            SET_TIMER = 0
+            COUNTDOWN = 1
+            state = SET_TIMER
+
+
+            def on_forever():
+                basic.show_number(countdown_time_s)
+
+            basic.forever(on_forever)
+
+
+            def on_forever2():
+                global state, countdown_time_s
+                if state == COUNTDOWN:
+                    basic.pause(1000)
+                    countdown_time_s -= 1
+                    if countdown_time_s == 0:
+                        countdown_time_s = 5
+                        basic.show_icon(IconNames.HEART)
+                        state = SET_TIMER
+            basic.forever(on_forever2)
+
+
+            def on_button_pressed_a():
+                global state, countdown_time_s
+                if state == SET_TIMER and countdown_time_s > 1:
+                    countdown_time_s -= 1
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+            def on_button_pressed_b():
+                global state, countdown_time_s
+                if state == SET_TIMER and countdown_time_s < 9:
+                    countdown_time_s += 1
+            input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+            def on_button_pressed_ab():
+                global state, countdown_time_s
+                state = COUNTDOWN
+            input.on_button_pressed(Button.AB, on_button_pressed_ab)    
+
+#. Code your own version of this: https://makecode.microbit.org/projects/tele-potato
+
+#. Code your own version of this: https://makecode.microbit.org/projects/red-light-green-light
+
+#. Code your own version of this: https://makecode.microbit.org/projects/best-friends
+
+
+Week 11: Accelerometer, Magnetometer
+------------------------------------
+
+Week 11 Topics
+^^^^^^^^^^^^^^
+
+- :ref:`input:On Gesture`
+- :ref:`input:Rotation`
+- :ref:`input:Magnetic Force`
+- :ref:`input:Compass Heading`
+
+
+
+Week 11 Exercises
+^^^^^^^^^^^^^^^^^
+
+
+
+#. Use ``input.onGesture()`` to display gestures that are performed: shake, logo up, logo down, screen up, screen down, tilt left, tilt right, or free fall. For example: when the micro\:bit is tilted right, display ``tilted right`` once; when it has is its logo up, display ``logo up`` once, etc.
+
+#. Run the code below on the micro\:bit. Place the micro\:bit next to a metallic object, and bring it further away. How does ``value`` change? (It becomes larger\|smaller when it is nearer\|further)
+
+    .. code-block:: python
+
+        def on_forever():
+            value = input.magnetic_force(Dimension.STRENGTH)
+            serial.write_line(str(value))
+            basic.pause(1000)
+        basic.forever(on_forever)
+
+
+#. While the micro\:bit moves, display ``moving`` on the serial port every 1s. While it is not moving (e.g. placed on a table), display ``stopped`` every 1s. Use the accelerometer values to do this.
+
+#. Whenever the micro\:bit transitions from moving to stopped, wait for 3 seconds, then display ``stopped`` only once.
+
+#. Display the accelerometer values every 1s, in this format:
+    
+    .. code-block:: 
+
+        x:XX
+        y:YY
+        z:ZZ
+        pitch:PP
+        roll:RR
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                serial.write_value("x", input.acceleration(Dimension.X))
+                serial.write_value("y", input.acceleration(Dimension.Y))
+                serial.write_value("z", input.acceleration(Dimension.Z))
+                serial.write_value("pitch", input.rotation(Rotation.PITCH))
+                serial.write_value("roll", input.rotation(Rotation.ROLL))
+                basic.pause(1000)
+            basic.forever(on_forever)
+
+#. Display the accelerometer values every 1s, in this format:
+    
+    .. code-block:: 
+
+        TT,XX,YY,ZZ,PP,RR
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                serial.write_line(
+                    str(control.millis() // 1000) + "," + 
+                    input.acceleration(Dimension.X) + "," + 
+                    input.acceleration(Dimension.Y) + "," +
+                    input.acceleration(Dimension.Z) + "," +
+                    input.rotation(Rotation.PITCH) + "," +
+                    input.rotation(Rotation.ROLL)
+                    )
+                basic.pause(1000)
+
+            basic.forever(on_forever)
+
+
+
+#. Display a random number on the LED while the micro\:bit is shaken, and any button is pressed, at the same time. When the micro\:bit's no button is pressed, the screen should not display anything.
+
+
+#. This is similar to unlocking a phone using a gesture. On the micro\:bit, display an icon on the LED when the user performs this sequence of actions in this exact order, within 10 seconds: button B pressed, micro\:bit shaken, button A pressed. 
+
+
+#. Use ``isGesture()`` to display ``shookt`` whenever the micro\:bit is shaken
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                if input.is_gesture(Gesture.SHAKE):
+                    serial.write_line(str("shookt"))
+            basic.forever(on_forever)
+
+#. Use ``input.onGesture()`` to display ``shookt`` whenever the micro\:bit is shaken
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_gesture_shake():
+                serial.write_line(str("shookt"))
+            input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
+#. Draw an icon on the screen and make it auto-rotate when the screen is tilted, just like your phone.
+
+    .. toggle-header::
+        :header: 🙄
+
+        It's important to understand the thought process behind solving this question. Getting the thought process is more important than getting the solution right. It goes like this:
+
+        1. Rotate the micro\:bit to an upright position. You can choose whatever orientation you want as "upright", it doesn't matter. But make sure that the micro\:bit is perpendicular to the ground, not parallel. Imagine holding the micro\:bit's USB cable, and letting the micro\:bit hang loosely. That's perpendicular. If you place the micro\:bit flat on the floor, that's parallel. Observe the x, y, z accelerometer values.
+
+        #. Rotate the micro\:bit clockwise by 90°. Observe the x, y, z accelerometer values. Keep rotating until you get back to the original position.
+
+        #. You should observe that there are certain patterns in terms of the x, y, z values. Based on these patterns, you can form the solution.
+
+        .. code-block:: python
+
+            def on_forever():
+                accel_x = input.acceleration(Dimension.X)
+                accel_y = input.acceleration(Dimension.Y)
+                accel_z = input.acceleration(Dimension.Z)
+                if accel_y > 900 and abs(accel_x) < 500 and abs(accel_z) < 500:
+                        basic.show_leds("""
+                        . . . . .
+                        . # . # .
+                        . . . . .
+                        # . . . #
+                        . # # # .
+                        """)
+
+                if accel_x > 900 and abs(accel_y) < 500 and abs(accel_z) < 500:
+                        basic.show_leds("""
+                        . . . # .
+                        . # . . #
+                        . . . . #
+                        . # . . #
+                        . . . # .
+                        """)
+
+                if accel_y < -900 and abs(accel_x) < 500 and abs(accel_z) < 500:
+                        basic.show_leds("""
+                        . # # # .
+                        # . . . #
+                        . . . . .
+                        . # . # .
+                        . . . . .
+                        """)
+
+                if accel_x < -900 and abs(accel_y) < 500 and abs(accel_z) < 500:
+                        basic.show_leds("""
+                        . # . . .
+                        # . . # .
+                        # . . . .
+                        # . . # .
+                        . # . . .
+                        """)
+            basic.forever(on_forever)
+
+
+#. Draw a dot on the LED screen, make it move along the screen according to how much the micro\:bit is tilted, like a drop of water on a surface. (difficult)
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_forever():
+                roll = 0
+                pitch = 0
+                pos_x = 0
+                pos_y = 0
+                roll = input.rotation(Rotation.ROLL)
+                roll = Math.constrain(roll, -60, 60)
+                pitch = input.rotation(Rotation.PITCH)
+                pitch = Math.constrain(pitch, -60, 60)
+
+                pos_x = int(Math.map(roll, -60, 60, 0, 4))
+                pos_y = int(Math.map(pitch, -60, 60, 0, 4))
+
+                basic.clear_screen()
+                led.plot(pos_x, pos_y)
+                basic.pause(200)
+            basic.forever(on_forever)
+
+#. Make a multi-player reaction game. Each player scores points for reacting quickly to an event, e.g. shaking the micro\:bit when LEDs are lit
+
+#. Create a fun orientation game using the radio and as many micro\:bit components as possible
+
+
+**Radio**
+
+#. Code your own version of this: https://makecode.microbit.org/projects/mood-radio
+
+#. Code your own version of this: https://microbit.org/projects/make-it-code-it/group-teleporting-duck/
+
+#. Code your own version of this: https://makecode.microbit.org/projects/multi-dice
+
+#. Code your own version of this: https://makecode.microbit.org/projects/voting-machine
+
+#. Code a program that extinguishes the LEDs of half the micro\:bits (randomly chosen) in the group, when a button is pressed.
+
+#. Code a variation of the WiFi treasure hunt game, using the micro\:bit. Use 1 micro\:bit as a sender. It continuously sends messages at 5s intervals. All other micro\:bits are receivers. When they are near the sender, their LEDs blink faster. When they are further away, their LEDs blink slower. This may require up distances of between 10-50m  micro\:bits.
+
+#. Perform an experiment to find out the transmission range of the micro\:bit, either outdoors or along a very long corridor, with line of sight (i.e. no obstacles in between, the micro\:bits can visually see each other if they had eyes). 
+
+
+Week 12
+-------
+
+- No labs. Information Systems Analysis and project consultations.
+
+
+Week 13
+-------
+
+- No labs. Design Challenge presentations.

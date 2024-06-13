@@ -1,0 +1,139 @@
+====
+Text
+====
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/text
+
+
+Char At
+-------
+
+- Get a character (letter, number, or symbol) from a place in the text string::
+
+    def String.char_at(index: number): str
+
+- Parameters
+
+    - ``index``: the position in the text string where the character is at, starting from 0
+
+- Returns: the character at the selected position
+
+
+Compare
+-------
+
+- Compare two strings in lexicographical order (approximately means alphabetical order) ::
+
+    def String.compare(that: str): number
+
+- Parameters
+
+    - ``that``: the string to compares with this string.
+
+- Returns: either -1, 0, or 1. These numbers mean that this string is:
+
+    - -1: this string is less than the compared string.
+    - 0: this string is equal to the compared string.
+    - 1: this string is greater than the compared string.
+
+
+- Example::
+
+    tea = "green"
+    if tea.compare("black") == 0:
+        basic.show_string("issa black bbt")
+    elif tea.compare("red") == 0:
+        basic.show_string("issa red bbt")
+    elif tea.compare("green") == 0:
+        basic.show_string("issa green bbt")
+
+
+Substr
+------
+
+- Take some part of a string to make a smaller string (substring)::
+
+    def String.substr(start: number, length: number): str
+
+- Parameters
+
+    - ``start``: the position to start the substrings
+    - ``length``: the number of characters in the substring
+    
+        - If length is left out, the rest of the string will be included
+        - If length is 0 or less, the string will be empty
+
+- Returns: the substring
+
+- Example::
+
+    message = "7,light,113"
+    sender = message.substr(0, 1)
+    sensor = message.substr(2, 5)
+    value = message.substr(8, 3)
+
+    basic.show_string(sender)
+    basic.clear_screen()
+    basic.show_string(sensor)
+    basic.clear_screen()
+    basic.show_string(value)
+    basic.clear_screen()
+
+
+Parse Int
+---------
+
+- Turn a string with only number characters (can include ``-``, ``.``, ``e``) into an integer::
+
+    def int(text: str, radix: number): number
+
+- Parameters
+
+    - ``text``: a string with number characters
+    - ``radix``: number of unique digits, including zero, used to represent numbers.
+
+- Returns: an integer that the string represents
+
+- Example::
+
+    message = "7,light,113"
+    sender = int(message.substr(0, 1))
+    sensor = message.substr(2, 5)
+    value = int(message.substr(8, 3))
+
+    basic.show_number(sender)
+    basic.clear_screen()
+    basic.show_string(sensor)
+    basic.clear_screen()
+    basic.show_number(value)
+    basic.clear_screen()
+
+
+Convert to text
+---------------
+
+- Change any value to become a string::
+
+    def str(value: any): str
+
+- Parameters
+
+    - ``value``: a value of some type to convert to a string.
+
+- Returns: a string that is a text representation of ``value``
+
+
+
+Exercises
+---------
+
+1. What are the resulting integers from the following code? ::
+
+    int("-1g13")
+    int("1.23")
+    int("5.67")
+    int("2e3")

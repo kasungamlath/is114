@@ -1,0 +1,115 @@
+=========
+Variables
+=========
+
+
+References
+----------
+- https://makecode.microbit.org/blocks/variables
+
+
+Usage
+-----
+
+- When humans need to calculate stuff, we store information in our memory. Computers have memory too, and pieces of data that are stored in a computer's memory are called variables
+
+- A variable holds a specific type of information. The micro\:bit's variables can keep track of *numbers*, *strings*, *booleans*, and *sprites*
+
+- A *number* variable could hold numerical data such as the year, the temperature, or the degree of acceleration.
+- A *string* variable holds a string of alphanumeric characters such as a person's name, a password, or the day of the week.
+- A *boolean* variable has only two values: true or false. You might have certain things that happen only when the variable called gameOver is false, for example.
+- A *sprite* is a special variable that represents a single dot on the screen and holds two separate values for the row and column the dot is currently in.
+
+- The first time you use a variable, its type is assigned to match whatever it is holding. From that point forward, you can only change the value of that variable to another value of that same type.
+
+
+Declaring Variables
+-------------------
+
+- Variables must be declared (to tell the micro\:bit that you want to use them) before they can be used.
+
+- To declare a variable::
+
+    item = 0
+
+- ``item`` is the variable's name. It is assigned a value ``0``.
+
+
+Changing Variables
+------------------
+
+- Setting its value::
+
+    item = 123
+
+- Changing its current value by some amount::
+
+    item = item + 1
+
+
+Exercises
+---------
+
+1. Write a program with only this one line of code and nothing else. Look at **Problems** at the bottom of the screen. How can this be fixed? ::
+
+    item = item + 1
+
+#. Enter the code below into the editor. Click on **Blocks**, then back on **Python** again. What happened, and why? ::
+
+    item = "a"
+    item = item + 1
+
+#. What do these 2 pieces of code display on the screen? Why the difference?
+
+    a. ::
+
+        var = "1"
+        var = var + "1"
+        basic.show_string(var)
+
+    #. ::
+
+        var = 1
+        var = var + 1
+        basic.show_number(var)
+
+#. For each of the code samples below, first predict whether it will cause problems (i.e. whether anything will show up in **Problems**). Next, try running it and see if you were right. If there are problems, explain why, and fix the code.
+
+    a. ::
+
+        var = 0
+        var = "abc"
+
+    #. ::
+
+        var = "xoxo"
+        basic.show_string(var)
+
+    #. ::
+
+        var = "113"
+        basic.show_number(var)
+
+    #. ::
+
+        var = "True"
+        var = True
+
+    #. ::
+
+        var = "false"
+        var = false
+
+    #. ::
+
+        var1 = "xoxo"
+        var2 = 777
+        var3 = var1 + var2
+
+    #. ::
+
+        var1 = "xoxo"
+        var2 = "777"
+        var3 = var1 + var2
+
+    

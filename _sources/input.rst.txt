@@ -1,0 +1,276 @@
+=====
+Input
+=====
+
+.. include:: ./common-take-care-of-hardware.rst
+
+
+References
+----------
+
+- `<https://makecode.microbit.org/reference/input>`__
+- `<https://makecode.microbit.org/reference/event-handler>`__
+
+
+Event-driven coding
+-------------------
+- *Event*: something that happens, e.g. a button press, a shake, etc
+- *Event handler*: some code that handles a specific event
+- https://youtu.be/6HVd7fhhdW8
+- How is this different from the coding paradigm in IS111?
+
+
+On Button Pressed
+-----------------
+
+- Behind the MakeCode Hardware - Buttons on micro\:bit `<https://www.youtube.com/watch?v=t_Qujjd_38o>`__
+- Run an event handler. The code in this handler runs when any of these events happen:
+
+  - button ``A`` is pressed
+  - button ``B`` is pressed
+  - button ``A`` and ``B`` are both pressed::
+
+        def input.on_button_pressed(button: Button, body: () -> None): None
+
+- Parameters
+
+    - ``button``: the button that is pressed - either of ``Button.A``, ``Button.B``, ``Button.AB``
+    - ``body``: the function to run when the button is pressed
+
+- For button ``A`` or ``B``: This handler works when the button is pushed down and released within 1 second.
+- For ``A`` and ``B`` together: This handler works when ``A`` and ``B`` are both pushed down, then one of them is released within 1.5 seconds of pushing down the second button.
+
+
+- When button A is pressed, display something::
+
+    def on_button_pressed_a():
+        basic.show_string("A")
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+- When button A is pressed, display something::
+
+    def on_button_pressed_a():
+        basic.show_string("A")
+        basic.show_string("2")
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+Event Handlers
+--------------
+
+- There can only be one event handler for an event::
+
+    def on_button_pressed_a():
+        basic.show_string("A")
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+    def on_button_pressed_a2():
+        basic.show_string("2")
+    input.on_button_pressed(Button.A, on_button_pressed_a2)
+
+- Run this code and press Button A twice quickly. What happens? Press Button A 10 times, as quickly as possible. What happens? ::
+
+    def on_button_pressed_a():
+        basic.show_string("uWu lol", interval = 100)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+On Gesture
+----------
+
+- This handler works when you do a **gesture** (like shaking the micro\:bit)::
+
+    def input.on_gesture(gesture: Gesture, body: () -> None): None
+
+- Parameters
+    - ``gesture`` means the way you hold or move the micro\:bit. How do you find out the possible gestures?
+    - ``body``: the function to run when the gesture is performed
+
+- Show an icon when the micro\:bit is shaken::
+
+    def on_gesture_shake():
+            basic.show_icon(IconNames.ASLEEP)    
+    input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
+
+Button Is Pressed
+-----------------
+
+- Check whether a button is pressed right now::
+
+    def input.button_is_pressed(button: Button): bool
+
+- Parameters
+
+    - ``button``: the button to check, either ``Button.A``, ``Button.B``, ``Button.AB``
+
+- Returns a boolean value: ``true`` if the button you are checking is pressed, ``false`` if it is not pressed.
+
+
+- Continuously check if button A is pressed, and do something if it is::
+
+    def on_forever():
+        if input.button_is_pressed(Button.A):
+            basic.show_string("A")
+    basic.forever(on_forever)
+
+    def on_forever2():
+        if input.button_is_pressed(Button.B):
+            basic.show_string("B")
+    basic.forever(on_forever2)
+
+
+- What happens if a pause is added? ::
+
+    def on_forever():
+        if input.button_is_pressed(Button.A):
+            basic.show_string("A")
+        basic.pause(1000)
+    basic.forever(on_forever)
+
+    def on_forever2():
+        if input.button_is_pressed(Button.B):
+            basic.show_string("B")
+        basic.pause(1000)
+    basic.forever(on_forever2)
+
+
+Compass Heading
+---------------
+
+- Find which direction on a compass the micro\:bit is facing::
+
+    def input.compass_heading(): number
+
+- Returns a number from ``0`` to ``359`` degrees, which means the compass heading.
+
+- The micro\:bit measures the compass heading from ``0`` to ``359`` degrees with its magnetometer chip. Different numbers mean north, east, south, and west.
+- If the compass isn't ready, the compass heading may display ``-1003``
+- The compass needs to be calibrated before use: `<https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass>`__
+
+- Show the compass heading when Button A is pressed::
+
+    def on_button_pressed_a():
+        basic.show_number(input.compass_heading())
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+Temperature
+-----------
+
+- Behind the MakeCode Hardware - Temperature Sensor on micro\:bit `<https://www.youtube.com/watch?v=_T4N8O9xsMA>`__
+
+- Find the temperature where you are. The temperature is measured in Celsius::
+
+    def input.temperature(): number
+
+- Returns a number that is the temperature in degrees Celsius
+
+
+
+Acceleration
+------------
+
+- Behind the MakeCode Hardware - Accelerometer on micro\:bit `<https://www.youtube.com/watch?v=byngcwjO51U>`__
+- Get the acceleration value in one of three dimensions, or the combined force in all directions (x, y, and z)::
+
+    def input.acceleration(dimension: Dimension): number
+
+- Parameters
+
+    - ``dimension``: the direction you are checking for acceleration.
+
+        - ``Dimension.X``: acceleration in the left and right direction.
+        - ``Dimension.Y``: acceleration in the forward and backward direction.
+        - ``Dimension.Z``: acceleration in the up and down direction.
+        - ``Dimension.STRENGTH``: the resulting strength of acceleration from all three dimensions (directions).
+
+- Returns a number that means the amount of acceleration. When the micro\:bit is lying flat on a surface with the screen pointing up, ``x`` is ``0``, ``y`` is ``0``, ``z`` is ``-1023``, and strength is ``1023``.
+
+- Every 2s, show how much the micro\:bit is being tilted in the X-axis::
+
+    def on_forever():
+        basic.show_number(input.acceleration(Dimension.X))
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+- Every 2s, show how much the micro\:bit is being shaken::
+
+    def on_forever():
+        basic.show_number(input.acceleration(Dimension.STRENGTH))
+        basic.pause(2000)
+    basic.forever(on_forever)
+
+
+Rotation
+--------
+
+- Find how much the micro\:bit is tilted in different directions ::
+
+    def input.rotation(kind: Rotation): number
+
+- Parameters
+
+    - ``kind`` means which direction you are checking: ``Rotation.PITCH`` (forward and backward) or ``Rotation.ROLL`` (left and right)
+
+- Returns: how much the micro\:bit is tilted in the specified direction. This is a value in degrees between ``-180`` to ``180``.
+
+
+Light Level
+-----------
+
+- Find the light level (how bright or dark it is). Light level ``0`` means darkness and ``255`` means bright light. The micro\:bit measures the light around it by using some of the LEDs on the LED screen::
+
+    def input.light_level(): number
+
+- Returns a number that means a light level from ``0`` (dark) to ``255`` (bright).
+
+- The first time you use it, this function will say ``0``. After that, it will say the real light level. This is because the light sensor (the part that can find the light level) has to be turned on first.
+- Behind the MakeCode Hardware - Light Sensor on micro\:bit `<https://www.youtube.com/watch?v=TKhCr-dQMBY>`__
+
+- Display the light level when Button A is pressed::
+
+    def on_button_pressed_a():
+        level = input.light_level()
+        basic.show_number(level)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+
+Magnetic Force
+--------------
+
+- This needs a magnet, some metal, or Magneto to be placed near the micro\:bit
+
+- Find the amount of magnetic force (the strength of a magnet, or some metal, placed near the micro\:bit) in one of the three directions::
+    
+    def input.magnetic_force(dimension: Dimension): number
+
+- Parameters:
+
+    - ``dimension``: this is the direction the micro\:bit should measure magnetic force in: either ``Dimension.X`` (the left-right direction), ``Dimension.Y`` (the forward/backward direction), or ``Dimension.Z`` (the up/down direction)
+
+- Returns: a number in microteslas that means the strength of the magnet
+
+- Create a metal detector by measuring the strength of magnetic force in the ``X`` direction. Display a bar graph to show the current level of magnetic force measured by the magnetometer::
+
+    def on_forever():
+        led.plot_bar_graph(input.magnetic_force(Dimension.X) / 2000, 0)
+    basic.forever(on_forever)
+
+
+Running Time
+------------
+
+- Find how long it has been since the program started in milliseconds::
+
+    def input.running_time(): number
+
+- Returns: the number of milliseconds since the program started. 1 second = 1000 milliseconds
+
+- When button ``B`` is pressed, display the number of milliseconds since the program started::
+
+    def on_button_pressed_b():
+        now = input.running_time()
+        basic.show_number(now)
+    input.on_button_pressed(Button.B, on_button_pressed_b)

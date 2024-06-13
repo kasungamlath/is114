@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. Physical Computing &mdash; IS114 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/contentui.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17. Basic" href="basic.html" />
+    <link rel="prev" title="15. Networking" href="networking.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">1. Week 1: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-topics">1.1. Week 1 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-1-exercises">1.2. Week 1 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-2-tools">2. Week 2: Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-topics">2.1. Week 2 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-2-exercises">2.2. Week 2 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#combining-tools">2.2.1. Combining tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#file-editing">2.2.2. File Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#storage-optional">2.2.3. Storage (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#process-management-optional">2.2.4. Process Management (Optional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-3-networking">3. Week 3: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-topics">3.1. Week 3 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-3-exercises">3.2. Week 3 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-4-networking">4. Week 4: Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-topics">4.1. Week 4 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-4-exercises">4.2. Week 4 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-5-lan-setup">5. Week 5: LAN Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-topics">5.1. Week 5 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-5-exercise">5.2. Week 5 Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#network-tests-optional">5.3. Network Tests (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-6-cloud-web-server">6. Week 6: Cloud Web Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-topics">6.1. Week 6 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises">6.2. Week 6 Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="labs.html#http-server-on-aws-ec2">6.2.1. HTTP Server on AWS EC2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-6-exercises-optional">6.3. Week 6 Exercises (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-7-physical-computing">7. Week 7: Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-topics">7.1. Week 7 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-7-exercises">7.2. Week 7 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-8">8. Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-9-light-buttons-radio-leds">9. Week 9: Light, Buttons, Radio, LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-topics">9.1. Week 9 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-9-exercises">9.2. Week 9 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-10-event-driven-coding-time">10. Week 10: Event-driven coding, Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-topics">10.1. Week 10 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-10-exercises">10.2. Week 10 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-11-accelerometer-magnetometer">11. Week 11: Accelerometer, Magnetometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-topics">11.1. Week 11 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#week-11-exercises">11.2. Week 11 Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-12">12. Week 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html#week-13">13. Week 13</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tools.html">14. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#windows-subsystem-for-linux">14.1. Windows Subsystem for Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-management">14.2. File management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#text">14.3. Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#process-management-optional">14.4. Process management (Optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#file-permissions">14.5. File Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#other-useful-stuff-optional">14.6. Other useful stuff (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#screen-recording-optional">14.7. Screen Recording (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">15. Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol">15.1. Hyper Text Transfer Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#curl">15.1.1. curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#hyper-text-transfer-protocol-secure">15.1.2. Hyper Text Transfer Protocol Secure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-access-optional">15.2. Remote access (Optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#server">15.2.1. Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#remote-file-transfer">15.3. Remote File Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#python">15.4. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-virtual-environment">15.4.1. Python Virtual Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#create-a-virtual-environment">15.4.2. Create a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#activate-the-virtual-environment">15.4.3. Activate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#install-libraries-inside-the-virtual-environment">15.4.4. Install libraries inside the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#python-requests">15.4.5. Python Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#deactivate-the-virtual-environment">15.4.6. Deactivate the virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#delete-an-existing-virtual-environment">15.4.7. Delete an existing virtual environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#domain-name-system">15.5. Domain Name System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dig">15.5.1. dig</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#web-application-programming-interface-optional">15.6. Web Application Programming Interface (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest">15.6.1. HTTP REST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#http-rest-api">15.6.2. HTTP REST API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#javascript-object-notation">15.6.3. JavaScript Object Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="networking.html#other-network-tools-optional">15.7. Other Network Tools (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ncat">15.7.1. ncat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ss">15.7.2. ss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#nmap">15.7.3. nmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ip">15.7.4. ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#mtr">15.7.5. mtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#ping">15.7.6. ping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#httpie">15.7.7. httpie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="networking.html#dweepy">15.7.8. dweepy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Physical Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#physical-computing-systems">16.1. Physical Computing Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-micro-bit">16.2. The micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#makecode-editor">16.3. MakeCode editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-workflow">16.4. Development workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">16.5. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#makecode-python">16.6. MakeCode Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#machine-to-machine-communication">16.7. Machine-to-machine communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-on-laptop">16.8. Python on Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-communication-using-pyserial">16.9. Serial Communication using pySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-the-micro-bit">16.9.1. On the micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-the-laptop">16.9.2. On the Laptop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-optional">16.10. Debugging (optional)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debugger">16.10.1. Debugger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#features">16.10.2. Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">16.10.3. Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#concurrency-optional">16.11. Concurrency (optional)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (core)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">17. Basic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#references">17.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-number">17.2. Show number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-icon">17.3. Show icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-leds">17.4. Show LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#show-string">17.5. Show string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#clear-screen">17.6. Clear screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#run-code-forever">17.7. Run code forever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#pause">17.8. Pause</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">18. Input</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input.html#references">18.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-driven-coding">18.2. Event-driven coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-button-pressed">18.3. On Button Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#event-handlers">18.4. Event Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#on-gesture">18.5. On Gesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#button-is-pressed">18.6. Button Is Pressed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#compass-heading">18.7. Compass Heading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#temperature">18.8. Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#acceleration">18.9. Acceleration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#rotation">18.10. Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#light-level">18.11. Light Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#magnetic-force">18.12. Magnetic Force</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#running-time">18.13. Running Time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="led.html">19. LEDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="led.html#references">19.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#display">19.2. Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot">19.3. Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#unplot">19.4. Unplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#toggle">19.5. Toggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#set-brightness">19.6. Set Brightness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#stop-animation-optional">19.7. Stop Animation (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html#plot-bar-graph-optional">19.8. plot Bar Graph (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="radio.html">20. Radio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#references">20.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#set-group">20.2. Set Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#send-value">20.3. Send Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#on-received-value">20.4. On Received Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio.html#received-packet">20.5. Received Packet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">21. Serial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#references">21.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#data-from-micro-bit-to-laptop">21.2. Data from micro:bit to laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#end-of-line">21.3. End of Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#buffering">21.4. Buffering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-line">21.5. Serial Write Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-number">21.6. Serial Write Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#write-value">21.7. Write Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-string">21.8. Serial Write String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-write-numbers">21.9. Serial Write Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-until">21.10. Serial Read Until</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-line">21.11. Serial Read Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-read-string">21.12. Serial Read String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#serial-on-data-received">21.13. Serial On Data Received</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial.html#using-pyserial">21.14. Using PySerial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#micro-bit">21.14.1. micro:bit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serial.html#laptop">21.14.2. Laptop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">micro:bit docs (optional)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="music.html">22. Music</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music.html#references">22.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#start-melody">22.2. Start Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#stop-melody">22.3. Stop Melody</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#on-event">22.4. On Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#change-tempo-by">22.5. Change Tempo By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-tempo">22.6. Set Tempo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#set-volume">22.7. Set Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#activities">22.8. Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">23. Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#references">23.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for">23.2. For</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#for-of">23.3. For … of</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#while">23.4. While</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html#every-interval">23.5. every Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">24. Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#references">24.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#if">24.2. If</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#boolean">24.3. Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">25. Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#references">25.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#usage">25.2. Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#declaring-variables">25.3. Declaring Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#changing-variables">25.4. Changing Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">25.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">26. Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#references">26.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#math-functions">26.2. Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#exercises">26.3. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arrays.html">27. Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#objectives">27.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#references">27.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#index">27.3. index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#push">27.4. push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#pop">27.5. pop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#shift">27.6. shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#unshift">27.7. unshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#insert-at">27.8. Insert at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#remove-at">27.9. Remove at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#reverse">27.10. Reverse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">28. Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#references">28.1. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#char-at">28.2. Char At</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#compare">28.3. Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#substr">28.4. Substr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#parse-int">28.5. Parse Int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#convert-to-text">28.6. Convert to text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#exercises">28.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">29. Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control.html#objectives">29.1. Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#references">29.2. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#reset">29.3. Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-name">29.4. Device Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control.html#device-serial-number">29.5. Device Serial Number</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IS114</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">16. </span>Physical Computing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take good care of all hardware, so that you and future students can have an awesome learning experience</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Return all packaging, including small items like cable ties, do not dispose anything</p>
+</div>
+<section id="physical-computing">
+<h1><span class="section-number">16. </span>Physical Computing<a class="headerlink" href="#physical-computing" title="Permalink to this heading"></a></h1>
+<section id="physical-computing-systems">
+<h2><span class="section-number">16.1. </span>Physical Computing Systems<a class="headerlink" href="#physical-computing-systems" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Interactive systems that can sense the world around them, and control some aspect of the environment.</p></li>
+<li><p>Physical computing devices typically have these features:</p>
+<ul>
+<li><p>Sensing (inputs): the ability to measure and quantify physical parameters in a form that computers can use</p></li>
+<li><p>Actuating (outputs): the ability to control the physical world in some way, e.g. by driving a motor, pumping water, moving a robotic arm, blowing air, etc</p></li>
+<li><p>Computation: process sensor data to extract meaning from them</p></li>
+<li><p>Networking: be able to communicate with other devices, over networks that are nearby, or across the global Internet</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="the-micro-bit">
+<h2><span class="section-number">16.2. </span>The micro:bit<a class="headerlink" href="#the-micro-bit" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Safety</p>
+<ul>
+<li><p><a class="reference external" href="https://microbit.org/get-started/user-guide/safety/">https://microbit.org/get-started/user-guide/safety/</a></p></li>
+<li><p><a class="reference external" href="https://microbit.org/get-started/user-guide/electrical-product-guidance/">https://microbit.org/get-started/user-guide/electrical-product-guidance/</a></p></li>
+</ul>
+</li>
+<li><p>Overview: <a class="reference external" href="https://microbit.org/get-started/user-guide/overview/">https://microbit.org/get-started/user-guide/overview/</a></p></li>
+<li><p>Features: <a class="reference external" href="https://microbit.org/get-started/user-guide/features-in-depth/">https://microbit.org/get-started/user-guide/features-in-depth/</a></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Read the links on safety, content might come out in the quizzes/exam</p>
+</div>
+</section>
+<section id="makecode-editor">
+<h2><span class="section-number">16.3. </span>MakeCode editor<a class="headerlink" href="#makecode-editor" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://makecode.microbit.org/">https://makecode.microbit.org/</a></p></li>
+<li><p>Simulator: <a class="reference external" href="https://makecode.microbit.org/device/simulator">https://makecode.microbit.org/device/simulator</a></p></li>
+<li><p>Debugger</p></li>
+<li><p>Editor</p>
+<ul>
+<li><p>Features: autocomplete, Ctrl-D, multiple cursors (Alt-click), Ctrl-Space</p></li>
+<li><p>Multi-editor, useful for coding 2 different programs that talk to each other <a class="reference external" href="https://makecode.microbit.org/">https://makecode.microbit.org/</a>—multi#</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="development-workflow">
+<h2><span class="section-number">16.4. </span>Development workflow<a class="headerlink" href="#development-workflow" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Write code in the MakeCode editor.</p></li>
+<li><p>Use the simulator and debugger to test the program on MakeCode.</p></li>
+<li><p>Transfer the program over to the micro:bit. This is also called “flashing” the micro:bit, or uploading a program to the micro:bit. There are 2 methods. Try both methods and use the one that works best for you.</p>
+<ul class="simple">
+<li><p>Drag and Drop method: <a class="reference external" href="https://microbit.org/get-started/first-steps/set-up/#drag-and-drop">https://microbit.org/get-started/first-steps/set-up/#drag-and-drop</a></p></li>
+<li><p>Direct flashing method: <a class="reference external" href="https://microbit.org/get-started/first-steps/set-up/#direct-flashing">https://microbit.org/get-started/first-steps/set-up/#direct-flashing</a>. This requires a Chrome or Edge web browser that supports a feature called WebUSB. There are occasional incompatibilities with some laptops/browsers. If this doesn’t work for you, use the Drag and Drop method instead.</p></li>
+</ul>
+</li>
+<li><p>The program will then run on the micro:bit. Only one program can run on the micro:bit at any one time. Uploading a new program will overwrite the previous program.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>if you don’t flash the micro:bit, the program will not run. The code in MakeCode is not automatically transferred to the micro:bit every time you make a change to the code. It is only transferred when you click Download</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2><span class="section-number">16.5. </span>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Error codes: <a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000016969-micro-bit-error-codes">https://support.microbit.org/support/solutions/articles/19000016969-micro-bit-error-codes</a></p></li>
+<li><p>Help &amp; Support: <a class="reference external" href="https://support.microbit.org">https://support.microbit.org</a></p></li>
+<li><p>There may be issues with flashing on Apple Silicon machines. Some workarounds:</p>
+<ul>
+<li><p>The offline app: <a class="reference external" href="https://makecode.microbit.org/offline-app">https://makecode.microbit.org/offline-app</a></p></li>
+<li><p>Mobile apps: <a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000023511-what-apps-are-available-for-the-micro-bit">https://support.microbit.org/support/solutions/articles/19000023511-what-apps-are-available-for-the-micro-bit</a>-. Copy the hex file over to the mobile phone, use the mobile app to flash the micro:bit.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="makecode-python">
+<h2><span class="section-number">16.6. </span>MakeCode Python<a class="headerlink" href="#makecode-python" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPython (used in IS111) cannot be used fully on the micro:bit, because the micro:bit does not have enough computing power to run it.</p></li>
+<li><p>There are 2 different variants of Python that can be used with the micro:bit</p>
+<ul>
+<li><p>MakeCode Python <a class="reference external" href="https://makecode.microbit.org/python">https://makecode.microbit.org/python</a></p></li>
+<li><p>MicroPython <a class="reference external" href="https://python.microbit.org/v/2">https://python.microbit.org/v/2</a></p></li>
+</ul>
+</li>
+<li><p>What’s the diff?</p>
+<ul>
+<li><p><a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000111744-makecode-python-and-micropython">MicroPython vs MakeCode Python</a></p></li>
+<li><p><a class="reference external" href="https://docs.micropython.org/en/latest/genrst/index.html">MicroPython vs CPython</a></p></li>
+</ul>
+</li>
+<li><p>We will use MakeCode Python for this mod.</p></li>
+<li><p>Why MakeCode Python?</p>
+<ul>
+<li><p>Has debugger, simulator</p></li>
+<li><p>Has constructs for event-driven programming / concurrency</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="machine-to-machine-communication">
+<h2><span class="section-number">16.7. </span>Machine-to-machine communication<a class="headerlink" href="#machine-to-machine-communication" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>In CPython, we use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to display some text on our laptop screen.</p></li>
+<li><p>The micro:bit does not have an attached screen. It needs to send the text over to our laptop first via the USB cable; the laptop will then display the text on the laptop screen.</p></li>
+<li><p>There are many ways that 2 machines (in this case, the micro:bit and laptop) can communicate. For this course, we will use a method called <em>serial communication</em> for the micro:bit and laptop to communicate.</p></li>
+<li><p>When the micro:bit and laptop are connected via a USB cable, a <em>serial connection</em> exists between them. There is a <em>serial port</em> at the laptop’s end of the connection.</p></li>
+<li><p>When the micro:bit wants to send data to the laptop:</p>
+<ul>
+<li><p>It <em>writes</em> the data to the laptop’s serial port</p></li>
+<li><p>The laptop <em>reads</em> this data from the laptop’s serial port.</p></li>
+</ul>
+</li>
+<li><p>(Optional) You can explore other ways to use serial communication between the micro:bit and laptop. In particular, the WebUSB method is very convenient. Unfortunately, it does not work for all machines/browsers, which is why we use pySerial for this course.</p>
+<ul>
+<li><p><a class="reference external" href="https://makecode.microbit.org/device/serial">https://makecode.microbit.org/device/serial</a></p></li>
+<li><p><a class="reference external" href="https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer">https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="python-on-laptop">
+<h2><span class="section-number">16.8. </span>Python on Laptop<a class="headerlink" href="#python-on-laptop" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Python needs to be installed on your laptop. If you use Windows, it needs to be installed in Windows, not Ubuntu/WSL.</p></li>
+<li><p>Do this at least 2 weeks before the IS111 lab test, or right after the lab test, in case it messes up your Python installation</p></li>
+</ul>
+<p><strong>Windows users with Anaconda</strong></p>
+<ul class="simple">
+<li><p><i class="fa fa-windows"></i> ➜ <strong>Anaconda Prompt</strong> ➜ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> ➜ Should see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code></p></li>
+</ul>
+<p><strong>Windows users without Anaconda</strong></p>
+<ol class="arabic simple">
+<li><p><i class="fa fa-windows"></i> ➜ <strong>Command Prompt</strong> ➜ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> ➜ if you see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code>, you’re done, stop. If not, continue.</p></li>
+<li><p>Do <a class="reference external" href="https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-windows">How to Add Python to PATH on Windows</a></p></li>
+<li><p><i class="fa fa-windows"></i> ➜ <strong>Command Prompt</strong> ➜ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> ➜ Should see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code></p></li>
+</ol>
+<p><strong>Windows users exempted from IS111</strong></p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://www.python.org/downloads/">Python</a></p></li>
+<li><p>Do <a class="reference external" href="https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-windows">How to Add Python to PATH on Windows</a></p></li>
+<li><p><i class="fa fa-windows"></i> ➜ Command Prompt ➜ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> ➜ Should see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code></p></li>
+</ol>
+<p><strong>macOS users</strong></p>
+<ul class="simple">
+<li><p>Terminal ➜ <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-V</span></code> ➜ Should see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code></p></li>
+</ul>
+<p><strong>macOS users exempted from IS111</strong></p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://www.python.org/downloads/">Python</a></p></li>
+<li><p>Terminal ➜ <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-V</span></code> ➜ Should see <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.XX.XX</span></code></p></li>
+</ol>
+</section>
+<section id="serial-communication-using-pyserial">
+<h2><span class="section-number">16.9. </span>Serial Communication using pySerial<a class="headerlink" href="#serial-communication-using-pyserial" title="Permalink to this heading"></a></h2>
+<section id="on-the-micro-bit">
+<h3><span class="section-number">16.9.1. </span>On the micro:bit<a class="headerlink" href="#on-the-micro-bit" title="Permalink to this heading"></a></h3>
+<p>Run this program on your micro:bit. This sends a string from the micro:bit to the laptop using serial communication:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;xoxo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When the micro:bit is turned on, or its <kbd class="kbd docutils literal notranslate">Reset</kbd> button is pressed, it sends the string <code class="docutils literal notranslate"><span class="pre">xoxo</span></code> to the laptop’s serial port. If the laptop is not connected to the micro:bit during this time, then the data sent is not received by the laptop. It is simply lost forever.</p>
+</section>
+<section id="on-the-laptop">
+<h3><span class="section-number">16.9.2. </span>On the Laptop<a class="headerlink" href="#on-the-laptop" title="Permalink to this heading"></a></h3>
+<p>We will install a Python module called <a class="reference external" href="https://pyserial.readthedocs.io/">pySerial</a>, which provides some useful features to read data from your micro:bit.</p>
+<ol class="arabic">
+<li><p>Plug in the micro:bit to the laptop.</p></li>
+<li><p>Open a terminal. On Windows, use Anaconda Prompt or the Command Prompt, not WSL.</p></li>
+<li><p>Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyserial</span>
+</pre></div>
+</div>
+<p>You should see some text, and eventually this line (<code class="docutils literal notranslate"><span class="pre">X.X</span></code> may differ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Successfully</span> <span class="n">installed</span> <span class="n">pyserial</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>Show your laptop’s <em>serial ports</em> using</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.list_ports<span class="w"> </span>-v
+</pre></div>
+</div>
+</div></blockquote>
+<p>You should see something similar to the below, but not exactly the same.</p>
+<blockquote>
+<div><ul>
+<li><p>This is an example from Windows. In this case, the serial port is <code class="docutils literal notranslate"><span class="pre">COM9</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COM9</span>
+    <span class="n">desc</span><span class="p">:</span> <span class="n">USB</span> <span class="n">Serial</span> <span class="n">Device</span> <span class="p">(</span><span class="n">COM9</span><span class="p">)</span>
+    <span class="n">hwid</span><span class="p">:</span> <span class="n">USB</span> <span class="n">VID</span><span class="p">:</span><span class="n">PID</span><span class="o">=</span><span class="mi">0</span><span class="n">D28</span><span class="p">:</span><span class="mi">0204</span> <span class="n">SER</span><span class="o">=</span><span class="mi">9905360200052833933</span><span class="n">DF9DD1DDE1D80000000006E052820</span> <span class="n">LOCATION</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span><span class="n">x</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>This is an example from macOS. In this case, the serial port is <code class="docutils literal notranslate"><span class="pre">/dev/cu.usbmodem123567</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cu</span><span class="o">.</span><span class="n">usbmodem123567</span>
+    <span class="n">desc</span><span class="p">:</span> <span class="n">BBC</span> <span class="n">micro</span><span class="p">:</span><span class="n">bit</span> <span class="n">CMSIS</span><span class="o">-</span><span class="n">DAP</span> <span class="o">-</span> <span class="n">mbed</span> <span class="n">Serial</span> <span class="n">Port</span>
+    <span class="n">hwid</span><span class="p">:</span> <span class="n">USB</span> <span class="n">VID</span><span class="p">:</span><span class="n">PID</span><span class="o">=</span><span class="mi">0</span><span class="n">D28</span><span class="p">:</span><span class="mi">0204</span> <span class="n">SER</span><span class="o">=</span><span class="mi">9905360200052833</span><span class="n">b53d21262edad78b000000006e052820</span> <span class="n">LOCATION</span><span class="o">=</span><span class="mi">20</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Whatever your serial port is, whenever you see <code class="docutils literal notranslate"><span class="pre">INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU</span></code>, place it there.</p></li>
+<li><p>Run the pySerial miniterm tool to receive data from your micro:bit and display it on the screen.</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.miniterm<span class="w"> </span>INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+<p>Press the micro:bit’s <kbd class="kbd docutils literal notranslate">Reset</kbd> button. You should see this output (similar, but not the same):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Miniterm</span> <span class="n">on</span> <span class="n">INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU</span>  <span class="mi">115200</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span> <span class="o">---</span>
+<span class="o">---</span> <span class="n">Quit</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="p">]</span> <span class="o">|</span> <span class="n">Menu</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="o">|</span> <span class="n">Help</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">H</span> <span class="o">---</span>
+
+<span class="n">xoxo</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Whenever the micro:bit is reset (by pressing the reset button), another line is displayed on the screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Miniterm</span> <span class="n">on</span> <span class="n">INSERT_YOUR_SERIAL_PORT_HERE_DUN_COPY_PASTA_BLINDLY_UWU</span>  <span class="mi">115200</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span> <span class="o">---</span>
+<span class="o">---</span> <span class="n">Quit</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="p">]</span> <span class="o">|</span> <span class="n">Menu</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="o">|</span> <span class="n">Help</span><span class="p">:</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">T</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">H</span> <span class="o">---</span>
+
+<span class="n">xoxo</span>
+</pre></div>
+</div>
+</li>
+<li><p>Exit miniterm by pressing <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">]</kbd> together. You should see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">exit</span> <span class="o">---</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After you’re done with this mod, uninstall pySerial by running this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="n">pyserial</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="debugging-optional">
+<h2><span class="section-number">16.10. </span>Debugging (optional)<a class="headerlink" href="#debugging-optional" title="Permalink to this heading"></a></h2>
+<section id="debugger">
+<h3><span class="section-number">16.10.1. </span>Debugger<a class="headerlink" href="#debugger" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>A debugger is a software that helps coders run code line by line, and tracks several important information about the code, such as variable values, which line of code is being run, etc.</p></li>
+<li><p>In MakeCode, we can use the debugger by clicking on the debugger icon.</p></li>
+</ul>
+</section>
+<section id="features">
+<h3><span class="section-number">16.10.2. </span>Features<a class="headerlink" href="#features" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Step into: runs the next line of code</p></li>
+<li><p>Pause: pauses the program</p></li>
+<li><p>Continue: runs the program until the next breakpoint, or until the code ends</p></li>
+<li><p>Breakpoint: stops execution at a certain line</p></li>
+</ul>
+</section>
+<section id="examples">
+<h3><span class="section-number">16.10.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<p>Use the debugger to fix the given code.</p>
+<ol class="arabic">
+<li><p>Given 3 integers, compute the maximum.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">maximum</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="n">b</span>
+
+<span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="n">c</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="n">b</span>
+
+
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;maximum == &quot;</span> <span class="o">+</span> <span class="n">maximum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Swap two numbers</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;a == &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;b == &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="concurrency-optional">
+<h2><span class="section-number">16.11. </span>Concurrency (optional)<a class="headerlink" href="#concurrency-optional" title="Permalink to this heading"></a></h2>
+<p>Most computers, like the micro:bit, need to be able to do several things at the same time (concurrently). But the micro:bit only has one CPU for executing your program, which means it can only execute one task at a time. It can, however, execute millions of instructions in a single second.</p>
+<p>In our laptops and phones, the Operating System manages multiple tasks that want to run. The micro:bit does not have an Operating System. Instead, there is some software called the micro:bit runtime scheduler that manages this. The scheduler maintains a queue of functions to run. This queue is like a to-do list for the scheduler. The scheduler runs the first function in the queue, then the second, third, and so on. Sometimes, the functions could be placed back into the queue.</p>
+<p>Whenever a function is done, it needs to tell the scheduler that it’s done, and the scheduler will move on to the next function in the queue. There are 2 cases where the scheduler decides that a function is done. In both cases, the scheduler will stop running the function, and run the next function in the queue</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The function exits on its own</p></li>
+<li><p>The function calls <code class="docutils literal notranslate"><span class="pre">basic.pause()</span></code></p></li>
+<li><p>The function calls another function that calls <code class="docutils literal notranslate"><span class="pre">basic.pause()</span></code>. Some functions call <code class="docutils literal notranslate"><span class="pre">basic.pause()</span></code>: e.g. <code class="docutils literal notranslate"><span class="pre">basic.show_leds()</span></code>, <code class="docutils literal notranslate"><span class="pre">basic.show_number()</span></code>, and some others.</p></li>
+</ul>
+</div></blockquote>
+<p>Here’s a simplified explanation of how the scheduler works:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Dequeue the function at the head (front) of the queue</p></li>
+<li><p>Run the function until the function is done, i.e. either of these happens</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>The function exits on its own</p></li>
+<li><p>The function calls <code class="docutils literal notranslate"><span class="pre">basic.pause()</span></code></p></li>
+<li><p>The function calls another function that calls <code class="docutils literal notranslate"><span class="pre">basic.pause()</span></code></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> was used to “register” the function, enqueue the function into the tail (back) of the queue.</p></li>
+<li><p>Repeat step 1.</p></li>
+</ol>
+</div></blockquote>
+<p>Here are some examples to help us understand concurrency better.</p>
+<ol class="arabic">
+<li><p>This code runs a function once, then stops. The scheduler runs the function once, then stops because there is nothing else to do. The function exits the queue and doesn’t re-join it.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="n">on_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>This is the exact same code, except that <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> is called. The scheduler puts the <code class="docutils literal notranslate"><span class="pre">on_forever()</span></code> function into a queue. It is the only function inside the queue. It then runs the function’s code until the function is done. When the function is done, the scheduler makes the function re-join the queue again. The micro:bit then runs the next function in the queue. In this case, since there is only one function, the function keeps running, re-joining the queue, running, re-joining the queue, etc.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_icon</span><span class="p">(</span><span class="n">IconNames</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Here there are 3 functions; note the use of <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code>. What’s the sequence in which the text is displayed? Try using the debugger to run through the code line by line. Is it helpful? Why not?</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:1&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:2&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:3&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:4&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:5&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:6&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Does this code have the same effect?</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:1&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:2&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:3&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:4&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:5&quot;</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:6&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>When a pause is introduced, what’s the sequence in which the text is displayed? Why?</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:1&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:2&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:3&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:4&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:5&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">serial</span><span class="o">.</span><span class="n">write_line</span><span class="p">(</span><span class="s2">&quot;x:6&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Some functions call <code class="docutils literal notranslate"><span class="pre">basic.pause</span></code>. For example:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># pauses here and yields control to the next function</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># pauses here and yields control to the next function</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="c1"># pauses here and yields control to the next function</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>It’s possible for one function to hog the processor and never let other functions run</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Write two <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> blocks. One clears the screen every 1s, and one scrolls a string on the screen continuously. What happens, and why?</p>
+<blockquote>
+<div><div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<p>Every 1s, the screen gets cleared; whatever happens to be on display at that time disappears</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;123567ordlohxoxo&quot;</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Try running the 2 code samples below and observe the difference between the two, in terms of the pattern that the numbers follow. How does the order of writing multiple <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> change the way the code runs?</p>
+<blockquote>
+<div><p><strong>Code Sample 1</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever0</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_forever1</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever0</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever1</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Code Sample 2</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever0</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_forever1</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">clear_screen</span><span class="p">()</span>
+
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever0</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<p>The pattern of the numbers follows the order that <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> is called. This is regardless of the order of the function definitions (the <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">on_forever()</span></code> parts). You can think of it as a queue; whenever <code class="docutils literal notranslate"><span class="pre">basic.forever()</span></code> is called, it adds a function to the queue. The functions in the queue take turns to run, one after another. After running, each function re-joins the queue again. This way of scheduling tasks is called round-robin scheduling.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Run the code below. What is the pattern of the numbers, and why?</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_forever1</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever2</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_forever5</span><span class="p">():</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">show_string</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+    <span class="n">basic</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">basic</span><span class="o">.</span><span class="n">forever</span><span class="p">(</span><span class="n">on_forever5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toggle-header docutils container">
+<p>🙄</p>
+</div>
+<div class="toggle-content docutils container">
+<p>The pattern is not obvious, because of the pause. Each <code class="docutils literal notranslate"><span class="pre">on_forever()</span></code> will only run if it has paused for a sufficient time. The number 1 appears every 1s, the number 2 appears every 2s, and the number 5 appears every 5s.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 🫰🏼 · 2023.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

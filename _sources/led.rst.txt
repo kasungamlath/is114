@@ -1,0 +1,213 @@
+====
+LEDs
+====
+
+References
+----------
+
+- https://makecode.microbit.org/reference/led
+
+
+Display
+-------
+
+- The micro\:bit is super smol, it doesn't have a display
+- Light Emitting Diodes (LEDs) are used in embedded systems to display information
+- Behind the MakeCode Hardware - LEDs on micro\:bit https://www.youtube.com/watch?v=qqBmvHD5bCw
+
+
+Plot
+----
+
+- Turn on a specific LED::
+    
+    def led.plot(x: int32, y: int32): None
+
+- Parameters:
+
+  - ``x`` is a number that means the column on the LED screen (from left to right: 0, 1, 2, 3, 4)
+  - ``y`` is a number that means the row on the LED screen (from top to bottom: 0, 1, 2, 3, 4)
+
+- If a parameter is out of bounds (a value other than 0 to 4), then this function will do nothing.
+
+- Turn on the bottom-right LED::
+
+    led.plot(4, 4)
+
+
+Unplot
+------
+
+- Turn off a specific LED::
+
+    def led.unplot(x: int32, y: int32): None
+
+- Parameters:
+
+  - ``x`` is a number that means the column on the LED screen (from left to right: 0, 1, 2, 3, 4)
+  - ``y`` is a number that means the row on the LED screen (from top to bottom: 0, 1, 2, 3, 4)
+
+- If a parameter is out of bounds (a value other than 0 to 4), then this function will do nothing.
+
+- Show a picture on the LED screen, then turn off the centre LED::
+
+    basic.show_leds("""
+      . . # . .
+      . . # . .
+      # # # # #
+      . . # . .
+      . . # . .
+      """)
+    basic.pause(500)
+    led.unplot(2, 2)
+
+
+.. Point
+.. -----
+
+.. - Find out whether a certain LED is on or off::
+
+..     def led.point(x: number, y: number): bool
+
+.. - Parameters:
+
+..   - ``x`` is a number that means the column on the LED screen (from left to right: 0, 1, 2, 3, 4)
+..   - ``y`` is a number that means the row on the LED screen (from top to bottom: 0, 1, 2, 3, 4)
+
+.. - Returns ``true`` if the LED is on, or ``false`` if the LED is off.
+
+.. - If a parameter is out of bounds (a value other than 0 to 4), this function will return ``false``
+
+.. - Turn the center LED (2, 2) off if it is already on. (If it is already off, leave it off) ::
+
+..     if led.point(2, 2):
+..       led.unplot(2, 2)
+
+
+Toggle
+------
+
+- Toggle a LED light on the LED screen, meaning: if it is on, turn it off; if it is off, turn it on::
+
+    def led.toggle(x: number, y: number): None
+
+- Parameters:
+
+  - ``x`` is a number that means the column on the LED screen (from left to right: 0, 1, 2, 3, 4)
+  - ``y`` is a number that means the row on the LED screen (from top to bottom: 0, 1, 2, 3, 4)
+
+- If a parameter is out of bounds (a value other than 0-4), then this function will do nothing.
+
+- Toggle the centre LED::
+
+    led.toggle(2, 2)
+
+
+.. Brightness
+.. ----------
+
+.. - Find how bright the LED screen is::
+
+..     def led.brightness(): number
+
+.. - Returns a number that means how bright the screen is when it is turned on, from ``0`` (darkest) to ``255`` (brightest). For example, the number ``127`` means the screen is halfway bright when it is turned on.
+
+.. - Make the screen brightness 100% (255), turn on the center LED (2, 2), wait for one second, then set the screen brightness to 50% (255 / 2)::
+
+..     led.set_brightness(255)
+..     led.plot(2, 2)
+..     basic.pause(1000)
+..     led.set_brightness(led.brightness() / 2)
+
+
+.. Plot Brightness
+.. ---------------
+
+.. - Turn on a LED light with a specific brightness on the LED screen::
+
+..     def led.plot_brightness(x: int32, y: int32, brightness: int32): None
+
+.. - Parameters:
+
+..   - ``x`` is a number that means the column on the LED screen (from left to right: 0, 1, 2, 3, 4)
+..   - ``y`` is a number that means the row on the LED screen (from top to bottom: 0, 1, 2, 3, 4)
+..   - ``brightness`` is a number that represents the brightness of the LED, from 0 (off) to 255 (full brightness)
+
+.. - If a parameter is out of bounds (a value other than 0 to 4), then this function will do nothing.
+
+.. - Turn on the bottom right LED at 50% brightness::
+
+..     led.plot_brightness(2, 2, 128)
+
+
+Set Brightness
+--------------
+
+- Make the LED screen a certain brightness::
+
+    def led.set_brightness(value: int32): None
+
+- Parameters:
+
+  - ``value`` is a number that means how bright the screen is when it is turned on, from 0 (darkest) to 255 (brightest)
+
+
+.. Enable
+.. ------
+
+.. - Turns the LED screen on and off::
+
+..     def led.enable(on: bool): None
+
+.. - Parameters
+
+..   - ``on`` is a boolean that defines the on/off state of the screen
+
+
+Stop Animation (optional)
+-------------------------
+
+- Stop the animation that is playing and any animations that are waiting to play::
+
+    def led.stop_animation(): None
+
+- Show a string that can be stopped with button B::
+
+    def on_button_pressed_b():
+      led.stop_animation()
+    input.on_button_pressed(Button.B, on_button_pressed_b)
+
+    basic.show_string("STAHP. PLS. JUST. STAHP.")
+
+
+- 🤔 Does this work like the previous one? Why? ::
+
+    basic.show_string("STAHP. PLS. JUST. STAHP.")
+
+    def on_button_pressed_b():
+      led.stop_animation()
+    input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+plot Bar Graph (optional)
+-------------------------
+
+- Display a bar graph for a number value::
+
+    def led.plot_bar_graph(value: number, high: number): None
+
+- A bar graph is a kind of chart that shows numbers as lines with different lengths.
+
+- Parameters
+
+  - ``value``: what you are measuring or trying to show. For example, if you are measuring the temperature of something with the micro\:bit, value might be 10 if the temperature is 10 degrees Celsius
+  - ``high``: a number that is the highest possible number (maximum) that the value parameter can be. The lines in the bar graph will reach their highest point when value reaches this number. If high is 0, then the largest value recently plotted is used as the maximum.
+
+- Show a bar graph of the acceleration in the ``x`` direction of the micro\:bit. The micro\:bit's ``x`` direction is left/right. The faster you move the micro\:bit in this direction, the taller the lines in the bar graph will be. The high parameter is ``1023``, this is the highest possible value of acceleration that can be shown ::
+
+    def on_forever():
+        a = input.acceleration(Dimension.X)
+        led.plot_bar_graph(a, 1023)
+    basic.forever(on_forever)
+
+

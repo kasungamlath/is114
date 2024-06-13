@@ -1,0 +1,161 @@
+=====
+Music
+=====
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/music
+
+
+Start Melody
+------------
+
+- Start playing a musical melody::
+
+    def music.start_melody(melodyArray: List[str], options: MelodyOptions): None
+
+- Parameters:
+
+    - ``melodyArray``: a list representing a melody. Use one of the built-in ones for convenience 
+    - ``options``: 
+
+        - ``MelodyOptions.ONCE``: play the melody in the foreground one time
+        - ``MelodyOptions.FOREVER``: play the melody in the foreground and keep repeating it
+        - ``MelodyOptions.ONCE_IN_BACKGROUND``: play the melody in the background one time
+        - ``MelodyOptions.FOREVER_IN_BACKGROUND``: play the melody in the background and keep repeating it
+
+- There are built-in melodies that you can choose. 
+- Melodies are played either in the *foreground* or *background*. This allows more than one melody to be active at once. If a melody is set to play in the background, it can be interrupted, or paused, temporarily while a melody set for the foreground is played. If the foreground melody is not set to play ``forever``, then the background melody resumes when the foreground melody is finished.
+
+- You can set options for how you want the melody to play. You can ask that the melody plays just one time, ``MelodyOptions.ONCE``, or have it keep repeating, ``MelodyOptions.FOREVER``. With these options the melody will play in the foreground either once or continue to repeat. 
+- Of course, if you set ``forever``, any melody that was started in background will never play unless you stop the foreground melody. To make a background melody, set the option to ``MelodyOptions.ONCE_IN_BACKGROUND`` or ``MelodyOptions.FOREVER_IN_BACKGROUND``.
+
+- Play the ``Entertainer`` melody once::
+    
+    music.begin_melody(music.built_in_melody(Melodies.ENTERTAINER), MelodyOptions.ONCE)
+
+
+Stop Melody
+------------
+
+- Stop playing a musical melody::
+
+    def music.stop_melody(options: MelodyStopOptions): None
+
+- Parameters:
+
+    - ``options``: options for stopping the melody
+    
+        - ``MelodyStopOptions.ALL``: stop all melodies
+        - ``MelodyStopOptions.BACKGROUND``: stop the background melody
+        - ``MelodyStopOptions.FOREGROUND``: stop the foreground melody
+
+- Play the ``Entertainer`` melody and stop after 5 seconds::
+
+    music.begin_melody(music.built_in_melody(Melodies.ENTERTAINER), MelodyOptions.FOREVER)
+    basic.pause(5000)
+    music.stop_melody(MelodyStopOptions.ALL)
+
+
+On Event
+--------
+
+- Raises events for melodies or music events::
+
+    def music.on_event(value: MusicEvent, handler: () -> None): None
+
+- Parameters
+
+    - ``value``: the kind of event
+    - ``handler``: code to run when the event is raised
+
+- Toggle an LED when a note is played::
+
+    def on_melody_note_played():
+        led.toggle(2, 2)
+    music.on_event(MusicEvent.MELODY_NOTE_PLAYED, on_melody_note_played)
+
+
+Change Tempo By
+---------------
+
+- Makes the tempo (speed of a piece of music) faster or slower::
+
+    def music.change_tempo_by(bpm: number): None
+
+- Parameters
+
+    - ``bpm``: a number that says how much to change the bpm (beats per minute)
+
+- Make the music faster by 12 bpm::
+
+    music.change_tempo_by(12)
+
+- Make the music slower by 12 bpm::
+
+    music.change_tempo_by(-12)
+
+
+Set Tempo
+---------
+
+- Sets the tempo (speed of a piece of music)::
+
+    def music.set_tempo(bpm: number): None
+
+
+Set Volume
+----------
+
+- Sets the volume::
+
+    def music.set_volume(volume: int32): None
+
+- Parameters
+
+    - ``volume``: between ``0`` for silent and ``255`` for the loudest sound.
+
+
+Activities
+----------
+
+1. Play a melody once when button A is pressed, and a different melody once when button B is pressed. Now try the following combinations, press button A, wait 1s, press button B, and observe the differences in behavior
+
+    a. Use ``MelodyOptions.ONCE`` for both
+    #. Use ``MelodyOptions.ONCE_IN_BACKGROUND`` for both
+    #. Use ``MelodyOptions.ONCE_IN_BACKGROUND`` for one, and ``MelodyOptions.ONCE`` for the other
+
+
+2. Loop forever playing a melody. When button A is pressed, increase the tempo. When button B is pressed, decrease the tempo
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            def on_button_pressed_a():
+                music.change_tempo_by(10)
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+            def on_button_pressed_b():
+                music.change_tempo_by(-10)
+            input.on_button_pressed(Button.B, on_button_pressed_b)
+
+            def on_forever():
+                music.play_melody("E B C5 A B G A F ", 120)
+            basic.forever(on_forever)
+
+
+.. #. On your phone, which apps run in the foreground, and which run in the background? What are some examples of when an app in the background interrupts an app in the foreground? What happens after the background app stops?
+
+.. #. Flash an icon on the screen which follows the rhythm of the melody
+
+#. Loop forever playing a melody. Stop the melody when button B is pressed. Is the stopping instantaneous?
+
+
+    .. toggle-header::
+        :header: 🙄
+    
+        No, the melody is played till the end, before it stops

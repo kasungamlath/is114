@@ -1,0 +1,86 @@
+===============
+Extra Exercises
+===============
+
+#. Switch on the lights when the surrounding volume is high, and off when it's low. https://makecode.microbit.org/projects/v2-clap-lights
+
+    .. toggle-header::
+        :header: 🙄
+
+        See https://makecode.microbit.org/projects/v2-clap-lights
+
+
+#. Compute the moving average of 5 consecutive sound level readings, where each reading is taken once every 1s. Display the result as an integer with no decimal points, in this format: ``sound,average,999``
+
+#. Code this: https://makecode.microbit.org/projects/infection
+
+#. Code this: https://microbit.org/projects/make-it-code-it/proximity-beacon/
+
+#. Code this: https://microbit.org/projects/make-it-code-it/light-alarm/
+
+#. Every 5s, check the sound level. If it exceeds the previous reading, display ``increasing``. If it is lower than the previous reading, display ``decreasing``. If it is the same, do nothing.
+
+#. When button ``A`` is pressed, an arrow spins round (🡱 🡵 🡲 🡶 🡳 🡷 🡰 🡴) continuously. When button ``B`` is pressed, the arrow stops.
+
+    .. toggle-header::
+        :header: 🙄
+
+        .. code-block:: python
+
+            interval = 100
+            do_spinning = False
+            current_arrow_idx = 0 
+
+            all_arrows = [ 
+                ArrowNames.NORTH, 
+                ArrowNames.NORTH_EAST,
+                ArrowNames.EAST,
+                ArrowNames.SOUTH_EAST,
+                ArrowNames.SOUTH,
+                ArrowNames.SOUTH_WEST,
+                ArrowNames.WEST,
+                ArrowNames.NORTH_WEST
+                ]
+
+            def on_forever():
+                global interval, current_arrow_idx
+                basic.show_arrow(all_arrows[current_arrow_idx], 0)
+                pass
+            basic.forever(on_forever)
+
+            def on_forever2():
+                global current_arrow_idx, do_spinning
+                if do_spinning:
+                    current_arrow_idx += 1
+                    if current_arrow_idx >= len(all_arrows):
+                        current_arrow_idx = 0
+                    basic.pause(interval)
+
+            basic.forever(on_forever2)
+
+            def on_button_pressed_a():
+                global do_spinning
+                do_spinning = True
+                pass
+            input.on_button_pressed(Button.A, on_button_pressed_a)
+
+            def on_button_pressed_b():
+                global do_spinning
+                do_spinning = False
+                pass
+            input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+#. Code this: https://microbit.org/projects/make-it-code-it/tilt-alarm/
+
+
+#. Run the code below on the micro\:bit. Use a phone compass app and compare the values. How accurate is the micro\:bit compass? 
+
+    .. code-block:: python
+
+        def on_forever():
+            value = input.compass_heading()
+            serial.write_line(str(value))
+            basic.pause(1000)
+        basic.forever(on_forever)
+            

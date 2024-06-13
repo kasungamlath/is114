@@ -1,0 +1,58 @@
+=======
+Control
+=======
+
+Objectives
+----------
+
+- To learn the micro\:bit's runtime and event utilities 
+
+
+References
+----------
+
+- https://makecode.microbit.org/reference/control
+
+
+Reset
+-----
+
+- Reset the micro\:bit::
+
+    def control.reset(): None
+
+- This program will count as high as you like when you press button A. When you get tired of counting, press button B to reset the micro:bit and start the program over. ::
+
+    item = 0
+    basic.show_number(item)
+
+    def on_button_pressed_a():
+        global item
+        item = item + 1
+        basic.show_number(item)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+    def on_button_pressed_b():
+        control.reset()
+    input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+Device Name
+-----------
+
+- Make a friendly name for the device based on its serial number. ::
+
+    def control.device_name(): str
+
+- Returns the friendly name of the micro\:bit
+
+
+Device Serial Number
+--------------------
+
+- Get the micro\:bit's serial number::
+
+    def control.device_serial_number(): number
+
+- Returns the micro\:bit's serial number
+

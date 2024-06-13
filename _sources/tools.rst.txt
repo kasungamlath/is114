@@ -1,0 +1,150 @@
+=====
+Tools
+=====
+
+Windows Subsystem for Linux
+---------------------------
+
+- Windows Subsystem for Linux (WSL) is a feature in Windows that lets users to run a Linux operating system environment directly on their Windows computers. Users can run Linux tools, utilities, and applications natively on Windows without the need for a virtual machine or a separate Linux installation.
+
+- To install: 
+
+  - https://learn.microsoft.com/en-us/windows/wsl/install
+  - Start WSL
+  - After starting WSL for the first time, type::
+    
+      whoami
+
+    If you see the word ``root``, get help, you might need to re-install WSL.
+
+  - Install some necessary software::
+
+      sudo apt update
+      sudo apt install broot curl tldr tree python3-venv
+
+File management
+---------------
+
+- ``ls`` : list files and directories
+
+- ``cd`` : change the current working directory to a specified location
+
+- ``pwd`` : display the present working directory
+
+- ``mkdir`` : create a new directory with a specified name
+
+- ``cp`` : copy files or directories from one location to another
+
+  - ``cp --recursive`` or ``cp --r``
+
+- ``mv`` : moves (or renames) files and directories
+
+- [Optional] ``broot`` : a file manager and navigation tool 
+
+
+Text
+----
+
+- ``cat`` : concatenate and display file contents
+
+- ``echo`` : output text or variable values
+
+  - ``echo "hi`` (try this; what happens if there's no closing quote?)
+
+- ``grep`` : search for patterns in files
+
+  - ``grep --ignore-case`` or ``grep -i``
+  - ``grep --invert-match`` or ``grep -v``
+  - ``grep --after-context=NUM`` or ``grep -A NUM``
+  - ``grep --context=NUM`` or ``grep -C NUM``
+
+- ``nano`` : a text editor
+
+- ``sort`` : sort lines of text 
+
+   - ``sort --numeric-sort`` or ``sort -n``
+   - ``sort --reverse`` or ``sort -r``
+   - ``sort --field-separator=SEP --key=KEYDEF`` or ``sort -t SEP -k KEYDEF``
+
+- ``cut`` : remove sections ("columns") from each line
+
+   - ``cut --delimiter=DELIM`` or ``cut -d DELIM``
+   - ``cut --fields=LIST`` or ``cut -f LIST``
+   - How to escape characters
+
+- ``uniq`` : filter out duplicate lines 
+
+   - ``uniq --count`` or ``uniq -c``
+   - ``uniq --repeated`` or ``uniq -d``
+
+- ``wc`` : count words, lines, and characters
+
+   - ``wc --lines`` or ``wc -l`` 
+
+- [Optional] ``tr`` : translate or replace characters
+
+   - ``tr --delete`` or ``tr -d``
+   - ``tr --delete "[:blank:]"`` or ``tr -d "[:blank:]"``
+
+- pipe, redirection
+
+
+Process management (Optional)
+-----------------------------
+
+- :kbd:`Ctrl` :kbd:`Z`
+- :kbd:`Ctrl` :kbd:`C`
+- ``ps`` : display snapshot information of active processes
+- ``top`` : real-time monitoring of active processes
+- ``pkill`` : terminate processes based on their names or other attributes
+- ``kill`` : terminate processes using their process ID (PID)
+
+
+File Permissions
+----------------
+
+- In Linux, a file has:
+  - An owner: a single user whom the file belongs to
+  - A group: 1 or more users who have access to that file
+ 
+- File permissions determine who can access files and folders on a system and how.
+- ``ls -l`` shows the file types and permissions
+- ``r``: read
+- ``w``: write
+- ``x``: execute
+- For a string like ``rw-r--r--``, first set applies to the owner, second set applies to the group, third set applies to others, i.e. any user who is not the owner, and also not inside the group.
+- ``chmod`` is used to change file permissions
+- Very common shortcuts: 
+
+  - Make a file executable: ``chmod 755 YOUR_FILENAME_HERE``
+  - Make a file non-executable: ``chmod 644 YOUR_FILENAME_HERE``
+  - Make a file readable by the owner only: ``chmod 400 YOUR_FILENAME_HERE``
+   
+- ``755``, ``644`` etc are "octal values". The shortcuts mentioned above are within scope of this mod, but octal values are out of scope of this mod.
+- For users, u stands for user owner, g for group owner, and o for others. 
+- Adapted from: https://www.redhat.com/sysadmin/linux-file-permissions-explained
+
+
+Other useful stuff (optional)
+-----------------------------
+
+- tldr
+- Up arrow (history)
+- Tab completion
+- Aliases
+- Wildcards
+
+
+Screen Recording (optional)
+---------------------------
+
+How to record your screen
+
+- Windows: https://www.tomshardware.com/how-to/screen-record-in-windows
+- macOS: https://support.apple.com/en-sg/guide/mac-help/mh26782/mac
+- Linux: 
+
+  - Gnome: https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en
+  - KDE: https://apps.kde.org/spectacle/
+
+
